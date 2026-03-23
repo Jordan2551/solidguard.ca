@@ -29,20 +29,22 @@ $areas = array(
 ?>
 
 <section class="service-areas" id="service-areas" aria-label="Service areas">
+    <div class="container">
 
-    <h2 class="section-heading">Service Areas</h2>
+        <h2 class="section-heading">Service Areas</h2>
 
-    <ul class="area-grid" role="list" aria-label="GTA service locations">
-        <?php foreach ( $areas as $area ) : ?>
-            <li class="area-item">
-                <span
-                    class="material-symbols-outlined area-item__icon"
-                    style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;"
-                    aria-hidden="true"
-                >location_on</span>
-                <span class="area-item__name"><?php echo esc_html( $area ); ?></span>
-            </li>
-        <?php endforeach; ?>
-    </ul>
+        <ul class="area-grid" role="list" aria-label="GTA service locations">
+            <?php foreach ( $areas as $area ) : ?>
+                <li class="area-item">
+                    <span
+                        class="material-symbols-outlined area-item__icon"
+                        style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;"
+                        aria-hidden="true"
+                    >location_on</span>
+                    <span class="area-item__name"><?php echo esc_html( $area ); ?></span>
+                </li>
+            <?php endforeach; ?>
+        </ul>
 
+    </div>
 </section>

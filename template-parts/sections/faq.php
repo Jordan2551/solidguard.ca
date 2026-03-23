@@ -47,6 +47,7 @@ $faqs = array(
 ?>
 
 <section class="faq" id="faq" aria-label="Frequently asked questions">
+    <div class="container">
 
     <h2 class="section-heading">Common Questions</h2>
 
@@ -66,4 +67,5 @@ $faqs = array(
         <?php endforeach; ?>
     </dl>
 
+    </div>
 </section>

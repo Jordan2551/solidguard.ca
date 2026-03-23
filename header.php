@@ -15,22 +15,25 @@
 
     <!-- Top bar: CTAs -->
     <div class="site-header__topbar">
-        <a href="#hero-form" class="site-header__topbar-cta" data-modal-trigger="modal-estimate">
-            <span class="material-symbols-outlined" style="font-size:var(--icon-xs);" aria-hidden="true">edit_note</span>
-            Quick Estimate
-        </a>
-        <a
-            href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>"
-            class="site-header__topbar-phone"
-            aria-label="Call us at <?php echo esc_attr( SG_PHONE_DISPLAY ); ?>"
-        >
-            <span class="material-symbols-outlined" aria-hidden="true">call</span>
-            <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
-        </a>
+        <div class="site-header__inner">
+            <a href="#hero-form" class="site-header__topbar-cta" data-modal-trigger="modal-estimate">
+                <span class="material-symbols-outlined" style="font-size:var(--icon-xs);" aria-hidden="true">edit_note</span>
+                Quick Estimate
+            </a>
+            <a
+                href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>"
+                class="site-header__topbar-phone"
+                aria-label="Call us at <?php echo esc_attr( SG_PHONE_DISPLAY ); ?>"
+            >
+                <span class="material-symbols-outlined" aria-hidden="true">call</span>
+                <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
+            </a>
+        </div>
     </div>
 
     <!-- Nav bar: logo + hamburger -->
     <div class="site-header__navbar">
+        <div class="site-header__inner">
         <div class="site-header__logo">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Solid Guard — Home">
                 <img
@@ -103,6 +106,7 @@
             <span class="nav-toggle__bar"></span>
             <span class="nav-toggle__bar"></span>
         </button>
+        </div><!-- .site-header__inner -->
     </div>
 
 </header>
