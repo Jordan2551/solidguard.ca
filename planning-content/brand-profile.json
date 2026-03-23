@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "brand_name": "Solid Guard",
+  "website_url": "https://solidguard.ca",
+  "extracted_at": "2026-03-23T00:00:00Z",
+  "industry": "glass-repair",
+  "location_targeting": "Toronto, Etobicoke, Scarborough, North York, Mississauga, Brampton, Vaughan, Markham, Richmond Hill, Oakville, Ajax, Pickering, GTA, Ontario, Canada",
+
+  "voice": {
+    "formal_casual": 4,
+    "rational_emotional": 4,
+    "playful_serious": 7,
+    "bold_subtle": 8,
+    "traditional_innovative": 4,
+    "expert_accessible": 6,
+    "descriptors": ["direct", "protective", "dependable", "no-nonsense"]
+  },
+
+  "colors": {
+    "primary": "#1A78C2",
+    "secondary": ["#F08C00", "#0B1F40"],
+    "forbidden": ["#FF0000", "#00FF00"],
+    "background": "#F5F7FA",
+    "text": "#1A1A1A"
+  },
+
+  "typography": {
+    "heading_font": "Rajdhani",
+    "body_font": "Inter",
+    "pairing_descriptor": "bold geometric condensed headings (Rajdhani 700) paired with clean readable body copy (Inter 400/500) — authoritative and professional without being corporate"
+  },
+
+  "imagery": {
+    "style": "real-work photography — technicians on the job, actual glass repair in progress",
+    "subjects": [
+      "technician replacing storefront glass",
+      "close-up of clean glass installation",
+      "tech arriving at a residential home",
+      "before/after broken vs. repaired window",
+      "GTA urban and suburban property exteriors"
+    ],
+    "composition": "action-oriented shots, high contrast, dark overlays on hero images, shield/blue brand color accents",
+    "forbidden": [
+      "generic stock photos",
+      "smiling people in suits",
+      "clip art or cartoons",
+      "overly bright pastel tones",
+      "competitor brand colors (green)"
+    ]
+  },
+
+  "aesthetic": {
+    "mood_keywords": ["secure", "reliable", "fast", "professional", "solid"],
+    "texture": "clean with metallic/chrome accents mirroring the logo — minimal flat layouts with bold typographic hierarchy",
+    "negative_space": "moderate — content-dense for landing pages but well structured with clear visual hierarchy"
+  },
+
+  "brand_values": [
+    "protection — we secure your property",
+    "speed — we respond when it matters most",
+    "trust — background-checked techs, no surprises",
+    "expertise — glass specialists, not generalists",
+    "accountability — we stand behind every repair"
+  ],
+
+  "target_audience": {
+    "age_range": "25-65",
+    "profession": "homeowners, small business/storefront owners, property managers, condo building supers",
+    "pain_points": [
+      "broken or shattered window needing immediate repair",
+      "foggy or seal-failed double-pane glass letting in cold air",
+      "smashed storefront after a break-in",
+      "sliding or patio door glass that needs replacing",
+      "not knowing who to call or what it will cost",
+      "fear of letting unknown technicians into their home or business"
+    ],
+    "aspirations": [
+      "property secured as fast as possible",
+      "trusted professional who shows up and solves the problem",
+      "no surprises — clear process, no hidden fees after approval",
+      "work done right the first time"
+    ]
+  },
+
+  "positioning": {
+    "tagline": "Fast. Secure. Solid.",
+    "tagline_alternatives": [
+      "Toronto's Glass Repair Specialists",
+      "Protect Your Property. Call Solid Guard.",
+      "When Glass Breaks, We Guard What Matters."
+    ],
+    "brand_promise": "We show up fast, assess for free, and fix it right — with background-checked technicians you can trust inside your home or business.",
+    "positioning_statement": "Solid Guard is Toronto and the GTA's glass repair specialist. Unlike generalist window-and-door companies, we do one thing — glass repair and replacement — and we do it better than anyone. We respond to emergencies the same day, send background-checked technicians, and never start work without your approval. From a broken basement window to a smashed commercial storefront, Solid Guard secures your property fast.",
+    "differentiators": [
+      "Glass specialists — not a windows-and-doors company that also does glass",
+      "24/7 emergency response — same-day availability including weekends",
+      "Background-checked technicians — safe to let into your home or business",
+      "Free on-site assessment — no commitment until you approve the quote",
+      "Residential and commercial — one call covers it all"
+    ]
+  },
+
+  "landing_page": {
+    "primary_cta": "Call Now",
+    "secondary_cta": "Get Free Assessment",
+    "hero_headline_options": [
+      "24/7 Emergency Glass Repair — Toronto & GTA",
+      "Broken Glass? We're On Our Way."
+    ],
+    "hero_subheadline": "Broken window? Smashed storefront? We respond fast.",
+    "trust_bullets": [
+      "Licensed & Insured",
+      "Background-Checked Technicians",
+      "Same-Day Emergency Service",
+      "Free On-Site Assessment — No Commitment"
+    ],
+    "how_it_works_steps": [
+      "Call or Request Online — we answer 24/7",
+      "We Come to You — free on-site assessment, same day",
+      "You Approve, We Fix — work starts only when you say go"
+    ]
+  },
+
+  "services": [
+    "Broken window repair",
+    "Window glass replacement (single, double, triple pane)",
+    "Foggy / seal-failed IGU replacement",
+    "Patio door glass replacement",
+    "Sliding door glass replacement",
+    "Storefront glass repair and replacement",
+    "French door glass replacement",
+    "Entry door glass replacement",
+    "Emergency board-up service",
+    "Tempered glass replacement",
+    "Laminated glass replacement",
+    "Privacy glass",
+    "Custom glass cutting",
+    "Commercial glass repair",
+    "Residential glass repair",
+    "24/7 emergency glass repair"
+  ],
+
+  "screenshots": {
+    "homepage": null,
+    "secondary": []
+  },
+
+  "google_ads": {
+    "customer_id": "TBD",
+    "manager_id": null,
+    "campaigns": []
+  }
+}
