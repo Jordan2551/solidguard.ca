@@ -31,9 +31,9 @@ $offers = array(
 
 <section class="section section--muted" id="offers" aria-label="Special offers">
 
-    <div class="container" style="margin-bottom: var(--space-8);">
-        <h2 class="h2 text-navy section-heading--accented" style="margin-bottom: var(--space-2);">Special Offers</h2>
-        <p class="body-sm text-muted">Check out the latest savings on glass repair and replacement services.</p>
+    <div class="container section-header--center" style="margin-bottom: var(--space-8);">
+        <h2 class="section-heading section-heading--center">Special Offers</h2>
+        <p class="section-intro">Check out the latest savings on glass repair and replacement services.</p>
     </div>
 
     <div class="scroll-rail" role="list" aria-label="Offers carousel">
@@ -57,7 +57,7 @@ $offers = array(
                     </div>
                 </div>
 
-                <button class="btn btn--primary btn--full" type="button">
+                <button class="btn btn--primary btn--full" type="button" data-modal-trigger="modal-estimate">
                     Claim Offer
                 </button>
 

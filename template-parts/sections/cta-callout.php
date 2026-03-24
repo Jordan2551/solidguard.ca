@@ -5,7 +5,7 @@
  * Reusable. Pass args to customise copy:
  *
  *   get_template_part( 'template-parts/sections/cta-callout', null, array(
- *       'eyebrow'  => '24/7 Emergency Response',
+ *       'eyebrow'  => 'Emergency Response',
  *       'title'    => 'Glass Broken? We\'re On Our Way.',
  *       'subtitle' => 'Same-day service across Toronto and the GTA.',
  *   ) );
@@ -14,7 +14,7 @@
  */
 
 $args     = wp_parse_args( $args ?? array(), array(
-    'eyebrow'  => '24/7 Emergency Response — Toronto &amp; GTA',
+    'eyebrow'  => 'Emergency Response — Toronto &amp; GTA',
     'title'    => 'Glass Broken? We\'re On Our Way.',
     'subtitle' => 'Same-day service, background-checked technicians, and a free on-site assessment — no commitment until you approve the quote.',
 ) );
@@ -51,10 +51,10 @@ $args     = wp_parse_args( $args ?? array(), array(
 
             <div class="cta-callout__actions">
 
-                <a href="#hero-form" class="btn btn--orange btn--lg">
+                <button type="button" class="btn btn--orange btn--lg" data-modal-trigger="modal-estimate">
                     <span class="material-symbols-outlined icon-sm" aria-hidden="true">edit_note</span>
                     Get Quick Estimate
-                </a>
+                </button>
 
                 <a
                     href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>"

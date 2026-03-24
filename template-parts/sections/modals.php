@@ -191,34 +191,7 @@ $service_modals = array(
                 <h3 class="sg-modal__form-title"><?php echo esc_html( $modal['form_title'] ); ?></h3>
                 <p class="sg-modal__form-sub"><?php echo esc_html( $modal['form_sub'] ); ?></p>
 
-                <form class="form-stack sg-modal__form" action="#" method="post" novalidate>
-                    <input type="hidden" name="service_context" value="<?php echo esc_attr( $modal['label'] ); ?>">
-
-                    <div class="form-group">
-                        <label class="form-label" for="<?php echo esc_attr( $modal['id'] ); ?>-name">Name</label>
-                        <input class="form-input" id="<?php echo esc_attr( $modal['id'] ); ?>-name" type="text" name="name" placeholder="Full Name" autocomplete="name" required>
-                    </div>
-
-                    <div class="form-grid-2">
-                        <div class="form-group">
-                            <label class="form-label" for="<?php echo esc_attr( $modal['id'] ); ?>-phone">Phone</label>
-                            <input class="form-input" id="<?php echo esc_attr( $modal['id'] ); ?>-phone" type="tel" name="phone" placeholder="(416) 000-0000" autocomplete="tel" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="<?php echo esc_attr( $modal['id'] ); ?>-email">Email</label>
-                            <input class="form-input" id="<?php echo esc_attr( $modal['id'] ); ?>-email" type="email" name="email" placeholder="email@address.com" autocomplete="email">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="<?php echo esc_attr( $modal['id'] ); ?>-message">Message</label>
-                        <textarea class="form-input form-textarea" id="<?php echo esc_attr( $modal['id'] ); ?>-message" name="message" placeholder="Tell us how we can help..." rows="3"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn--primary btn--full btn--lg">
-                        Get Quick Estimate
-                    </button>
-                </form>
+                <?php echo do_shortcode( '[ninja_form id="2"]' ); ?>
 
             </div><!-- .sg-modal__body -->
         </div><!-- .sg-modal__scroll -->
@@ -250,7 +223,7 @@ $service_modals = array(
         <!-- Van image header -->
         <div class="sg-modal__estimate-hero">
             <img
-                src="<?php echo esc_url( get_template_directory_uri() . '/images/pictures/no-bg-van-reverse.webp' ); ?>"
+                src="<?php echo esc_url( get_template_directory_uri() . '/images/pictures/solidguard-van-no-bg.webp' ); ?>"
                 alt="Solid Guard service van"
                 aria-hidden="true"
             >
@@ -262,50 +235,7 @@ $service_modals = array(
             <h2 class="sg-modal__title">Get Quick Estimate</h2>
             <p class="sg-modal__tagline">Fast response. Clear pricing. No pressure.</p>
 
-            <form class="form-stack sg-modal__form" action="#" method="post" novalidate>
-
-                <div class="form-group">
-                    <label class="form-label" for="est-name">Name</label>
-                    <input class="form-input" id="est-name" type="text" name="name" placeholder="Full Name" autocomplete="name" required>
-                </div>
-
-                <div class="form-grid-2">
-                    <div class="form-group">
-                        <label class="form-label" for="est-phone">Phone</label>
-                        <input class="form-input" id="est-phone" type="tel" name="phone" placeholder="(416) 000-0000" autocomplete="tel" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="est-email">Email</label>
-                        <input class="form-input" id="est-email" type="email" name="email" placeholder="email@address.com" autocomplete="email">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label" for="est-service">Service</label>
-                    <div class="form-select-wrap">
-                        <select class="form-select" id="est-service" name="service">
-                            <option value="">Select a service...</option>
-                            <option value="residential">Residential Glass Repair</option>
-                            <option value="commercial">Commercial Glass Repair</option>
-                            <option value="emergency">Emergency Glass Repair</option>
-                            <option value="storefront">Storefront Glass</option>
-                            <option value="icu">Insulated Glass Units</option>
-                            <option value="boardup">Board-up Services</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label" for="est-message">Message</label>
-                    <textarea class="form-input form-textarea" id="est-message" name="message" placeholder="Tell us how we can help..." rows="3"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn--primary btn--full btn--lg">
-                    Get Quick Estimate
-                </button>
-
-            </form>
+            <?php echo do_shortcode( '[ninja_form id="2"]' ); ?>
         </div>
     </div>
 </div>

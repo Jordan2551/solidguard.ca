@@ -9,7 +9,7 @@
 $faqs = array(
     array(
         'q' => 'How fast can you arrive?',
-        'a' => 'For emergency calls we target same-day arrival across the GTA. In most cases a technician is on-site within 1–3 hours of your call. We operate 24/7, including weekends and holidays, so you\'re never left waiting when it matters most.',
+        'a' => 'For emergency calls we target same-day arrival across the GTA. In most cases a technician is on-site within 1–3 hours of your call. We operate including weekends and holidays, so you\'re never left waiting when it matters most.',
     ),
     array(
         'q' => 'Is the on-site assessment really free?',

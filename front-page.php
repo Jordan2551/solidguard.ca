@@ -26,7 +26,6 @@ get_header();
 
     <?php get_template_part( 'template-parts/sections/service-areas' ); ?>
 
-    <?php get_template_part( 'template-parts/sections/faq' ); ?>
 
 </main>
 

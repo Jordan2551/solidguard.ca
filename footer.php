@@ -32,13 +32,13 @@
             <div class="site-footer__col">
                 <h5 class="site-footer__nav-heading">Services</h5>
                 <nav class="site-footer__nav" aria-label="Footer service links">
-                    <a href="<?php echo esc_url( home_url( '/emergency-glass-repair' ) ); ?>">Emergency Glass Repair</a>
-                    <a href="<?php echo esc_url( home_url( '/insulated-glass-units' ) ); ?>">Insulated Glass Units</a>
-                    <a href="<?php echo esc_url( home_url( '/tempered-glass' ) ); ?>">Tempered Glass</a>
-                    <a href="<?php echo esc_url( home_url( '/board-up-services' ) ); ?>">Board-up Services</a>
-                    <a href="<?php echo esc_url( home_url( '/commercial-glass-repair' ) ); ?>">Commercial Glass Repair</a>
-                    <a href="<?php echo esc_url( home_url( '/residential-glass-repair' ) ); ?>">Residential Glass Repair</a>
-                    <a href="<?php echo esc_url( home_url( '/storefront-glass-repair' ) ); ?>">Storefront Glass</a>
+                    <button type="button" data-modal-trigger="modal-emergency">Emergency Glass Repair</button>
+                    <button type="button" data-modal-trigger="modal-estimate">Insulated Glass Units</button>
+                    <button type="button" data-modal-trigger="modal-estimate">Tempered Glass</button>
+                    <button type="button" data-modal-trigger="modal-estimate">Board-up Services</button>
+                    <button type="button" data-modal-trigger="modal-commercial">Commercial Glass Repair</button>
+                    <button type="button" data-modal-trigger="modal-residential">Residential Glass Repair</button>
+                    <button type="button" data-modal-trigger="modal-storefront">Storefront Glass</button>
                 </nav>
             </div>
 
@@ -51,7 +51,6 @@
                     <a href="#offers">Special Offers</a>
                     <a href="#guarantee">Warranty</a>
                     <a href="#service-areas">Service Areas</a>
-                    <a href="#faq">FAQ</a>
                 </nav>
             </div>
 
@@ -62,10 +61,6 @@
                     <a href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>">
                         <span class="material-symbols-outlined" aria-hidden="true">call</span>
                         <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
-                    </a>
-                    <a href="mailto:<?php echo esc_attr( SG_EMAIL_DISPATCH ); ?>">
-                        <span class="material-symbols-outlined" aria-hidden="true">mail</span>
-                        <?php echo esc_html( SG_EMAIL_DISPATCH ); ?>
                     </a>
                 </nav>
                 <button class="btn btn--orange btn--full" type="button" data-modal-trigger="modal-estimate" style="margin-top: var(--space-5);">

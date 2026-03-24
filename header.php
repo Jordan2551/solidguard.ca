@@ -58,40 +58,26 @@
                     <?php
                     // modal = null means link to page; modal = 'id' opens the modal
                     $desktop_services = array(
-                        array( 'Emergency Glass Repair',     '/emergency-glass-repair',        'modal-emergency'  ),
-                        array( 'Insulated Glass Units',      '/insulated-glass-units',          null               ),
-                        array( 'Tempered Glass',             '/tempered-glass',                 null               ),
-                        array( 'Board-up Services',          '/board-up-services',              null               ),
-                        array( 'Storefront Glass',           '/storefront-glass-repair',        'modal-storefront' ),
-                        array( 'Patio &amp; Sliding Door Glass', '/patio-door-glass-replacement', null             ),
-                        array( 'Commercial Glass Repair',    '/commercial-glass-repair',        'modal-commercial' ),
-                        array( 'Residential Glass Repair',   '/residential-glass-repair',       'modal-residential'),
-                        array( '24/7 Emergency Service',     '/emergency-glass-repair',         'modal-emergency'  ),
+                        array( 'Residential Glass Services', 'modal-residential' ),
+                        array( 'Commercial Glass Services',  'modal-commercial'  ),
+                        array( 'Emergency Glass Services',   'modal-emergency'   ),
+                        array( 'Storefront Glass Services',  'modal-storefront'  ),
                     );
-                    foreach ( $desktop_services as $svc ) :
-                        if ( $svc[2] ) : ?>
-                            <li>
-                                <button class="desktop-nav__submenu-link" data-modal-trigger="<?php echo esc_attr( $svc[2] ); ?>">
-                                    <?php echo wp_kses( $svc[0], array() ); ?>
-                                </button>
-                            </li>
-                        <?php else : ?>
-                            <li>
-                                <a href="<?php echo esc_url( home_url( $svc[1] ) ); ?>" class="desktop-nav__submenu-link">
-                                    <?php echo wp_kses( $svc[0], array() ); ?>
-                                </a>
-                            </li>
-                        <?php endif;
-                    endforeach; ?>
+                    foreach ( $desktop_services as $svc ) : ?>
+                        <li>
+                            <button class="desktop-nav__submenu-link" data-modal-trigger="<?php echo esc_attr( $svc[1] ); ?>">
+                                <?php echo wp_kses( $svc[0], array() ); ?>
+                            </button>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
 
-            <!-- Direct links — mirror mobile nav -->
-            <a href="#reviews"       class="desktop-nav__link">Testimonials</a>
+            <!-- Direct links — in page order -->
+            <a href="#reviews"       class="desktop-nav__link">Reviews</a>
             <a href="#offers"        class="desktop-nav__link">Special Offers</a>
             <a href="#guarantee"     class="desktop-nav__link">Warranty</a>
             <a href="#service-areas" class="desktop-nav__link">Service Areas</a>
-            <a href="#faq"           class="desktop-nav__link">FAQ</a>
 
         </nav>
 
@@ -150,27 +136,19 @@
                 </button>
                 <ul class="nav-overlay__sub" id="nav-services" role="list">
                     <?php
-                    $services = array(
-                        array( 'Emergency Glass Repair',     '/emergency-glass-repair' ),
-                        array( 'Insulated Glass Units',      '/insulated-glass-units' ),
-                        array( 'Tempered Glass',             '/tempered-glass' ),
-                        array( 'Board-up Services',          '/board-up-services' ),
-                        array( 'Storefront Glass',           '/storefront-glass-repair' ),
-                        array( 'Patio & Sliding Door Glass', '/patio-door-glass-replacement' ),
-                        array( 'Commercial Glass Repair',    '/commercial-glass-repair' ),
-                        array( 'Residential Glass Repair',   '/residential-glass-repair' ),
-                        array( '24/7 Emergency Service',     '/emergency-glass-repair' ),
+                    // label, modal id (null = estimate fallback)
+                    $mobile_services = array(
+                        array( 'Residential Glass Services', 'modal-residential' ),
+                        array( 'Commercial Glass Services',  'modal-commercial'  ),
+                        array( 'Emergency Glass Services',   'modal-emergency'   ),
+                        array( 'Storefront Glass Services',  'modal-storefront'  ),
                     );
-                    foreach ( $services as $svc ) :
-                    ?>
+                    foreach ( $mobile_services as $svc ) : ?>
                         <li>
-                            <a
-                                href="<?php echo esc_url( home_url( $svc[1] ) ); ?>"
-                                class="nav-overlay__sub-link"
-                            >
+                            <button class="nav-overlay__sub-link" data-modal-trigger="<?php echo esc_attr( $svc[1] ); ?>">
                                 <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
                                 <?php echo esc_html( $svc[0] ); ?>
-                            </a>
+                            </button>
                         </li>
                     <?php endforeach; ?>
                 </ul>
@@ -181,11 +159,10 @@
             $nav_links = array(
                 array( 'Get Quick Estimate', '#hero-form',          'edit_note' ),
                 array( 'Call Now',          'tel:' . SG_PHONE_RAW, 'call' ),
-                array( 'Testimonials',      '#reviews',            'star' ),
+                array( 'Reviews',           '#reviews',            'star' ),
                 array( 'Special Offers',    '#offers',             'local_offer' ),
                 array( 'Warranty',          '#guarantee',          'verified' ),
                 array( 'Service Areas',     '#service-areas',      'location_on' ),
-                array( 'FAQ',               '#faq',                'help' ),
             );
             foreach ( $nav_links as $link ) :
                 $href = strpos( $link[1], 'tel:' ) === 0
