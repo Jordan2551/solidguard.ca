@@ -1,6 +1,6 @@
 <?php
 /**
- * Special offers — horizontal scroll rail
+ * Special offers - horizontal scroll rail
  *
  * @package SolidGuard
  */
@@ -31,7 +31,7 @@ $offers = array(
 
 <section class="section section--muted" id="offers" aria-label="Special offers">
 
-    <div class="container section-header--center" style="margin-bottom: var(--space-8);">
+    <div class="container section-header--center">
         <h2 class="section-heading section-heading--center">Special Offers</h2>
         <p class="section-intro">Check out the latest savings on glass repair and replacement services.</p>
     </div>
@@ -47,17 +47,17 @@ $offers = array(
                         aria-hidden="true"
                         width="48"
                         height="48"
-                        style="opacity: 0.25; margin-bottom: var(--space-6); width: 3rem; height: 3rem; object-fit: contain;"
+                        class="offer-card__logo"
                     >
-                    <p class="h2 text-primary" style="margin-bottom: var(--space-2);"><?php echo esc_html( $offer['headline'] ); ?></p>
-                    <p style="font-weight: var(--font-bold); color: var(--color-navy); margin-bottom: var(--space-4);"><?php echo esc_html( $offer['subhead'] ); ?></p>
-                    <p class="body-xs text-muted" style="margin-bottom: var(--space-6);"><?php echo esc_html( $offer['desc'] ); ?></p>
+                    <p class="h2 text-primary offer-card__headline"><?php echo esc_html( $offer['headline'] ); ?></p>
+                    <p class="offer-card__subhead"><?php echo esc_html( $offer['subhead'] ); ?></p>
+                    <p class="body-xs text-muted offer-card__desc"><?php echo esc_html( $offer['desc'] ); ?></p>
                     <div class="offer-card__expiry">
                         <strong>Expires:</strong> <span class="js-offer-expiry"><?php echo esc_html( $offer['expires'] ); ?></span>
                     </div>
                 </div>
 
-                <button class="btn btn--primary btn--full" type="button" data-modal-trigger="modal-estimate">
+                <button class="btn btn--primary btn--full" type="button" data-modal-trigger="modal-estimate" id="btn-offer-<?php echo sanitize_title( $offer['subhead'] ); ?>">
                     Claim Offer
                 </button>
 

@@ -35,19 +35,5 @@ Extended Warranty
 FAQ
 Gallery
 
-
-CTAs:
-- Request an estimate in under 2 mins
-
-
-Promos:
-10% off any service 
-Mebmers (returning clients) get 15% off 
-Flat $25 off for window repair of $200+
-
-
-Warranty:
-3 months on labour 
-More info:
-- on worksmanship which means for e.g: I installed a window and there's a draft, crack in the glass after 2 weeks or less (not delibrate damage). 
-
+Google ads conversion actions
+google ads write the ads and extension checks

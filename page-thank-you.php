@@ -35,7 +35,7 @@ get_header();
                 </h1>
 
                 <p class="thankyou__sub">
-                    Your estimate request has been received. A member of our team will be in touch shortly — usually within the hour.
+                    Your estimate request has been received. A member of our team will be in touch shortly, usually within the hour.
                 </p>
 
                 <ul class="thankyou__promises" role="list">
@@ -45,7 +45,7 @@ get_header();
                     </li>
                     <li>
                         <span class="material-symbols-outlined" aria-hidden="true">payments</span>
-                        Clear, upfront pricing — no surprises
+                        Clear, upfront pricing. No surprises.
                     </li>
                     <li>
                         <span class="material-symbols-outlined" aria-hidden="true">verified</span>

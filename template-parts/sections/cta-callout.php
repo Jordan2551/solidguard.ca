@@ -1,6 +1,6 @@
 <?php
 /**
- * CTA Callout — van + headline + estimate + call CTAs
+ * CTA Callout - van + headline + estimate + call CTAs
  *
  * Reusable. Pass args to customise copy:
  *
@@ -14,9 +14,9 @@
  */
 
 $args     = wp_parse_args( $args ?? array(), array(
-    'eyebrow'  => 'Emergency Response — Toronto &amp; GTA',
+    'eyebrow'  => 'Emergency Response: Toronto &amp; GTA',
     'title'    => 'Glass Broken? We\'re On Our Way.',
-    'subtitle' => 'Same-day service, background-checked technicians, and a free on-site assessment — no commitment until you approve the quote.',
+    'subtitle' => 'Same-day service, background-checked technicians, and a free on-site assessment. No commitment until you approve the quote.',
 ) );
 ?>
 
@@ -51,7 +51,7 @@ $args     = wp_parse_args( $args ?? array(), array(
 
             <div class="cta-callout__actions">
 
-                <button type="button" class="btn btn--orange btn--lg" data-modal-trigger="modal-estimate">
+                <button type="button" class="btn btn--orange btn--lg" data-modal-trigger="modal-estimate" id="btn-cta-estimate">
                     <span class="material-symbols-outlined icon-sm" aria-hidden="true">edit_note</span>
                     Get Quick Estimate
                 </button>
@@ -60,6 +60,7 @@ $args     = wp_parse_args( $args ?? array(), array(
                     href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>"
                     class="cta-callout__phone"
                     aria-label="Call us at <?php echo esc_attr( SG_PHONE_DISPLAY ); ?>"
+                    id="phone-cta"
                 >
                     <span class="material-symbols-outlined icon-sm" aria-hidden="true">call</span>
                     <?php echo esc_html( SG_PHONE_DISPLAY ); ?>

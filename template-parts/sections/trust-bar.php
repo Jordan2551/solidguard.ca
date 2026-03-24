@@ -1,6 +1,6 @@
 <?php
 /**
- * Trust / Affiliates bar — auto-scrolling marquee
+ * Trust / Affiliates bar - auto-scrolling marquee
  *
  * @package SolidGuard
  */
@@ -43,9 +43,9 @@ $items = array(
 
 <section class="section section--white trust-bar" id="trust-bar" aria-label="Certifications and affiliations">
 
-    <div class="container" style="margin-bottom: var(--space-8);">
+    <div class="container">
         <h2 class="section-heading">Trusted &amp; Verified</h2>
-        <p class="body-sm text-muted" style="margin-top: var(--space-3);">Vetted technicians, recognised affiliations, and award-winning service.</p>
+        <p class="body-sm text-muted">Vetted technicians, recognised affiliations, and award-winning service.</p>
     </div>
 
     <!-- Marquee rail -->
@@ -67,7 +67,7 @@ $items = array(
                 </article>
             <?php endforeach; ?>
 
-            <!-- Duplicate set — visual only, keeps the loop seamless -->
+            <!-- Duplicate set - visual only, keeps the loop seamless -->
             <?php foreach ( $items as $item ) : ?>
                 <article class="trust-chip" aria-hidden="true">
                     <div class="trust-chip__logo-wrap">

@@ -25,7 +25,7 @@ $service_modals = array(
             'Emergency board-up after break-ins or accidents',
         ),
         'why_title'  => 'Why Homeowners Choose SolidGuard',
-        'why_intro'  => 'Most companies jump straight to full window replacement. We don\'t. If the frame is still good, we replace just the glass and restore performance — saving you hundreds to thousands.',
+        'why_intro'  => 'Most companies jump straight to full window replacement. We don\'t. If the frame is still good, we replace just the glass and restore performance, saving you hundreds to thousands.',
         'why_items'  => array(
             'Faster turnaround',
             'Lower cost',
@@ -44,7 +44,7 @@ $service_modals = array(
         'label'      => 'Commercial Glass Services',
         'subtitle'   => 'Broken or Damaged Glass Disrupting Your Business?',
         'tagline'    => 'Fast, professional repair for storefronts, doors, and commercial glass systems.',
-        'intro'      => 'Glass issues don\'t just look bad — they affect security, safety, and customer trust.',
+        'intro'      => 'Glass issues don\'t just look bad. They affect security, safety, and customer trust.',
         'help_title' => 'What We Handle',
         'help_items' => array(
             'Storefront glass repair and replacement',
@@ -56,7 +56,7 @@ $service_modals = array(
             'Door closer, hinge, and alignment issues',
         ),
         'why_title'  => 'Why Businesses Choose SolidGuard',
-        'why_intro'  => 'Most companies push full replacements. We focus on restoring what you have first. If the structure is still solid, we replace only the glass or repair the issue — minimizing downtime and saving you thousands.',
+        'why_intro'  => 'Most companies push full replacements. We focus on restoring what you have first. If the structure is still solid, we replace only the glass or repair the issue, minimizing downtime and saving you thousands.',
         'why_items'  => array(
             'Fast turnaround',
             'Cost-effective repair-first approach',
@@ -193,6 +193,15 @@ $service_modals = array(
 
                 <?php echo do_shortcode( '[ninja_form id="2"]' ); ?>
 
+                <a
+                    href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>"
+                    class="btn btn--orange btn--full"
+                    id="phone-modal-<?php echo esc_attr( str_replace( 'modal-', '', $modal['id'] ) ); ?>"
+                >
+                    <span class="material-symbols-outlined icon-sm" aria-hidden="true">call</span>
+                    <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
+                </a>
+
             </div><!-- .sg-modal__body -->
         </div><!-- .sg-modal__scroll -->
     </div><!-- .sg-modal__panel -->
@@ -232,7 +241,6 @@ $service_modals = array(
         <div class="sg-modal__body sg-modal__body--padded">
 
             <span class="sg-modal__label">Quick Estimate</span>
-            <h2 class="sg-modal__title">Get Quick Estimate</h2>
             <p class="sg-modal__tagline">Fast response. Clear pricing. No pressure.</p>
 
             <?php echo do_shortcode( '[ninja_form id="2"]' ); ?>

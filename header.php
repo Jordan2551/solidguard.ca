@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M4S0Y3B78Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-M4S0Y3B78Y');
+    </script>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
@@ -16,14 +25,15 @@
     <!-- Top bar: CTAs -->
     <div class="site-header__topbar">
         <div class="site-header__inner">
-            <a href="#hero-form" class="site-header__topbar-cta" data-modal-trigger="modal-estimate">
-                <span class="material-symbols-outlined" style="font-size:var(--icon-xs);" aria-hidden="true">edit_note</span>
+            <a href="#hero-form" class="site-header__topbar-cta" data-modal-trigger="modal-estimate" id="btn-topbar-estimate">
+                <span class="material-symbols-outlined icon-xs" aria-hidden="true">edit_note</span>
                 Quick Estimate
             </a>
             <a
                 href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>"
                 class="site-header__topbar-phone"
                 aria-label="Call us at <?php echo esc_attr( SG_PHONE_DISPLAY ); ?>"
+                id="phone-topbar"
             >
                 <span class="material-symbols-outlined" aria-hidden="true">call</span>
                 <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
@@ -35,7 +45,7 @@
     <div class="site-header__navbar">
         <div class="site-header__inner">
         <div class="site-header__logo">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Solid Guard — Home">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Solid Guard Home">
                 <img
                     src="<?php echo esc_url( get_template_directory_uri() . '/images/logos/logo.png' ); ?>"
                     alt="Solid Guard Logo"
@@ -65,7 +75,7 @@
                     );
                     foreach ( $desktop_services as $svc ) : ?>
                         <li>
-                            <button class="desktop-nav__submenu-link" data-modal-trigger="<?php echo esc_attr( $svc[1] ); ?>">
+                            <button class="desktop-nav__submenu-link" data-modal-trigger="<?php echo esc_attr( $svc[1] ); ?>" id="btn-nav-desktop-<?php echo esc_attr( $svc[1] ); ?>">
                                 <?php echo wp_kses( $svc[0], array() ); ?>
                             </button>
                         </li>
@@ -145,7 +155,7 @@
                     );
                     foreach ( $mobile_services as $svc ) : ?>
                         <li>
-                            <button class="nav-overlay__sub-link" data-modal-trigger="<?php echo esc_attr( $svc[1] ); ?>">
+                            <button class="nav-overlay__sub-link" data-modal-trigger="<?php echo esc_attr( $svc[1] ); ?>" id="btn-nav-mobile-<?php echo esc_attr( $svc[1] ); ?>">
                                 <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
                                 <?php echo esc_html( $svc[0] ); ?>
                             </button>
@@ -180,10 +190,10 @@
         </ul>
 
         <div class="nav-overlay__cta">
-            <a href="#hero-form" class="btn btn--orange btn--full btn--lg" data-modal-trigger="modal-estimate">
+            <a href="#hero-form" class="btn btn--orange btn--full btn--lg" data-modal-trigger="modal-estimate" id="btn-nav-estimate">
                 Get Quick Estimate
             </a>
-            <a href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>" class="btn btn--outline-white btn--full btn--lg">
+            <a href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>" class="btn btn--outline-white btn--full btn--lg" id="phone-nav">
                 <span class="material-symbols-outlined icon-sm" aria-hidden="true">call</span>
                 <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
             </a>

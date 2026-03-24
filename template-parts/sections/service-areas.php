@@ -1,6 +1,6 @@
 <?php
 /**
- * Service Areas section — pin grid + Google Maps embed
+ * Service Areas section - pin grid + Google Maps embed
  *
  * @package SolidGuard
  */
@@ -38,7 +38,6 @@ $areas = array(
                 <li class="area-item">
                     <span
                         class="material-symbols-outlined area-item__icon"
-                        style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;"
                         aria-hidden="true"
                     >location_on</span>
                     <span class="area-item__name"><?php echo esc_html( $area ); ?></span>

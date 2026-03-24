@@ -9,7 +9,7 @@
 <section class="guarantee-block" id="guarantee" aria-label="Our guarantee">
 
     <div class="guarantee-block__icon-wrap" aria-hidden="true">
-        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; font-size: var(--icon-2xl);">verified</span>
+        <span class="material-symbols-outlined">verified</span>
     </div>
 
     <h2 class="guarantee-block__title">Solid Warranty Guarantee</h2>

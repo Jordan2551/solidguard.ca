@@ -11,7 +11,7 @@
 
             <!-- Brand column -->
             <div class="site-footer__brand">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Solid Guard — Home" class="site-footer__logo">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Solid Guard Home" class="site-footer__logo">
                     <img
                         src="<?php echo esc_url( get_template_directory_uri() . '/images/logos/logo.png' ); ?>"
                         alt="Solid Guard"
@@ -22,7 +22,7 @@
                 <p class="site-footer__tagline">
                     Toronto's premier emergency glass response team. Licensed, insured, and ready when you need us.
                 </p>
-                <a href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>" class="site-footer__phone">
+                <a href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>" class="site-footer__phone" id="phone-footer-brand">
                     <span class="material-symbols-outlined" aria-hidden="true">call</span>
                     <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
                 </a>
@@ -32,13 +32,10 @@
             <div class="site-footer__col">
                 <h5 class="site-footer__nav-heading">Services</h5>
                 <nav class="site-footer__nav" aria-label="Footer service links">
-                    <button type="button" data-modal-trigger="modal-emergency">Emergency Glass Repair</button>
-                    <button type="button" data-modal-trigger="modal-estimate">Insulated Glass Units</button>
-                    <button type="button" data-modal-trigger="modal-estimate">Tempered Glass</button>
-                    <button type="button" data-modal-trigger="modal-estimate">Board-up Services</button>
-                    <button type="button" data-modal-trigger="modal-commercial">Commercial Glass Repair</button>
-                    <button type="button" data-modal-trigger="modal-residential">Residential Glass Repair</button>
-                    <button type="button" data-modal-trigger="modal-storefront">Storefront Glass</button>
+                    <button type="button" data-modal-trigger="modal-residential" id="btn-footer-modal-residential">Residential Glass Services</button>
+                    <button type="button" data-modal-trigger="modal-commercial" id="btn-footer-modal-commercial">Commercial Glass Services</button>
+                    <button type="button" data-modal-trigger="modal-emergency" id="btn-footer-modal-emergency">Emergency Glass Services</button>
+                    <button type="button" data-modal-trigger="modal-storefront" id="btn-footer-modal-storefront">Storefront Glass Services</button>
                 </nav>
             </div>
 
@@ -58,12 +55,12 @@
             <div class="site-footer__col">
                 <h5 class="site-footer__nav-heading">Contact Us</h5>
                 <nav class="site-footer__nav" aria-label="Footer contact links">
-                    <a href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>">
+                    <a href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>" id="phone-footer-contact">
                         <span class="material-symbols-outlined" aria-hidden="true">call</span>
                         <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
                     </a>
                 </nav>
-                <button class="btn btn--orange btn--full" type="button" data-modal-trigger="modal-estimate" style="margin-top: var(--space-5);">
+                <button class="btn btn--orange btn--full" type="button" data-modal-trigger="modal-estimate" id="btn-footer-estimate">
                     Get Quick Estimate
                 </button>
             </div>
@@ -73,7 +70,7 @@
         <!-- Legal bar -->
         <div class="site-footer__legal">
             <span>&copy; <?php echo date( 'Y' ); ?> Solid Guard Glass &amp; Windows. All rights reserved.</span>
-            <span>Created and designed by <a href="http://jcsoftware.ca/" target="_blank" rel="noopener" style="color: var(--color-orange); transition: color var(--transition);">JC Software</a></span>
+            <span>Created and designed by <a href="http://jcsoftware.ca/" target="_blank" rel="noopener">JC Software</a></span>
         </div>
 
     </div>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact Form section — Ninja Forms shortcode
+ * Contact Form section - Ninja Forms shortcode
  *
  * @package SolidGuard
  */
@@ -12,24 +12,24 @@
         <div class="contact-form-wrap">
 
             <div class="contact-form-wrap__copy">
-                <h2 class="section-heading" style="margin-bottom: var(--space-2);">Get In Touch</h2>
-                <p class="body-sm text-muted" style="margin-bottom: var(--space-8);">Fill out the form and a member of our team will get back to you within the hour. No pressure, no hidden fees.</p>
+                <h2 class="section-heading">Get In Touch</h2>
+                <p class="body-sm text-muted">Fill out the form and a member of our team will get back to you within the hour. No pressure, no hidden fees.</p>
 
                 <ul class="contact-form-wrap__promises" role="list">
                     <li>
-                        <span class="material-symbols-outlined" aria-hidden="true" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; color: var(--color-orange);">schedule</span>
+                        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
                         Response within 1 hour
                     </li>
                     <li>
-                        <span class="material-symbols-outlined" aria-hidden="true" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; color: var(--color-orange);">payments</span>
+                        <span class="material-symbols-outlined" aria-hidden="true">payments</span>
                         Free on-site assessment
                     </li>
                     <li>
-                        <span class="material-symbols-outlined" aria-hidden="true" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; color: var(--color-orange);">verified</span>
+                        <span class="material-symbols-outlined" aria-hidden="true">verified</span>
                         Backed by our workmanship warranty
                     </li>
                     <li>
-                        <span class="material-symbols-outlined" aria-hidden="true" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; color: var(--color-orange);">shield_person</span>
+                        <span class="material-symbols-outlined" aria-hidden="true">shield_person</span>
                         Background-checked technicians
                     </li>
                 </ul>

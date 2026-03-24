@@ -12,8 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 // ---------------------------------------------------------------------------
 // Site-wide constants — edit here to update everywhere
 // ---------------------------------------------------------------------------
-define( 'SG_PHONE_RAW',     '4165550000' );
-define( 'SG_PHONE_DISPLAY', '(416) 555-0000' );
+define( 'SG_PHONE_RAW',     '6472302725' );
+define( 'SG_PHONE_DISPLAY', '(647) 230-2725' );
 define( 'SG_EMAIL',         'info@solidguard.ca' );
 define( 'SG_EMAIL_DISPATCH','emergency@solidguard.ca' );
 
@@ -55,7 +55,7 @@ function solidguard_scripts() {
     // Material Symbols Outlined
     wp_enqueue_style(
         'solidguard-icons',
-        'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap',
+        'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block',
         array(),
         null
     );
@@ -96,3 +96,20 @@ function solidguard_preconnect() {
     echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
 }
 add_action( 'wp_head', 'solidguard_preconnect', 1 );
+
+
+// ---------------------------------------------------------------------------
+// Microsoft Clarity analytics
+// ---------------------------------------------------------------------------
+function solidguard_clarity() {
+    ?>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "w0z5qw2ob5");
+    </script>
+    <?php
+}
+add_action( 'wp_head', 'solidguard_clarity' );
