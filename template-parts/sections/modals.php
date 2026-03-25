@@ -229,21 +229,25 @@ $service_modals = array(
             Close
         </button>
 
-        <!-- Van image header -->
-        <div class="sg-modal__estimate-hero">
-            <img
-                src="<?php echo esc_url( get_template_directory_uri() . '/images/pictures/solidguard-van-no-bg.webp' ); ?>"
-                alt="Solid Guard service van"
-                aria-hidden="true"
-            >
-        </div>
+        <div class="sg-modal__scroll">
 
-        <div class="sg-modal__body sg-modal__body--padded">
+            <!-- Van image header -->
+            <div class="sg-modal__estimate-hero">
+                <img
+                    src="<?php echo esc_url( get_template_directory_uri() . '/images/pictures/solidguard-van-no-bg.webp' ); ?>"
+                    alt="Solid Guard service van"
+                    aria-hidden="true"
+                >
+            </div>
 
-            <span class="sg-modal__label">Quick Estimate</span>
-            <p class="sg-modal__tagline">Fast response. Clear pricing. No pressure.</p>
+            <div class="sg-modal__body sg-modal__body--padded">
 
-            <?php echo do_shortcode( '[ninja_form id="2"]' ); ?>
-        </div>
+                <span class="sg-modal__label">Quick Estimate</span>
+                <p class="sg-modal__tagline">Fast response. Clear pricing. No pressure.</p>
+
+                <?php echo do_shortcode( '[ninja_form id="2"]' ); ?>
+            </div>
+
+        </div><!-- .sg-modal__scroll -->
     </div>
 </div>

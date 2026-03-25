@@ -70,7 +70,7 @@ get_header();
             <div class="thankyou__van-wrap" aria-hidden="true">
                 <img
                     class="thankyou__van"
-                    src="<?php echo esc_url( get_template_directory_uri() . '/images/pictures/no-bg-van-reverse.webp' ); ?>"
+                    src="<?php echo esc_url( get_template_directory_uri() . '/images/pictures/solidguard-van-no-bg.webp' ); ?>"
                     alt=""
                 >
                 <div class="thankyou__van-shadow"></div>
