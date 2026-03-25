@@ -13,7 +13,7 @@
             <div class="site-footer__brand">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Solid Guard Home" class="site-footer__logo">
                     <img
-                        src="<?php echo esc_url( get_template_directory_uri() . '/images/logos/logo.png' ); ?>"
+                        src="<?php echo esc_url( get_template_directory_uri() . '/images/logos/logo.webp' ); ?>"
                         alt="Solid Guard"
                         width="140"
                         height="80"

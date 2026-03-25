@@ -38,3 +38,5 @@ Gallery
 Google ads conversion actions
 google ads write the ads and extension checks
 Finalize email confirm and sending
+Meta titles 
+Lighthouse report

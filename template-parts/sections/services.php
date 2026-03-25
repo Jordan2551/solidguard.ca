@@ -18,6 +18,8 @@ $services = array(
             'Foggy double-pane glass',
             'Patio and sliding door glass',
         ),
+        'w'     => 614,
+        'h'     => 429,
         'slug'  => 'residential-glass-repair',
         'modal' => 'modal-residential',
     ),
@@ -31,6 +33,8 @@ $services = array(
             'Cracked or shattered commercial doors',
             'Emergency board-up after break-ins or damage',
         ),
+        'w'     => 614,
+        'h'     => 497,
         'slug'  => 'commercial-glass-repair',
         'modal' => 'modal-commercial',
     ),
@@ -44,6 +48,8 @@ $services = array(
             'Break-in damage',
             'Unsafe doors and windows',
         ),
+        'w'     => 564,
+        'h'     => 614,
         'slug'  => 'emergency-glass-repair',
         'modal' => 'modal-emergency',
     ),
@@ -57,6 +63,8 @@ $services = array(
             'Large tempered glass panels',
             'Aluminum frame and door glass',
         ),
+        'w'     => 614,
+        'h'     => 406,
         'slug'  => 'storefront-glass-repair',
         'modal' => 'modal-storefront',
     ),
@@ -84,6 +92,8 @@ $services = array(
                         <img
                             src="<?php echo esc_url( $service['image'] ); ?>"
                             alt="<?php echo esc_attr( $service['alt'] ); ?>"
+                            width="<?php echo esc_attr( $service['w'] ); ?>"
+                            height="<?php echo esc_attr( $service['h'] ); ?>"
                             loading="lazy"
                             decoding="async"
                         >

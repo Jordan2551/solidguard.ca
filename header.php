@@ -11,7 +11,7 @@
       gtag('config', 'G-M4S0Y3B78Y');
       gtag('config', 'AW-17670100208');
       gtag('config', 'AW-17579846282/eEnbCPuSg48cEIrV3L5B', {
-        'phone_conversion_number': '(647) 230-2725'
+        'phone_conversion_number': '(647)-230-2725'
       });
     </script>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -51,7 +51,7 @@
         <div class="site-header__logo">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Solid Guard Home">
                 <img
-                    src="<?php echo esc_url( get_template_directory_uri() . '/images/logos/logo.png' ); ?>"
+                    src="<?php echo esc_url( get_template_directory_uri() . '/images/logos/logo.webp' ); ?>"
                     alt="Solid Guard Logo"
                     width="160"
                     height="48"
@@ -123,7 +123,7 @@
         <div class="nav-overlay__header">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-overlay__logo" tabindex="-1">
                 <img
-                    src="<?php echo esc_url( get_template_directory_uri() . '/images/logos/logo.png' ); ?>"
+                    src="<?php echo esc_url( get_template_directory_uri() . '/images/logos/logo.webp' ); ?>"
                     alt="Solid Guard"
                     width="120"
                     height="36"

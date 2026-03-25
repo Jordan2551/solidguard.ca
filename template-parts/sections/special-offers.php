@@ -5,7 +5,7 @@
  * @package SolidGuard
  */
 
-$logo = get_template_directory_uri() . '/images/logos/logo-sm.png';
+$logo = get_template_directory_uri() . '/images/logos/logo-sm.webp';
 
 $offers = array(
     array(

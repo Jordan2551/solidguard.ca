@@ -19,8 +19,7 @@
             <p class="h3 text-navy">5/5 Google Reviews</p>
         </div>
 
-        <!-- Elfsight Google Reviews widget -->
-        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <!-- Elfsight Google Reviews widget (platform.js loaded once in footer.php) -->
         <div class="elfsight-app-8c78541f-b588-48f7-9d7b-6b245249187f" data-elfsight-app-lazy></div>
 
     </div>
