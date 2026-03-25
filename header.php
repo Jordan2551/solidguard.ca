@@ -9,6 +9,10 @@
       gtag('js', new Date());
 
       gtag('config', 'G-M4S0Y3B78Y');
+      gtag('config', 'AW-17670100208');
+      gtag('config', 'AW-17579846282/eEnbCPuSg48cEIrV3L5B', {
+        'phone_conversion_number': '(647) 230-2725'
+      });
     </script>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">

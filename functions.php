@@ -89,6 +89,63 @@ add_action( 'wp_enqueue_scripts', 'solidguard_scripts' );
 
 
 // ---------------------------------------------------------------------------
+// Favicon
+// ---------------------------------------------------------------------------
+function solidguard_favicon() {
+    $uri = get_template_directory_uri();
+    ?>
+    <link rel="icon" type="image/png" href="<?php echo esc_url( $uri . '/images/logos/favicon.png' ); ?>">
+    <link rel="shortcut icon" href="<?php echo esc_url( $uri . '/images/logos/favicon.png' ); ?>">
+    <link rel="apple-touch-icon" href="<?php echo esc_url( $uri . '/images/logos/favicon.png' ); ?>">
+    <?php
+}
+add_action( 'wp_head', 'solidguard_favicon', 1 );
+
+
+// ---------------------------------------------------------------------------
+// Meta description + Open Graph + Twitter Card
+// ---------------------------------------------------------------------------
+function solidguard_meta_tags() {
+    $uri        = get_template_directory_uri();
+    $site_name  = 'SolidGuard Glass &amp; Windows';
+    $og_image   = $uri . '/images/logos/landing-page.png';
+    $site_url   = home_url( '/' );
+
+    // Per-page overrides
+    if ( is_page( 'thank-you' ) ) {
+        $title       = 'Request Received | SolidGuard Glass &amp; Windows';
+        $description = 'Your service request has been received. A member of the SolidGuard team will be in touch shortly, usually within the hour.';
+        $url         = home_url( '/thank-you/' );
+    } else {
+        $title       = 'SolidGuard Glass &amp; Windows | Toronto\'s Emergency Glass Repair Experts';
+        $description = 'Fast, professional glass repair and replacement across the GTA. Residential, commercial, emergency, and storefront glass services. Licensed, insured, and background-checked technicians.';
+        $url         = $site_url;
+    }
+    ?>
+    <!-- SEO -->
+    <meta name="description" content="<?php echo esc_attr( $description ); ?>">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website">
+    <meta property="og:site_name"   content="<?php echo esc_attr( html_entity_decode( $site_name ) ); ?>">
+    <meta property="og:title"       content="<?php echo esc_attr( html_entity_decode( $title ) ); ?>">
+    <meta property="og:description" content="<?php echo esc_attr( $description ); ?>">
+    <meta property="og:url"         content="<?php echo esc_url( $url ); ?>">
+    <meta property="og:image"       content="<?php echo esc_url( $og_image ); ?>">
+    <meta property="og:locale"      content="en_CA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="<?php echo esc_attr( html_entity_decode( $title ) ); ?>">
+    <meta name="twitter:description" content="<?php echo esc_attr( $description ); ?>">
+    <meta name="twitter:image"       content="<?php echo esc_url( $og_image ); ?>">
+    <?php
+}
+add_action( 'wp_head', 'solidguard_meta_tags', 2 );
+
+
+// ---------------------------------------------------------------------------
 // Preconnect to Google Fonts for performance
 // ---------------------------------------------------------------------------
 function solidguard_preconnect() {

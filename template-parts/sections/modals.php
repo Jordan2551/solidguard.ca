@@ -246,6 +246,15 @@ $service_modals = array(
                 <p class="sg-modal__tagline">Fast response. Clear pricing. No pressure.</p>
 
                 <?php echo do_shortcode( '[ninja_form id="2"]' ); ?>
+
+                <a
+                    href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>"
+                    class="btn btn--orange btn--full"
+                    id="phone-modal-estimate"
+                >
+                    <span class="material-symbols-outlined icon-sm" aria-hidden="true">call</span>
+                    <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
+                </a>
             </div>
 
         </div><!-- .sg-modal__scroll -->
