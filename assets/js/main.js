@@ -120,6 +120,142 @@
    Offer expiry — set to 7 days from today
    ============================================================================= */
 
+/* =============================================================================
+   GA4 — Track all clickable element interactions + Ninja Forms submissions
+   ============================================================================= */
+
+( function () {
+    'use strict';
+
+    var GA_ID = 'G-M4S0Y3B78Y';
+
+    function sendGtag( eventName, params ) {
+        if ( typeof gtag !== 'function' ) return;
+        params.send_to = GA_ID;
+        gtag( 'event', eventName, params );
+    }
+
+    // -----------------------------------------------------------------
+    // All element clicks — buttons, links, cards, CTAs
+    // -----------------------------------------------------------------
+    document.addEventListener( 'click', function ( e ) {
+        var el = e.target.closest( 'a, button, [role="button"], input[type="submit"]' );
+        if ( ! el ) return;
+
+        var text = ( el.textContent || '' ).trim().substring( 0, 100 );
+        var tag  = el.tagName.toLowerCase();
+
+        // For submit inputs, use the value
+        if ( tag === 'input' && el.type === 'submit' ) {
+            text = el.value || text;
+        }
+
+        sendGtag( 'all_element_clicks', {
+            button_text:      text,
+            button_id:        el.id || '',
+            button_classes:   el.className || '',
+            button_tag:       tag,
+            button_href:      el.href || el.getAttribute( 'data-modal-trigger' ) || '',
+            button_page_url:  window.location.href,
+            button_page_path: window.location.pathname,
+            button_section:   ( function () {
+                var section = el.closest( 'section, footer, header, .nav-overlay' );
+                return section ? ( section.id || section.className.split( ' ' )[ 0 ] || '' ) : '';
+            } )()
+        } );
+    } );
+
+    // -----------------------------------------------------------------
+    // Phone link clicks — dedicated event
+    // -----------------------------------------------------------------
+    document.addEventListener( 'click', function ( e ) {
+        var link = e.target.closest( 'a[href^="tel:"]' );
+        if ( ! link ) return;
+
+        sendGtag( 'phone_click', {
+            phone_number:   link.href.replace( 'tel:', '' ),
+            click_location: link.id || '',
+            page_url:       window.location.href
+        } );
+    } );
+
+    // -----------------------------------------------------------------
+    // Modal opens — track which service/CTA triggered it
+    // -----------------------------------------------------------------
+    document.addEventListener( 'click', function ( e ) {
+        var trigger = e.target.closest( '[data-modal-trigger]' );
+        if ( ! trigger ) return;
+
+        sendGtag( 'modal_open', {
+            modal_id:       trigger.getAttribute( 'data-modal-trigger' ),
+            trigger_id:     trigger.id || '',
+            trigger_text:   ( trigger.textContent || '' ).trim().substring( 0, 100 ),
+            page_url:       window.location.href
+        } );
+    } );
+
+    // -----------------------------------------------------------------
+    // Ninja Forms — track successful submissions
+    // -----------------------------------------------------------------
+    if ( typeof jQuery !== 'undefined' ) {
+        jQuery( document ).on( 'nfFormSubmitResponse', function ( e, response ) {
+            var formId    = response && response.id ? response.id : '';
+            var formTitle = '';
+            var fields    = {};
+
+            // Extract field values (skip sensitive data)
+            if ( response && response.fields ) {
+                var skipTypes = [ 'password', 'creditcard' ];
+                Object.keys( response.fields ).forEach( function ( key ) {
+                    var field = response.fields[ key ];
+                    if ( skipTypes.indexOf( field.type ) === -1 ) {
+                        fields[ field.label || key ] = ( field.value || '' ).toString().substring( 0, 50 );
+                    }
+                } );
+            }
+
+            sendGtag( 'form_submission', {
+                form_id:        formId.toString(),
+                form_title:     formTitle,
+                form_location:  window.location.pathname,
+                page_url:       window.location.href
+            } );
+
+            // Also fire Google Ads conversion for form submit
+            if ( typeof gtag === 'function' ) {
+                gtag( 'event', 'conversion', {
+                    send_to: 'AW-17670100208/form_submit'
+                } );
+            }
+        } );
+    }
+
+    // -----------------------------------------------------------------
+    // Scroll depth — fire at 25%, 50%, 75%, 100%
+    // -----------------------------------------------------------------
+    var firedDepths = {};
+    var depthThresholds = [ 25, 50, 75, 100 ];
+
+    window.addEventListener( 'scroll', function () {
+        var scrollTop    = window.pageYOffset || document.documentElement.scrollTop;
+        var docHeight    = document.documentElement.scrollHeight - window.innerHeight;
+        if ( docHeight <= 0 ) return;
+        var scrollPercent = Math.round( ( scrollTop / docHeight ) * 100 );
+
+        depthThresholds.forEach( function ( threshold ) {
+            if ( scrollPercent >= threshold && ! firedDepths[ threshold ] ) {
+                firedDepths[ threshold ] = true;
+                sendGtag( 'scroll_depth', {
+                    depth_threshold: threshold,
+                    page_url:        window.location.href
+                } );
+            }
+        } );
+    }, { passive: true } );
+
+} )();
+
+
 ( function () {
     var expiry = new Date();
     expiry.setDate( expiry.getDate() + 7 );
