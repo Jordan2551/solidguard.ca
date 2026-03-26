@@ -1,9 +1,15 @@
 <?php
 /**
- * Front page template — SolidGuard landing page
+ * Front page template - SolidGuard landing page
  *
  * @package SolidGuard
  */
+
+$GLOBALS['sg_meta'] = array(
+    'title'       => 'SolidGuard Glass & Windows | Toronto & GTA Glass Repair',
+    'description' => 'Fast, professional glass repair and replacement across the GTA. Residential, commercial, emergency, and storefront glass services. Licensed, insured, and background-checked technicians.',
+    'url'         => home_url( '/' ),
+);
 
 get_header();
 ?>

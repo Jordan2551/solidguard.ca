@@ -16,6 +16,26 @@
     </script>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php
+$sg = isset( $GLOBALS['sg_meta'] ) ? $GLOBALS['sg_meta'] : array();
+if ( ! empty( $sg ) ) :
+    $og_image = get_template_directory_uri() . '/images/logos/landing-page.png';
+?>
+    <title><?php echo esc_html( $sg['title'] ); ?></title>
+    <meta name="description" content="<?php echo esc_attr( $sg['description'] ); ?>">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type"        content="website">
+    <meta property="og:site_name"   content="SolidGuard Glass &amp; Windows">
+    <meta property="og:title"       content="<?php echo esc_attr( $sg['title'] ); ?>">
+    <meta property="og:description" content="<?php echo esc_attr( $sg['description'] ); ?>">
+    <meta property="og:url"         content="<?php echo esc_url( $sg['url'] ); ?>">
+    <meta property="og:image"       content="<?php echo esc_url( $og_image ); ?>">
+    <meta property="og:locale"      content="en_CA">
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="<?php echo esc_attr( $sg['title'] ); ?>">
+    <meta name="twitter:description" content="<?php echo esc_attr( $sg['description'] ); ?>">
+    <meta name="twitter:image"       content="<?php echo esc_url( $og_image ); ?>">
+<?php endif; ?>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

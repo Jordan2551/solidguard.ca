@@ -8,6 +8,12 @@
  * @package SolidGuard
  */
 
+$GLOBALS['sg_meta'] = array(
+    'title'       => 'Request Received | SolidGuard Glass & Windows',
+    'description' => 'Your service request has been received. A member of the SolidGuard team will be in touch shortly, usually within the hour.',
+    'url'         => home_url( '/thank-you/' ),
+);
+
 get_header();
 ?>
 
