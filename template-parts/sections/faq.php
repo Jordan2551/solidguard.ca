@@ -57,7 +57,7 @@ $faqs = array(
                 <details <?php echo $i === 0 ? 'open' : ''; ?>>
                     <summary class="faq__question" aria-expanded="<?php echo $i === 0 ? 'true' : 'false'; ?>">
                         <span class="faq__question-text"><?php echo esc_html( $item['q'] ); ?></span>
-                        <span class="material-symbols-outlined faq__icon" aria-hidden="true">add</span>
+                        <?php echo sg_icon( 'add', 'faq__icon' ); ?>
                     </summary>
                     <div class="faq__answer">
                         <p><?php echo esc_html( $item['a'] ); ?></p>

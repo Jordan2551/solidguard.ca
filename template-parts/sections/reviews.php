@@ -13,7 +13,7 @@
         <div class="text-center reviews-header">
             <div class="star-row" aria-label="5 out of 5 stars">
                 <?php for ( $i = 0; $i < 5; $i++ ) : ?>
-                    <span class="material-symbols-outlined" aria-hidden="true">star</span>
+                    <?php echo sg_icon( 'star' ); ?>
                 <?php endfor; ?>
             </div>
             <p class="h3 text-navy">5/5 Google Reviews</p>

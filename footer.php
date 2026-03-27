@@ -23,7 +23,7 @@
                     Toronto's premier emergency glass response team. Licensed, insured, and ready when you need us.
                 </p>
                 <a href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>" class="site-footer__phone" id="phone-footer-brand">
-                    <span class="material-symbols-outlined" aria-hidden="true">call</span>
+                    <?php echo sg_icon( 'call' ); ?>
                     <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
                 </a>
             </div>
@@ -56,7 +56,7 @@
                 <h5 class="site-footer__nav-heading">Contact Us</h5>
                 <nav class="site-footer__nav" aria-label="Footer contact links">
                     <a href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>" id="phone-footer-contact">
-                        <span class="material-symbols-outlined" aria-hidden="true">call</span>
+                        <?php echo sg_icon( 'call' ); ?>
                         <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
                     </a>
                 </nav>

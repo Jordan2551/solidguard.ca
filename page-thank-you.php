@@ -32,7 +32,7 @@ get_header();
             <div class="thankyou__copy">
 
                 <span class="thankyou__badge">
-                    <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
+                    <?php echo sg_icon( 'check_circle' ); ?>
                     Request Received
                 </span>
 
@@ -46,26 +46,26 @@ get_header();
 
                 <ul class="thankyou__promises" role="list">
                     <li>
-                        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+                        <?php echo sg_icon( 'schedule' ); ?>
                         Response within 1 hour
                     </li>
                     <li>
-                        <span class="material-symbols-outlined" aria-hidden="true">payments</span>
+                        <?php echo sg_icon( 'payments' ); ?>
                         Clear, upfront pricing. No surprises.
                     </li>
                     <li>
-                        <span class="material-symbols-outlined" aria-hidden="true">verified</span>
+                        <?php echo sg_icon( 'verified' ); ?>
                         Backed by our workmanship warranty
                     </li>
                 </ul>
 
                 <div class="thankyou__actions">
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn--primary btn--lg">
-                        <span class="material-symbols-outlined icon-sm" aria-hidden="true">home</span>
+                        <?php echo sg_icon( 'home', 'icon-sm' ); ?>
                         Back to Home
                     </a>
                     <a href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>" class="btn btn--orange btn--lg">
-                        <span class="material-symbols-outlined icon-sm" aria-hidden="true">call</span>
+                        <?php echo sg_icon( 'call', 'icon-sm' ); ?>
                         <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
                     </a>
                 </div>

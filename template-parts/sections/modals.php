@@ -134,7 +134,7 @@ $service_modals = array(
     <div class="sg-modal__panel">
 
         <button class="sg-modal__close" data-modal-close aria-label="Close modal">
-            <span class="material-symbols-outlined" aria-hidden="true">close</span>
+            <?php echo sg_icon( 'close' ); ?>
             Close
         </button>
 
@@ -165,7 +165,7 @@ $service_modals = array(
                     <ul class="sg-modal__bullets" role="list">
                         <?php foreach ( $modal['help_items'] as $item ) : ?>
                             <li>
-                                <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
+                                <?php echo sg_icon( 'check_circle' ); ?>
                                 <?php echo esc_html( $item ); ?>
                             </li>
                         <?php endforeach; ?>
@@ -179,7 +179,7 @@ $service_modals = array(
                     <ul class="sg-modal__bullets" role="list">
                         <?php foreach ( $modal['why_items'] as $item ) : ?>
                             <li>
-                                <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
+                                <?php echo sg_icon( 'check_circle' ); ?>
                                 <?php echo esc_html( $item ); ?>
                             </li>
                         <?php endforeach; ?>
@@ -198,7 +198,7 @@ $service_modals = array(
                     class="btn btn--orange btn--full"
                     id="phone-modal-<?php echo esc_attr( str_replace( 'modal-', '', $modal['id'] ) ); ?>"
                 >
-                    <span class="material-symbols-outlined icon-sm" aria-hidden="true">call</span>
+                    <?php echo sg_icon( 'call', 'icon-sm' ); ?>
                     <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
                 </a>
 
@@ -225,7 +225,7 @@ $service_modals = array(
     <div class="sg-modal__panel sg-modal__panel--compact">
 
         <button class="sg-modal__close" data-modal-close aria-label="Close modal">
-            <span class="material-symbols-outlined" aria-hidden="true">close</span>
+            <?php echo sg_icon( 'close' ); ?>
             Close
         </button>
 
@@ -252,7 +252,7 @@ $service_modals = array(
                     class="btn btn--orange btn--full"
                     id="phone-modal-estimate"
                 >
-                    <span class="material-symbols-outlined icon-sm" aria-hidden="true">call</span>
+                    <?php echo sg_icon( 'call', 'icon-sm' ); ?>
                     <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
                 </a>
             </div>

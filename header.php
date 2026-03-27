@@ -50,7 +50,7 @@ if ( ! empty( $sg ) ) :
     <div class="site-header__topbar">
         <div class="site-header__inner">
             <a href="#hero-form" class="site-header__topbar-cta" data-modal-trigger="modal-estimate" id="btn-topbar-estimate">
-                <span class="material-symbols-outlined icon-xs" aria-hidden="true">edit_note</span>
+                <?php echo sg_icon( 'edit_note', 'icon-xs' ); ?>
                 Quick Estimate
             </a>
             <a
@@ -59,7 +59,7 @@ if ( ! empty( $sg ) ) :
                 aria-label="Call us at <?php echo esc_attr( SG_PHONE_DISPLAY ); ?>"
                 id="phone-topbar"
             >
-                <span class="material-symbols-outlined" aria-hidden="true">call</span>
+                <?php echo sg_icon( 'call' ); ?>
                 <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
             </a>
         </div>
@@ -86,7 +86,7 @@ if ( ! empty( $sg ) ) :
             <div class="desktop-nav__dropdown">
                 <button class="desktop-nav__link desktop-nav__link--trigger" aria-expanded="false">
                     Services
-                    <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
+                    <?php echo sg_icon( 'expand_more' ); ?>
                 </button>
                 <ul class="desktop-nav__submenu" role="list">
                     <?php
@@ -150,7 +150,7 @@ if ( ! empty( $sg ) ) :
                 >
             </a>
             <button class="nav-overlay__close" id="nav-close" aria-label="Close navigation menu">
-                <span class="material-symbols-outlined">close</span>
+                <?php echo sg_icon( 'close' ); ?>
             </button>
         </div>
 
@@ -164,9 +164,9 @@ if ( ! empty( $sg ) ) :
                     aria-controls="nav-services"
                     id="nav-services-btn"
                 >
-                    <span class="material-symbols-outlined" aria-hidden="true">window</span>
+                    <?php echo sg_icon( 'window' ); ?>
                     Services
-                    <span class="material-symbols-outlined nav-overlay__chevron" aria-hidden="true">expand_more</span>
+                    <?php echo sg_icon( 'expand_more', 'nav-overlay__chevron' ); ?>
                 </button>
                 <ul class="nav-overlay__sub" id="nav-services" role="list">
                     <?php
@@ -180,7 +180,7 @@ if ( ! empty( $sg ) ) :
                     foreach ( $mobile_services as $svc ) : ?>
                         <li>
                             <button class="nav-overlay__sub-link" data-modal-trigger="<?php echo esc_attr( $svc[1] ); ?>" id="btn-nav-mobile-<?php echo esc_attr( $svc[1] ); ?>">
-                                <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+                                <?php echo sg_icon( 'arrow_forward' ); ?>
                                 <?php echo esc_html( $svc[0] ); ?>
                             </button>
                         </li>
@@ -205,7 +205,7 @@ if ( ! empty( $sg ) ) :
             ?>
                 <li class="nav-overlay__item">
                     <a href="<?php echo $href; ?>" class="nav-overlay__link">
-                        <span class="material-symbols-outlined" aria-hidden="true"><?php echo esc_html( $link[2] ); ?></span>
+                        <?php echo sg_icon( $link[2] ); ?>
                         <?php echo esc_html( $link[0] ); ?>
                     </a>
                 </li>
@@ -218,7 +218,7 @@ if ( ! empty( $sg ) ) :
                 Get Quick Estimate
             </a>
             <a href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>" class="btn btn--outline-white btn--full btn--lg" id="phone-nav">
-                <span class="material-symbols-outlined icon-sm" aria-hidden="true">call</span>
+                <?php echo sg_icon( 'call', 'icon-sm' ); ?>
                 <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
             </a>
         </div>

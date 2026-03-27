@@ -117,6 +117,81 @@
 
 
 /* =============================================================================
+   Trust-bar marquee — touch/mouse drag to swipe
+   ============================================================================= */
+
+( function () {
+    'use strict';
+
+    var track = document.querySelector( '.trust-rail__track' );
+    if ( ! track ) return;
+
+    var startX, startScroll, isDragging = false;
+
+    function getTranslateX() {
+        var style = window.getComputedStyle( track );
+        var matrix = new DOMMatrix( style.transform );
+        return matrix.m41;
+    }
+
+    function pointerDown( e ) {
+        isDragging = true;
+        startX = ( e.touches ? e.touches[0].clientX : e.clientX );
+        startScroll = getTranslateX();
+        track.style.animation = 'none';
+        track.style.transform = 'translateX(' + startScroll + 'px)';
+    }
+
+    function pointerMove( e ) {
+        if ( ! isDragging ) return;
+        e.preventDefault();
+        var x = ( e.touches ? e.touches[0].clientX : e.clientX );
+        var delta = x - startX;
+        var halfWidth = track.scrollWidth / 2;
+        var newX = startScroll + delta;
+
+        // Wrap around for seamless looping
+        if ( newX > 0 ) newX -= halfWidth;
+        if ( newX < -halfWidth ) newX += halfWidth;
+
+        track.style.transform = 'translateX(' + newX + 'px)';
+    }
+
+    function pointerUp() {
+        if ( ! isDragging ) return;
+        isDragging = false;
+
+        // Resume animation from current position
+        var current = getTranslateX();
+        var halfWidth = track.scrollWidth / 2;
+        // Calculate how far through the animation we are (0 to 1)
+        var progress = Math.abs( current ) / halfWidth;
+        var remaining = ( 1 - progress ) * 36; // 36s total duration
+
+        track.style.animation = 'none';
+        track.offsetHeight; // force reflow
+        track.style.transform = '';
+        track.style.animation = 'trust-scroll ' + 36 + 's linear infinite';
+        track.style.animationDelay = '-' + ( progress * 36 ) + 's';
+    }
+
+    // Touch events
+    track.addEventListener( 'touchstart', pointerDown, { passive: true } );
+    track.addEventListener( 'touchmove', pointerMove, { passive: false } );
+    track.addEventListener( 'touchend', pointerUp );
+
+    // Mouse drag
+    track.addEventListener( 'mousedown', pointerDown );
+    window.addEventListener( 'mousemove', pointerMove );
+    window.addEventListener( 'mouseup', pointerUp );
+
+    // Prevent images from being dragged
+    track.addEventListener( 'dragstart', function ( e ) { e.preventDefault(); } );
+
+} )();
+
+
+/* =============================================================================
    Offer expiry — set to 7 days from today
    ============================================================================= */
 

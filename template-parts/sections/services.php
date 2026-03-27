@@ -106,7 +106,7 @@ $services = array(
                         <ul class="check-list" role="list">
                             <?php foreach ( $service['bullets'] as $bullet ) : ?>
                                 <li class="check-list__item">
-                                    <span class="material-symbols-outlined icon-sm icon-filled" aria-hidden="true">check_circle</span>
+                                    <?php echo sg_icon( 'check_circle', 'icon-sm' ); ?>
                                     <?php echo wp_kses( $bullet, array() ); ?>
                                 </li>
                             <?php endforeach; ?>

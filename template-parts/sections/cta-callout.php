@@ -52,7 +52,7 @@ $args     = wp_parse_args( $args ?? array(), array(
             <div class="cta-callout__actions">
 
                 <button type="button" class="btn btn--orange btn--lg" data-modal-trigger="modal-estimate" id="btn-cta-estimate">
-                    <span class="material-symbols-outlined icon-sm" aria-hidden="true">edit_note</span>
+                    <?php echo sg_icon( 'edit_note', 'icon-sm' ); ?>
                     Get Quick Estimate
                 </button>
 
@@ -62,7 +62,7 @@ $args     = wp_parse_args( $args ?? array(), array(
                     aria-label="Call us at <?php echo esc_attr( SG_PHONE_DISPLAY ); ?>"
                     id="phone-cta"
                 >
-                    <span class="material-symbols-outlined icon-sm" aria-hidden="true">call</span>
+                    <?php echo sg_icon( 'call', 'icon-sm' ); ?>
                     <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
                 </a>
 

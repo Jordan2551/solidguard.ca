@@ -41,14 +41,22 @@ add_action( 'after_setup_theme', 'solidguard_setup' );
 // Enqueue styles & scripts
 // ---------------------------------------------------------------------------
 function solidguard_scripts() {
-    $v = '1.2.0';
+    $v = '1.4.0';
     $uri = get_template_directory_uri();
+
+    // Local fonts (Inter + Rajdhani)
+    wp_enqueue_style(
+        'solidguard-fonts',
+        $uri . '/assets/css/fonts.css',
+        array(),
+        $v
+    );
 
     // Design tokens
     wp_enqueue_style(
         'solidguard-tokens',
         $uri . '/assets/css/design-system.css',
-        array(),
+        array( 'solidguard-fonts' ),
         $v
     );
 
@@ -73,26 +81,18 @@ add_action( 'wp_enqueue_scripts', 'solidguard_scripts' );
 
 
 // ---------------------------------------------------------------------------
-// Load Google Fonts as preload (non-render-blocking)
+// Inline SVG icon helper
 // ---------------------------------------------------------------------------
-function solidguard_preload_fonts() {
-    $fonts = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600;700&display=swap';
-    $icons = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap';
-
-    printf(
-        '<link rel="preload" as="style" href="%s">' . "\n" .
-        '<link rel="stylesheet" href="%s" media="print" onload="this.media=\'all\'">' . "\n" .
-        '<noscript><link rel="stylesheet" href="%s"></noscript>' . "\n",
-        esc_url( $fonts ), esc_url( $fonts ), esc_url( $fonts )
-    );
-    printf(
-        '<link rel="preload" as="style" href="%s">' . "\n" .
-        '<link rel="stylesheet" href="%s" media="print" onload="this.media=\'all\'">' . "\n" .
-        '<noscript><link rel="stylesheet" href="%s"></noscript>' . "\n",
-        esc_url( $icons ), esc_url( $icons ), esc_url( $icons )
-    );
+function sg_icon( $name, $class = '' ) {
+    $file = get_template_directory() . '/images/icons/' . $name . '.svg';
+    if ( ! file_exists( $file ) ) {
+        return '';
+    }
+    $svg = file_get_contents( $file );
+    $cls = 'sg-icon' . ( $class ? ' ' . esc_attr( $class ) : '' );
+    $svg = preg_replace( '/<svg\b/', '<svg class="' . $cls . '" aria-hidden="true"', $svg, 1 );
+    return $svg;
 }
-add_action( 'wp_head', 'solidguard_preload_fonts', 3 );
 
 
 // ---------------------------------------------------------------------------
@@ -120,14 +120,6 @@ function solidguard_favicon() {
 add_action( 'wp_head', 'solidguard_favicon', 1 );
 
 
-// ---------------------------------------------------------------------------
-// Preconnect to Google Fonts for performance
-// ---------------------------------------------------------------------------
-function solidguard_preconnect() {
-    echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
-    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
-}
-add_action( 'wp_head', 'solidguard_preconnect', 1 );
 
 
 // ---------------------------------------------------------------------------

@@ -9,7 +9,7 @@
 <section class="guarantee-block" id="guarantee" aria-label="Our guarantee">
 
     <div class="guarantee-block__icon-wrap" aria-hidden="true">
-        <span class="material-symbols-outlined">verified</span>
+        <?php echo sg_icon( 'verified' ); ?>
     </div>
 
     <h2 class="guarantee-block__title">Solid Warranty Guarantee</h2>

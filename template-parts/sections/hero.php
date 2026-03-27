@@ -28,19 +28,19 @@
 
         <ul class="hero__bullets" aria-label="Key benefits">
             <li class="hero__bullet">
-                <span class="material-symbols-outlined icon-filled" aria-hidden="true">check_circle</span>
+                <?php echo sg_icon( 'check_circle' ); ?>
                 Expert Emergency Glass Repair
             </li>
             <li class="hero__bullet">
-                <span class="material-symbols-outlined icon-filled" aria-hidden="true">check_circle</span>
+                <?php echo sg_icon( 'check_circle' ); ?>
                 Same-Day On-Site Assessments
             </li>
             <li class="hero__bullet">
-                <span class="material-symbols-outlined icon-filled" aria-hidden="true">check_circle</span>
+                <?php echo sg_icon( 'check_circle' ); ?>
                 Licensed &amp; Bonded Professionals
             </li>
             <li class="hero__bullet">
-                <span class="material-symbols-outlined icon-filled" aria-hidden="true">check_circle</span>
+                <?php echo sg_icon( 'check_circle' ); ?>
                 Background-Checked Technicians
             </li>
         </ul>

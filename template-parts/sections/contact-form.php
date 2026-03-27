@@ -17,25 +17,25 @@
 
                 <ul class="contact-form-wrap__promises" role="list">
                     <li>
-                        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+                        <?php echo sg_icon( 'schedule' ); ?>
                         Response within 1 hour
                     </li>
                     <li>
-                        <span class="material-symbols-outlined" aria-hidden="true">payments</span>
+                        <?php echo sg_icon( 'payments' ); ?>
                         Free on-site assessment
                     </li>
                     <li>
-                        <span class="material-symbols-outlined" aria-hidden="true">verified</span>
+                        <?php echo sg_icon( 'verified' ); ?>
                         Backed by our workmanship warranty
                     </li>
                     <li>
-                        <span class="material-symbols-outlined" aria-hidden="true">shield_person</span>
+                        <?php echo sg_icon( 'shield_person' ); ?>
                         Background-checked technicians
                     </li>
                 </ul>
 
                 <a href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>" class="contact-form-wrap__phone">
-                    <span class="material-symbols-outlined" aria-hidden="true">call</span>
+                    <?php echo sg_icon( 'call' ); ?>
                     <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
                 </a>
             </div>

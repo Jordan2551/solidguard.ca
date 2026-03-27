@@ -36,4 +36,3 @@ FAQ
 Gallery
 
 google ads write the ads and extension checks
-Finalize email confirm and sending
