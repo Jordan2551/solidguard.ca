@@ -97,6 +97,8 @@ p {
 .sg-icon {
   width: var(--icon-md);
   height: var(--icon-md);
+  min-width: var(--icon-md);
+  min-height: var(--icon-md);
   vertical-align: middle;
   display: inline-flex;
   flex-shrink: 0;

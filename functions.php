@@ -90,7 +90,7 @@ function sg_icon( $name, $class = '' ) {
     }
     $svg = file_get_contents( $file );
     $cls = 'sg-icon' . ( $class ? ' ' . esc_attr( $class ) : '' );
-    $svg = preg_replace( '/<svg\b/', '<svg class="' . $cls . '" aria-hidden="true"', $svg, 1 );
+    $svg = preg_replace( '/<svg\b/', '<svg class="' . $cls . '" aria-hidden="true" width="24" height="24"', $svg, 1 );
     return $svg;
 }
 
