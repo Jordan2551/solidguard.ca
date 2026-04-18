@@ -23,13 +23,17 @@
     <div class="hero__content">
 
         <h1 class="hero__title">
-            The GTA's Top <span class="text-orange">Glass Repair</span> and Installation Services
+            The GTA's Top <span class="text-orange">Window Glass Repair</span> &amp; Replacement Services
         </h1>
 
         <ul class="hero__bullets" aria-label="Key benefits">
             <li class="hero__bullet">
                 <?php echo sg_icon( 'check_circle' ); ?>
-                Expert Emergency Glass Repair
+                Window Glass Repair &amp; Replacement
+            </li>
+            <li class="hero__bullet">
+                <?php echo sg_icon( 'check_circle' ); ?>
+                Residential, Commercial &amp; Storefront
             </li>
             <li class="hero__bullet">
                 <?php echo sg_icon( 'check_circle' ); ?>
@@ -37,11 +41,7 @@
             </li>
             <li class="hero__bullet">
                 <?php echo sg_icon( 'check_circle' ); ?>
-                Licensed &amp; Bonded Professionals
-            </li>
-            <li class="hero__bullet">
-                <?php echo sg_icon( 'check_circle' ); ?>
-                Background-Checked Technicians
+                Licensed &amp; Background-Checked Technicians
             </li>
         </ul>
 

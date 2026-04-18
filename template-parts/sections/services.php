@@ -14,9 +14,10 @@ $services = array(
         'image'  => $img . 'work/resedential-glass-services/foggy_before_after_combined(1)-1_70reduced.webp',
         'alt'    => 'Residential glass repair before and after',
         'bullets' => array(
+            'Glass unit replacement',
+            'Window water leak repair',
             'Cracked or shattered window glass',
             'Foggy double-pane glass',
-            'Patio and sliding door glass',
         ),
         'w'     => 614,
         'h'     => 429,
