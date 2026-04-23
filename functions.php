@@ -137,3 +137,20 @@ function solidguard_clarity() {
     <?php
 }
 add_action( 'wp_head', 'solidguard_clarity' );
+
+
+// ---------------------------------------------------------------------------
+// Ninja Forms → Zapier webhook
+// ---------------------------------------------------------------------------
+add_action( 'ninja_forms_after_submission', function( $form_data ) {
+    $fields = [];
+    foreach ( $form_data['fields'] as $field ) {
+        $fields[ $field['key'] ] = $field['value'];
+    }
+
+    wp_remote_post( 'https://hooks.zapier.com/hooks/catch/27315495/u7cn9a/', [
+        'body'    => wp_json_encode( $fields ),
+        'headers' => [ 'Content-Type' => 'application/json' ],
+        'timeout' => 15,
+    ] );
+} );

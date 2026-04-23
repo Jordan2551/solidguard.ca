@@ -16,8 +16,7 @@ $services = array(
         'bullets' => array(
             'Glass unit replacement',
             'Window water leak repair',
-            'Cracked or shattered window glass',
-            'Foggy double-pane glass',
+            'Cracked, foggy or shattered glass',
         ),
         'w'     => 614,
         'h'     => 429,

@@ -82,5 +82,8 @@
 <div class="elfsight-app-09abe886-6277-4f6f-bb44-46ee50d4f64f" data-elfsight-app-lazy></div>
 
 <?php wp_footer(); ?>
+
+<!-- CallRail Dynamic Number Insertion -->
+<script type="text/javascript" src="//cdn.callrail.com/companies/825390083/7d705884a4f0568f7615/12/swap.js"></script>
 </body>
 </html>
