@@ -439,3 +439,40 @@
     } );
 
 } )();
+
+
+/* =============================================================================
+   Attribution capture — gclid / msclkid / fbclid / utm_* → channel_id
+   ============================================================================= */
+( function () {
+    'use strict';
+
+    const KEYS = [ 'gclid', 'msclkid', 'fbclid', 'utm_source', 'utm_campaign', 'utm_medium', 'utm_term', 'utm_content' ];
+    const COOKIE = 'sg_channel';
+
+    const params = new URLSearchParams( window.location.search );
+    const parts = [];
+    KEYS.forEach( function ( k ) {
+        const v = params.get( k );
+        if ( v ) parts.push( k + '=' + v );
+    } );
+
+    if ( parts.length ) {
+        document.cookie = COOKIE + '=' + encodeURIComponent( parts.join( '&' ) ) +
+            '; path=/; max-age=' + ( 60 * 60 * 24 * 90 ) + '; SameSite=Lax';
+    }
+
+    const match = document.cookie.split( '; ' ).find( function ( r ) { return r.indexOf( COOKIE + '=' ) === 0; } );
+    const value = match ? decodeURIComponent( match.split( '=' ).slice( 1 ).join( '=' ) ) : '';
+    if ( ! value ) return;
+
+    function fill() {
+        document.querySelectorAll( 'input[name="channel_id"], input[data-key="channel_id"]' ).forEach( function ( i ) {
+            i.value = value;
+        } );
+    }
+
+    fill();
+    document.addEventListener( 'nfFormReady', fill );
+    document.addEventListener( 'DOMContentLoaded', fill );
+} )();

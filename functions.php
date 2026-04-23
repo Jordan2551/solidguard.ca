@@ -148,9 +148,35 @@ add_action( 'ninja_forms_after_submission', function( $form_data ) {
         $fields[ $field['key'] ] = $field['value'];
     }
 
+    $channel = isset( $fields['channel_id'] ) ? strtolower( (string) $fields['channel_id'] ) : '';
+    if ( strpos( $channel, 'gclid=' ) !== false ) {
+        $fields['source'] = 'google ads';
+    } elseif ( strpos( $channel, 'msclkid=' ) !== false ) {
+        $fields['source'] = 'microsoft ads';
+    } elseif ( strpos( $channel, 'fbclid=' ) !== false ) {
+        $fields['source'] = 'facebook ads';
+    } else {
+        $fields['source'] = 'organic';
+    }
+
+    $fields['submitted_at'] = current_time( 'c' );
+
     wp_remote_post( 'https://hooks.zapier.com/hooks/catch/27315495/uj7cn9a/', [
         'body'    => wp_json_encode( $fields ),
         'headers' => [ 'Content-Type' => 'application/json' ],
         'timeout' => 15,
     ] );
 } );
+
+
+// ---------------------------------------------------------------------------
+// Populate channel_id hidden field from sg_channel cookie at render time
+// ---------------------------------------------------------------------------
+add_filter( 'ninja_forms_render_default_value', function ( $default_value, $field_type, $field_settings ) {
+    if ( ! empty( $field_settings['key'] ) && $field_settings['key'] === 'channel_id' ) {
+        if ( ! empty( $_COOKIE['sg_channel'] ) ) {
+            return sanitize_text_field( wp_unslash( $_COOKIE['sg_channel'] ) );
+        }
+    }
+    return $default_value;
+}, 10, 3 );
