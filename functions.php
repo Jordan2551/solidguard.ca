@@ -148,7 +148,7 @@ add_action( 'ninja_forms_after_submission', function( $form_data ) {
         $fields[ $field['key'] ] = $field['value'];
     }
 
-    wp_remote_post( 'https://hooks.zapier.com/hooks/catch/27315495/u7cn9a/', [
+    wp_remote_post( 'https://hooks.zapier.com/hooks/catch/27315495/uj7cn9a/', [
         'body'    => wp_json_encode( $fields ),
         'headers' => [ 'Content-Type' => 'application/json' ],
         'timeout' => 15,
