@@ -296,10 +296,41 @@
                 page_url:       window.location.href
             } );
 
-            // Also fire Google Ads conversion for form submit
+            // Also fire Google Ads conversion for form submit (with Enhanced Conversions)
             if ( typeof gtag === 'function' ) {
+                var userData = {};
+                if ( response && response.fields ) {
+                    Object.keys( response.fields ).forEach( function ( key ) {
+                        var f = response.fields[ key ];
+                        var v = ( f && f.value ) ? String( f.value ).trim() : '';
+                        if ( ! v ) return;
+                        if ( f.type === 'email' ) {
+                            userData.email = v.toLowerCase();
+                        } else if ( f.type === 'phone' ) {
+                            var digits = v.replace( /\D/g, '' );
+                            if ( digits.length === 10 ) digits = '1' + digits;
+                            if ( digits ) userData.phone_number = '+' + digits;
+                        } else if ( /name/i.test( f.key || f.label || '' ) ) {
+                            var parts = v.split( /\s+/ );
+                            if ( parts[ 0 ] && ! userData[ 'address.first_name' ] ) {
+                                userData[ 'address.first_name' ] = parts[ 0 ];
+                                if ( parts.length > 1 ) {
+                                    userData[ 'address.last_name' ] = parts.slice( 1 ).join( ' ' );
+                                }
+                            }
+                        }
+                    } );
+                }
+
+                console.log( '[EC debug] userData built from form:', userData );
+
+                if ( Object.keys( userData ).length ) {
+                    gtag( 'set', 'user_data', userData );
+                }
+
                 gtag( 'event', 'conversion', {
-                    send_to: 'AW-17670100208/form_submit'
+                    send_to: 'AW-17670100208/form_submit',
+                    user_data: userData
                 } );
             }
         } );

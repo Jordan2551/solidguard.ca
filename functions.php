@@ -41,7 +41,7 @@ add_action( 'after_setup_theme', 'solidguard_setup' );
 // Enqueue styles & scripts
 // ---------------------------------------------------------------------------
 function solidguard_scripts() {
-    $v = '1.4.0';
+    $v = '2.2.0';
     $uri = get_template_directory_uri();
 
     // Local fonts (Inter + Rajdhani)
@@ -155,6 +155,16 @@ add_action( 'ninja_forms_after_submission', function( $form_data ) {
         $fields['source'] = 'microsoft ads';
     } elseif ( strpos( $channel, 'fbclid=' ) !== false ) {
         $fields['source'] = 'facebook ads';
+    } elseif ( strpos( $channel, 'chatgpt' ) !== false || strpos( $channel, 'openai' ) !== false ) {
+        $fields['source'] = 'chatgpt';
+    } elseif ( strpos( $channel, 'claude' ) !== false ) {
+        $fields['source'] = 'claude';
+    } elseif ( strpos( $channel, 'perplexity' ) !== false ) {
+        $fields['source'] = 'perplexity';
+    } elseif ( strpos( $channel, 'gemini' ) !== false ) {
+        $fields['source'] = 'gemini';
+    } elseif ( strpos( $channel, 'copilot' ) !== false ) {
+        $fields['source'] = 'copilot';
     } else {
         $fields['source'] = 'organic';
     }
@@ -173,10 +183,26 @@ add_action( 'ninja_forms_after_submission', function( $form_data ) {
 // Populate channel_id hidden field from sg_channel cookie at render time
 // ---------------------------------------------------------------------------
 add_filter( 'ninja_forms_render_default_value', function ( $default_value, $field_type, $field_settings ) {
-    if ( ! empty( $field_settings['key'] ) && $field_settings['key'] === 'channel_id' ) {
-        if ( ! empty( $_COOKIE['sg_channel'] ) ) {
-            return sanitize_text_field( wp_unslash( $_COOKIE['sg_channel'] ) );
+    if ( empty( $field_settings['key'] ) || $field_settings['key'] !== 'channel_id' ) {
+        return $default_value;
+    }
+
+    // First, check current request for click IDs / UTMs (handles same-pageload submits).
+    $keys = [ 'gclid', 'msclkid', 'fbclid', 'utm_source', 'utm_campaign', 'utm_medium', 'utm_term', 'utm_content' ];
+    $parts = [];
+    foreach ( $keys as $k ) {
+        if ( ! empty( $_GET[ $k ] ) ) {
+            $parts[] = $k . '=' . sanitize_text_field( wp_unslash( $_GET[ $k ] ) );
         }
     }
+    if ( $parts ) {
+        return implode( '&', $parts );
+    }
+
+    // Fallback: cookie set by JS on a prior pageload.
+    if ( ! empty( $_COOKIE['sg_channel'] ) ) {
+        return sanitize_text_field( wp_unslash( $_COOKIE['sg_channel'] ) );
+    }
+
     return $default_value;
 }, 10, 3 );
