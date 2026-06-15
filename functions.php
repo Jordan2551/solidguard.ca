@@ -14,6 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 // ---------------------------------------------------------------------------
 define( 'SG_PHONE_RAW',     '6472302725' );
 define( 'SG_PHONE_DISPLAY', '(647)-230-2725' );
+define( 'CALL_ASSET_RAW',     '6476999486' );
+define( 'CALL_ASSET_DISPLAY', '(647)-699-9486' );
 define( 'SG_EMAIL',         'info@solidguard.ca' );
 define( 'SG_EMAIL_DISPATCH','emergency@solidguard.ca' );
 

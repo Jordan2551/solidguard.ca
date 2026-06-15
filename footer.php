@@ -26,6 +26,10 @@
                     <?php echo sg_icon( 'call' ); ?>
                     <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
                 </a>
+                <a href="tel:<?php echo esc_attr( CALL_ASSET_RAW ); ?>" class="site-footer__phone" id="phone-footer-brand-2">
+                    <?php echo sg_icon( 'call' ); ?>
+                    <?php echo esc_html( CALL_ASSET_DISPLAY ); ?>
+                </a>
             </div>
 
             <!-- Services -->
@@ -58,6 +62,10 @@
                     <a href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>" id="phone-footer-contact">
                         <?php echo sg_icon( 'call' ); ?>
                         <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
+                    </a>
+                    <a href="tel:<?php echo esc_attr( CALL_ASSET_RAW ); ?>" id="phone-footer-contact-2">
+                        <?php echo sg_icon( 'call' ); ?>
+                        <?php echo esc_html( CALL_ASSET_DISPLAY ); ?>
                     </a>
                 </nav>
                 <button class="btn btn--orange btn--full" type="button" data-modal-trigger="modal-estimate" id="btn-footer-estimate">
