@@ -12,6 +12,8 @@
 
 $img = ! empty( $args['img'] ) ? $args['img'] : 'solidguard-van-no-bg.webp';
 $alt = ! empty( $args['alt'] ) ? $args['alt'] : 'Solid Guard branded service van';
+
+wp_enqueue_style( 'solidguard-components' ); // load block styles only where this block renders
 ?>
 <div class="sg-van" data-sg-van>
     <img class="sg-van__img"

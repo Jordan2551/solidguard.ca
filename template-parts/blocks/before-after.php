@@ -19,6 +19,10 @@ $cap_a    = ! empty( $args['cap_after'] )  ? $args['cap_after']  : 'After';
 $combined = ! empty( $args['combined'] ) ? esc_url( $base . $args['combined'] ) : '';
 $before   = ! empty( $args['before'] )   ? esc_url( $base . $args['before'] )   : '';
 $after    = ! empty( $args['after'] )    ? esc_url( $base . $args['after'] )    : '';
+
+wp_enqueue_style( 'solidguard-components' );
+wp_enqueue_style( 'imgcomparison-slider' );   // self-hosted lib — only loads on pages with this block
+wp_enqueue_script( 'imgcomparison-slider' );
 ?>
 <img-comparison-slider class="sg-ba">
 <?php if ( $combined ) : // one composite, split into before (left) / after (right) ?>

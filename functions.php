@@ -79,14 +79,17 @@ function solidguard_scripts() {
         true   // load in footer
     );
 
-    // img-comparison-slider (self-hosted vendor) — powers the before/after block
-    wp_enqueue_style(
+    // Block component assets — REGISTERED here, enqueued on-demand by the block
+    // partials that use them (so they don't load on pages without those blocks).
+
+    // img-comparison-slider (self-hosted vendor) — only the before/after block needs it
+    wp_register_style(
         'imgcomparison-slider',
         $uri . '/assets/css/vendor/img-comparison-slider.css',
         array( 'solidguard-tokens' ),
         $v
     );
-    wp_enqueue_script(
+    wp_register_script(
         'imgcomparison-slider',
         $uri . '/assets/js/vendor/img-comparison-slider.js',
         array(),
@@ -94,14 +97,14 @@ function solidguard_scripts() {
         true
     );
 
-    // Reusable block components (floating van, before/after, savings teaser)
-    wp_enqueue_style(
+    // Reusable block styles/behaviours (floating van, before/after, savings teaser)
+    wp_register_style(
         'solidguard-components',
         $uri . '/assets/css/components.css',
         array( 'solidguard-style' ),
         $v
     );
-    wp_enqueue_script(
+    wp_register_script(
         'solidguard-components',
         $uri . '/assets/js/components.js',
         array(),

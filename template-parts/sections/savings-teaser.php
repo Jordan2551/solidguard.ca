@@ -19,6 +19,9 @@ $mid   = function ( $a ) { return ( $a[0] + $a[1] ) / 2; };
 $save  = round( $mid( $d['replace'] ) - $mid( $d['repair'] ) );
 $pct   = round( $save / $mid( $d['replace'] ) * 100 );
 $rwid  = round( $mid( $d['repair'] ) / $mid( $d['replace'] ) * 100, 1 );
+
+wp_enqueue_style( 'solidguard-components' );
+wp_enqueue_script( 'solidguard-components' ); // teaser tab logic — only where this section renders
 ?>
 
 <section class="sg-teaser" id="savings-teaser" aria-label="Repair-first savings"
