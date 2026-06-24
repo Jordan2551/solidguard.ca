@@ -14,7 +14,7 @@
     ]
   },
 
-  "comment_types": "repair = glass-only (replace the sealed unit/pane, keep the frame — what Solid Guard does). replace = full unit (frame + glass — what other companies push). [low, high] CAD.",
+  "comment_types": "Solid Guard does BOTH and is repair-first: repair = glass-only (replace the sealed unit/pane, keep the frame) — recommended whenever the frame is sound; replace = full unit (frame + glass) — done when it's genuinely needed. The teaser shows the saving from repairing instead of replacing. [low, high] CAD.",
   "types": [
     { "id": "standard",   "label": "Standard window",      "desc": "Double-pane sealed unit, up to ~3×4 ft",        "repair": [350, 650],  "replace": [600, 1200] },
     { "id": "bay",        "label": "Bay / bow",            "desc": "3-panel — we replace the failed sealed unit(s)", "repair": [700, 1500], "replace": [2800, 6000] },
