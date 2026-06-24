@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Solid Guard — Interactive Blocks POC</title>
 <meta name="robots" content="noindex">
-<!-- Real theme fonts + tokens, then POC styles -->
 <link rel="stylesheet" href="../assets/css/fonts.css">
 <link rel="stylesheet" href="../assets/css/design-system.css">
+<!-- img-comparison-slider: maintained web component, keyboard + touch + ARIA built in -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css">
+<script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
 <link rel="stylesheet" href="poc.css">
 </head>
 <body>
@@ -18,11 +20,11 @@
   <div class="wrap">
     <p class="eyebrow">Solid Guard · Proof of Concept</p>
     <h1 class="poc-head__title">Interactive Blocks</h1>
-    <p class="poc-head__sub">Five new conversion + delight components, built in the live theme's design tokens. Drag, hover, and tap — everything below is interactive.</p>
+    <p class="poc-head__sub">Curated set: floating van, library-backed before/after slider, and the repair-first savings teaser. Locations reuse the existing theme component (now linked).</p>
   </div>
 </header>
 
-<!-- 3 · FLOATING VAN BRAND SIGNATURE -->
+<!-- FLOATING VAN BRAND SIGNATURE -->
 <section class="band band--navy" aria-label="Floating van signature">
   <div class="wrap van-band">
     <div class="van-stage">
@@ -32,53 +34,44 @@
     <div class="van-copy">
       <p class="eyebrow eyebrow--orange">On Our Way — Toronto &amp; the GTA</p>
       <h2 class="band__title">The van that shows up the <span class="text-orange">same day.</span></h2>
-      <p class="band__lead">A subtle, always-on brand signature. The van floats with a gentle parallax and follows the page — your rolling billboard, on every screen.</p>
+      <p class="band__lead band__lead--dark">An always-on brand signature — the van floats gently and parallaxes on scroll. Your rolling billboard, on every page.</p>
     </div>
   </div>
 </section>
 
-<!-- 1 · BEFORE / AFTER GLASS SLIDER -->
+<!-- BEFORE / AFTER SLIDER (img-comparison-slider) -->
 <section class="band" aria-label="Before and after slider">
   <div class="wrap">
-    <p class="eyebrow eyebrow--orange">Drag to repair</p>
+    <p class="eyebrow eyebrow--orange">Drag to reveal</p>
     <h2 class="band__title">See the fix happen.</h2>
-    <p class="band__lead">The signature glass-brand proof element. Drag the handle — the cracked pane heals into a clean one. (Swap the demo panes for real before/after job photos at build.)</p>
+    <p class="band__lead">Real foggy-glass job, split into before &amp; after. Powered by <code>img-comparison-slider</code> — drag, swipe, or arrow-key it. Mobile + screen-reader friendly out of the box.</p>
 
-    <div class="ba" id="ba">
-      <!-- BEFORE: broken (base layer, right side) -->
-      <div class="ba__pane ba__pane--before" aria-hidden="true">
-        <div class="glass-scene glass-scene--broken"></div>
-        <span class="ba__tag ba__tag--before">Before · cracked</span>
-      </div>
-      <!-- AFTER: clear (revealed from the left) -->
-      <div class="ba__pane ba__pane--after" id="ba-after" aria-hidden="true">
-        <div class="glass-scene glass-scene--clear"></div>
-        <span class="ba__tag ba__tag--after">After · repaired</span>
-      </div>
-      <div class="ba__handle" id="ba-handle" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 7l-5 5 5 5V7zm8 0v10l5-5-5-5z"/></svg>
-      </div>
-      <input class="ba__range" id="ba-range" type="range" min="0" max="100" value="55"
-             aria-label="Reveal the repaired glass">
-    </div>
+    <img-comparison-slider class="ba2">
+      <figure slot="first" class="ba2-half ba2-half--before">
+        <figcaption class="ba2-cap ba2-cap--before">Before · foggy seal failure</figcaption>
+      </figure>
+      <figure slot="second" class="ba2-half ba2-half--after">
+        <figcaption class="ba2-cap ba2-cap--after">After · repaired</figcaption>
+      </figure>
+    </img-comparison-slider>
+    <p class="micro">Production: export the before/after as two separate WebP files per service (the theme's <code>work/</code> photos are currently combined composites).</p>
   </div>
 </section>
 
-<!-- 2 · REPAIR-FIRST SAVINGS COMPARATOR -->
-<section class="band band--navy" aria-label="Repair-first savings comparator">
+<!-- SAVINGS TEASER (homepage selling point — NOT a quote tool) -->
+<section class="band band--navy" aria-label="Repair-first savings teaser">
   <div class="wrap">
-    <p class="eyebrow eyebrow--orange">Repair-first</p>
+    <p class="eyebrow eyebrow--orange">Repair-first · homepage selling point</p>
     <h2 class="band__title">We fix the glass, not the whole window.</h2>
-    <p class="band__lead band__lead--dark">If the frame's still good, we replace just the glass — and you keep the difference. Pick a job to see it.</p>
+    <p class="band__lead band__lead--dark">A simple, honest teaser of the savings — its job is to land the value prop, not quote a job. (A real estimate calculator is a separate lead-gen tool — see notes.)</p>
 
     <div class="cmp" id="cmp">
       <div class="cmp__tabs" role="tablist" aria-label="Job type">
-        <button class="cmp__tab is-active" role="tab" data-job="standard">Standard window</button>
-        <button class="cmp__tab" role="tab" data-job="bay">Bay / bow</button>
-        <button class="cmp__tab" role="tab" data-job="patio">Patio door</button>
-        <button class="cmp__tab" role="tab" data-job="storefront">Storefront</button>
+        <button class="cmp__tab is-active" role="tab" aria-selected="true" data-job="standard">Standard window</button>
+        <button class="cmp__tab" role="tab" aria-selected="false" data-job="bay">Bay / bow</button>
+        <button class="cmp__tab" role="tab" aria-selected="false" data-job="patio">Patio door</button>
+        <button class="cmp__tab" role="tab" aria-selected="false" data-job="storefront">Storefront</button>
       </div>
-
       <div class="cmp__bars">
         <div class="cmp__row">
           <span class="cmp__label">Full replacement</span>
@@ -91,7 +84,6 @@
           <span class="cmp__price cmp__price--win" id="price-repair">$350</span>
         </div>
       </div>
-
       <div class="cmp__save">
         <span class="cmp__save-label">You save about</span>
         <span class="cmp__save-amt" id="save-amt">$850</span>
@@ -102,52 +94,18 @@
   </div>
 </section>
 
-<!-- 4 · INTERACTIVE GTA MAP -->
-<section class="band" aria-label="GTA service area map">
+<!-- LOCATIONS — REUSE EXISTING COMPONENT -->
+<section class="band band--soft" aria-label="Locations note">
   <div class="wrap">
-    <p class="eyebrow eyebrow--orange">Serving the GTA</p>
-    <h2 class="band__title">19 cities. One call from each.</h2>
-    <p class="band__lead">Hover or tap a city — every node links to its local glass-repair page. Delight, local SEO, and internal linking in one block.</p>
-
-    <div class="gta" id="gta">
-      <svg class="gta__lines" id="gta-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
-      <span class="gta__lake" aria-hidden="true">Lake Ontario</span>
-      <div class="gta__nodes" id="gta-nodes"></div>
-      <div class="gta__tip" id="gta-tip" role="status" aria-live="polite"></div>
-    </div>
-  </div>
-</section>
-
-<!-- 5 · GLASS-HEAL MICRO-INTERACTION -->
-<section class="band band--soft" aria-label="Glass heal micro-interaction">
-  <div class="wrap">
-    <p class="eyebrow eyebrow--orange">Cracked? Gone.</p>
-    <h2 class="band__title">The repair-first promise, in motion.</h2>
-    <p class="band__lead">A subtle brand metaphor for section headers and hovers — cracks appear, then heal to clear. Plays once on scroll; replay below.</p>
-
-    <div class="heal" id="heal">
-      <div class="heal__pane">
-        <div class="glass-scene glass-scene--clear heal__base"></div>
-        <svg class="heal__cracks" viewBox="0 0 400 240" preserveAspectRatio="none" aria-hidden="true">
-          <g fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4" stroke-linecap="round">
-            <path d="M200,120 L120,40"/><path d="M200,120 L300,46"/><path d="M200,120 L70,150"/>
-            <path d="M200,120 L150,225"/><path d="M200,120 L320,200"/><path d="M200,120 L355,120"/>
-            <path d="M200,120 L250,30"/><path d="M160,95 L110,120"/><path d="M250,150 L300,135"/>
-            <path d="M180,160 L150,210"/><path d="M235,95 L280,70"/>
-          </g>
-          <circle class="heal__impact" cx="200" cy="120" r="5" fill="rgba(255,255,255,0.9)"/>
-        </svg>
-        <div class="heal__flash" aria-hidden="true"></div>
-        <span class="heal__badge"><svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M9 16.2l-3.5-3.5L4 14.2 9 19l11-11-1.4-1.4z"/></svg> Repaired</span>
-      </div>
-      <button class="btn btn--ghost heal__replay" id="heal-replay" type="button">Replay</button>
-    </div>
+    <p class="eyebrow eyebrow--orange">Service areas</p>
+    <h2 class="band__title">Reusing the existing component.</h2>
+    <p class="band__lead">No new map. The theme's <code>service-areas.php</code> is <strong>untouched</strong> — on the ads landing page, cities deliberately open the estimate modal. For SEO pages, a copy — <code>service-areas-linked.php</code> — renders the same grid but links each city to <code>/glass/locations/&#123;city&#125;/</code>. Built on this branch.</p>
   </div>
 </section>
 
 <footer class="poc-foot">
   <div class="wrap">
-    <p>POC · branch <code>poc/interactive-blocks</code> · tokens from <code>design-system.css</code>. Not for production routing — noindexed.</p>
+    <p>POC · branch <code>poc/interactive-blocks</code> · real <code>design-system.css</code> tokens. Slider: img-comparison-slider (self-host at build). Noindexed.</p>
   </div>
 </footer>
 
