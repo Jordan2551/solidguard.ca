@@ -78,6 +78,36 @@ function solidguard_scripts() {
         $v,
         true   // load in footer
     );
+
+    // img-comparison-slider (self-hosted vendor) — powers the before/after block
+    wp_enqueue_style(
+        'imgcomparison-slider',
+        $uri . '/assets/css/vendor/img-comparison-slider.css',
+        array( 'solidguard-tokens' ),
+        $v
+    );
+    wp_enqueue_script(
+        'imgcomparison-slider',
+        $uri . '/assets/js/vendor/img-comparison-slider.js',
+        array(),
+        $v,
+        true
+    );
+
+    // Reusable block components (floating van, before/after, savings teaser)
+    wp_enqueue_style(
+        'solidguard-components',
+        $uri . '/assets/css/components.css',
+        array( 'solidguard-style' ),
+        $v
+    );
+    wp_enqueue_script(
+        'solidguard-components',
+        $uri . '/assets/js/components.js',
+        array(),
+        $v,
+        true
+    );
 }
 add_action( 'wp_enqueue_scripts', 'solidguard_scripts' );
 

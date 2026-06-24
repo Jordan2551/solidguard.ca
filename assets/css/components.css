@@ -1,0 +1,92 @@
+/* =============================================================================
+   Solid Guard — Reusable block components
+   Depends on design-system.css tokens. Namespaced .sg-* to avoid collisions.
+   Blocks: floating van · before/after slider · savings teaser
+   ============================================================================= */
+
+.sg-eyebrow {
+  font-family: var(--font-headline); font-weight: var(--font-bold);
+  font-size: var(--text-sm); letter-spacing: var(--tracking-widest);
+  text-transform: uppercase; color: var(--color-orange); margin: 0 0 var(--space-3);
+}
+
+/* ----------------------------------------------------------------------------
+   Floating van
+   ---------------------------------------------------------------------------- */
+.sg-van { position: relative; padding-block: var(--space-8); }
+.sg-van__img { display: block; width: 100%; height: auto; will-change: transform;
+  animation: sg-van-float 6s var(--ease-default) infinite;
+  filter: drop-shadow(0 24px 28px rgba(0,0,0,.45)); }
+.sg-van__shadow { position: absolute; left: 12%; right: 12%; bottom: var(--space-4);
+  height: 22px; border-radius: var(--radius-full);
+  background: radial-gradient(ellipse at center, rgba(0,0,0,.45), transparent 70%);
+  animation: sg-van-shadow 6s var(--ease-default) infinite; }
+@keyframes sg-van-float  { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-16px); } }
+@keyframes sg-van-shadow { 0%,100%{ transform: scaleX(1); opacity:.55; } 50%{ transform: scaleX(.86); opacity:.32; } }
+
+/* ----------------------------------------------------------------------------
+   Before / after slider (wraps img-comparison-slider — vendor css loaded too)
+   ---------------------------------------------------------------------------- */
+.sg-ba {
+  display: block; width: 100%; max-width: 460px; aspect-ratio: 307 / 429;
+  border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl);
+  --divider-width: 3px; --divider-color: var(--orange-500);
+  color: var(--orange-500); /* default handle uses currentColor */
+}
+.sg-ba__half { margin: 0; width: 100%; height: 100%; position: relative;
+  background-repeat: no-repeat; background-size: 200% 100%; }
+.sg-ba__half img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.sg-ba__cap { position: absolute; bottom: var(--space-3); color: #fff;
+  font-family: var(--font-headline); font-weight: var(--font-bold);
+  text-transform: uppercase; letter-spacing: var(--tracking-wide);
+  font-size: var(--text-xs); padding: var(--space-1-5) var(--space-3); border-radius: var(--radius-sm); }
+.sg-ba__cap--before { left: var(--space-3); background: rgba(11,31,64,.82); }
+.sg-ba__cap--after  { right: var(--space-3); background: var(--orange-500); }
+
+/* ----------------------------------------------------------------------------
+   Savings teaser (navy section + comparator)
+   ---------------------------------------------------------------------------- */
+.sg-teaser { padding-block: var(--section-py); color: var(--color-text-on-dark);
+  background: radial-gradient(120% 140% at 18% 0%, var(--navy-600) 0%, var(--navy-700) 45%, var(--navy-800) 100%); }
+@media (min-width:768px){ .sg-teaser { padding-block: var(--section-py-lg); } }
+.sg-teaser__title { font-family: var(--font-headline); font-weight: var(--font-bold);
+  text-transform: uppercase; letter-spacing: var(--tracking-tight); line-height: var(--leading-tight);
+  font-size: clamp(1.9rem, 4.5vw, var(--text-5xl)); color: #fff; margin: 0 0 var(--space-4); }
+.sg-teaser__lead { font-size: var(--text-lg); line-height: var(--leading-relaxed);
+  color: var(--color-text-on-dark-muted); max-width: 60ch; margin: 0 0 var(--space-8); }
+
+.sg-cmp { max-width: 760px; }
+.sg-cmp__tabs { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
+.sg-cmp__tab { font-family: var(--font-headline); font-weight: var(--font-bold);
+  text-transform: uppercase; letter-spacing: var(--tracking-wide); font-size: var(--text-sm);
+  color: var(--color-text-on-dark-muted); background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14); border-radius: var(--radius-sm);
+  padding: var(--space-2-5) var(--space-4); cursor: pointer; transition: var(--transition); }
+.sg-cmp__tab:hover { color: #fff; border-color: rgba(255,255,255,.4); }
+.sg-cmp__tab.is-active { color: var(--color-navy); background: #fff; border-color: #fff; }
+.sg-cmp__desc { color: var(--color-text-on-dark-muted); font-size: var(--text-sm); margin: 0 0 var(--space-6); }
+.sg-cmp__row { margin-bottom: var(--space-5); }
+.sg-cmp__rowhead { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-3); margin-bottom: var(--space-2); }
+.sg-cmp__label { font-size: var(--text-sm); color: var(--color-text-on-dark-muted); font-weight: var(--font-medium); }
+.sg-cmp__label--win { color: #fff; font-weight: var(--font-semibold); }
+.sg-cmp__price { font-family: var(--font-headline); font-weight: var(--font-bold); font-size: var(--text-lg); color: var(--color-text-on-dark-muted); white-space: nowrap; }
+.sg-cmp__price--win { color: var(--orange-300); }
+.sg-cmp__track { height: 22px; background: rgba(255,255,255,.08); border-radius: var(--radius-sm); overflow: hidden; }
+.sg-cmp__fill { height: 100%; width: 0; border-radius: var(--radius-sm); transition: width var(--duration-slower) var(--ease-spring); }
+.sg-cmp__fill--replace { background: linear-gradient(90deg, var(--neutral-400), var(--neutral-300)); }
+.sg-cmp__fill--repair  { background: linear-gradient(90deg, var(--orange-600), var(--orange-400)); box-shadow: var(--shadow-orange); }
+.sg-cmp__save { margin-top: var(--space-8); padding: var(--space-6); display: flex; flex-wrap: wrap;
+  align-items: baseline; gap: var(--space-2) var(--space-4);
+  background: rgba(240,140,0,.10); border: 1px solid rgba(240,140,0,.35); border-radius: var(--radius-xl); }
+.sg-cmp__save-label { font-size: var(--text-sm); text-transform: uppercase; letter-spacing: var(--tracking-caps); color: var(--color-text-on-dark-muted); }
+.sg-cmp__save-amt { font-family: var(--font-headline); font-weight: var(--font-bold); font-size: var(--text-5xl); line-height: 1; color: var(--orange-300); }
+.sg-cmp__save-pct { font-size: var(--text-sm); color: #fff; }
+.sg-cmp__fine { margin-top: var(--space-4); font-size: var(--text-xs); color: var(--color-text-on-dark-muted); }
+
+/* ----------------------------------------------------------------------------
+   Reduced motion
+   ---------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .sg-van__img, .sg-van__shadow { animation: none; }
+  .sg-cmp__fill { transition: none; }
+}
