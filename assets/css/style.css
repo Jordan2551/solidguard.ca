@@ -1318,17 +1318,111 @@ p {
     margin-inline: auto;
     display: grid;
     grid-template-columns: 1fr 400px;
-    grid-template-rows: auto auto;
     column-gap: var(--space-14);
-    row-gap: var(--space-4);
     align-items: center;
-    align-content: center;
     padding-block: var(--space-8);
   }
 
-  .hero__title   { grid-area: 1 / 1; margin-bottom: var(--space-4); align-self: end; }
-  .hero__bullets { grid-area: 2 / 1; margin-bottom: 0; align-self: start; }
-  .hero-form     { grid-area: 1 / 2 / 3 / 3; align-self: start; margin-block: var(--space-10); }
+  .hero__copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .hero__title     { margin-bottom: 0; }
+  .hero__assurance { margin-bottom: 0; }
+  .hero__bullets   { margin-bottom: 0; gap: var(--space-3); }
+  .hero-form       { align-self: center; margin-block: 0; }
+}
+
+/* Hero assurance card — 5-star rating + GTA reach, sits above the fold */
+.hero__assurance {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-6);
+  background: rgba(11, 31, 64, 0.55);
+  border: 1px solid rgba(245, 247, 250, 0.18);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: max-content;
+}
+
+.hero__assurance-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.hero__assurance-value {
+  font-family: var(--font-headline);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--neutral-0);
+  line-height: 1;
+}
+
+.hero__assurance-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--color-orange);
+}
+
+.hero__assurance-stars .sg-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.hero__assurance-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--neutral-0);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.hero__assurance-divider {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(245, 247, 250, 0.25);
+}
+
+.hero__assurance-copy {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--neutral-0);
+  line-height: 1.3;
+}
+
+.hero__assurance-copy strong {
+  color: var(--color-orange);
+  font-weight: var(--font-bold);
+}
+
+@media (max-width: 560px) {
+  .hero__assurance {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--space-3);
+    gap: var(--space-2) var(--space-3);
+  }
+  .hero__assurance-rating { flex: 0 1 auto; }
+  .hero__assurance-value  { font-size: var(--text-xl); }
+  .hero__assurance-stars .sg-icon { width: 14px; height: 14px; }
+  .hero__assurance-label  {
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-tight);
+  }
+  .hero__assurance-copy   {
+    font-size: var(--text-xs);
+    flex: 1 1 100%;
+  }
+  .hero__assurance-divider { display: none; }
 }
 
 .hero__title {
@@ -2007,6 +2101,8 @@ p {
     box-shadow       var(--transition),
     transform        var(--transition);
   cursor: pointer;
+  text-decoration: none;   /* for the linked service-areas variant (<a class="area-item">) */
+  color: inherit;
 }
 
 .area-item:hover {
