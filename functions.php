@@ -27,6 +27,7 @@ define( 'SG_EMAIL_DISPATCH','emergency@solidguard.ca' );
 require_once get_template_directory() . '/inc/site-data.php';
 require_once get_template_directory() . '/inc/lp-content.php';
 require_once get_template_directory() . '/inc/acf-fields.php';
+require_once get_template_directory() . '/inc/schema.php';
 
 
 // ---------------------------------------------------------------------------
@@ -52,7 +53,7 @@ add_action( 'after_setup_theme', 'solidguard_setup' );
 // Enqueue styles & scripts
 // ---------------------------------------------------------------------------
 function solidguard_scripts() {
-    $v = '2.3.3';
+    $v = '2.4.1';
     $uri = get_template_directory_uri();
 
     // Local fonts (Inter + Rajdhani)

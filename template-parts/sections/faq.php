@@ -9,7 +9,7 @@
  * @package SolidGuard
  *
  * Expected $args:
- *   faqs    array   items with 'q' and 'a'
+ *   faqs    array   items with 'question' and 'answer'
  *   heading string  optional section heading
  */
 
@@ -31,11 +31,11 @@ if ( empty( $faqs ) ) {
             <div class="faq__item">
                 <details <?php echo 0 === $i ? 'open' : ''; ?>>
                     <summary class="faq__question" aria-expanded="<?php echo 0 === $i ? 'true' : 'false'; ?>">
-                        <span class="faq__question-text"><?php echo esc_html( $item['q'] ); ?></span>
+                        <span class="faq__question-text"><?php echo esc_html( $item['question'] ); ?></span>
                         <?php echo sg_icon( 'add', 'faq__icon' ); ?>
                     </summary>
                     <div class="faq__answer">
-                        <p><?php echo esc_html( $item['a'] ); ?></p>
+                        <p><?php echo esc_html( $item['answer'] ); ?></p>
                     </div>
                 </details>
             </div>

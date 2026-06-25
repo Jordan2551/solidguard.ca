@@ -169,6 +169,20 @@ function sg_affiliations() {
 }
 
 /**
+ * Standard hero trust bullets (brand-global, shown on every SEO hero).
+ *
+ * @return string[]
+ */
+function sg_trust_bullets() {
+    return array(
+        '5.0 Google rating',
+        'Police-cleared technicians',
+        'Same or next day',
+        '3-month workmanship warranty',
+    );
+}
+
+/**
  * Standing promotional offers (special-offers rail).
  *
  * @return array<array{headline:string,subhead:string,desc:string,expires:string}>

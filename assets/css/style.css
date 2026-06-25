@@ -3383,3 +3383,135 @@ a.mega__col-head:hover { color: var(--color-primary); }
 .prose > * + * { margin-top: var(--space-4); }
 .prose h2 { font-family: var(--font-headline); font-size: var(--text-2xl); color: var(--color-navy); margin-top: var(--space-8); }
 .prose a { color: var(--color-primary); text-decoration: underline; }
+
+
+/* =============================================================================
+   20. SEO PAGE TEMPLATES — hero (CTA variant), prose sections, CTA band
+   ============================================================================= */
+
+/* --- SEO hero (CTA variant; LP uses .hero) --- */
+.page-hero {
+  position: relative;
+  background: var(--color-navy);
+  color: var(--neutral-0);
+  padding-block: var(--space-12);
+  overflow: hidden;
+}
+
+.page-hero--image { padding-block: var(--space-16); }
+
+.page-hero__bg { position: absolute; inset: 0; z-index: 0; }
+.page-hero__bg img { width: 100%; height: 100%; object-fit: cover; }
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(11,31,64,0.94) 35%, rgba(11,31,64,0.70) 100%);
+}
+
+.page-hero__inner { position: relative; z-index: 1; }
+
+.page-hero__title {
+  font-family: var(--font-headline);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--neutral-0);
+  max-width: 22ch;
+  margin-bottom: var(--space-4);
+}
+
+.page-hero__subhead {
+  font-size: var(--text-lg);
+  color: rgba(255,255,255,0.85);
+  max-width: 62ch;
+  margin-bottom: var(--space-6);
+}
+
+.page-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.page-hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-hero__trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.9);
+}
+
+.page-hero__trust .sg-icon { width: var(--icon-xs); height: var(--icon-xs); color: var(--color-orange); flex-shrink: 0; }
+
+/* --- Prose content sections --- */
+.glass-section { padding-block: var(--space-12); }
+.glass-section--accent { background: var(--color-surface-container); }
+
+.container.glass-section__narrow { max-width: 52rem; }
+
+.glass-section .section-heading { text-align: left; margin-bottom: var(--space-4); }
+
+.check-list--cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2) var(--space-6);
+}
+@media (min-width: 640px) {
+  .check-list--cols { grid-template-columns: 1fr 1fr; }
+}
+
+.related-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.related-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-primary);
+  font-weight: var(--font-semibold);
+  transition: gap var(--transition);
+}
+.related-links a:hover { gap: var(--space-2); }
+.related-links a .sg-icon { width: var(--icon-xs); height: var(--icon-xs); }
+
+/* --- Final CTA band --- */
+.glass-cta {
+  background: var(--color-navy);
+  color: var(--neutral-0);
+  padding-block: var(--space-12);
+  text-align: center;
+}
+
+.glass-cta__heading {
+  font-family: var(--font-headline);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: var(--font-bold);
+  color: var(--neutral-0);
+  margin-bottom: var(--space-3);
+}
+
+.glass-cta__sub { color: rgba(255,255,255,0.8); margin-bottom: var(--space-6); }
+
+.glass-cta__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+}
