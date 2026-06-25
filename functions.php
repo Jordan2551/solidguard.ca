@@ -25,6 +25,7 @@ define( 'SG_EMAIL_DISPATCH','emergency@solidguard.ca' );
 // Single source of truth read by the chrome and the section partials.
 // ---------------------------------------------------------------------------
 require_once get_template_directory() . '/inc/site-data.php';
+require_once get_template_directory() . '/inc/lp-content.php';
 
 
 // ---------------------------------------------------------------------------

@@ -11,14 +11,18 @@ $GLOBALS['sg_meta'] = array(
     'url'         => home_url( '/' ),
 );
 
+// Landing-page content (this page is not a seeded WP page, so content comes
+// from the LP provider, not ACF). Partials are pure views fed from here.
+$lp = sg_lp_content();
+
 get_header( 'lp' );
 ?>
 
 <main id="primary" class="page-main">
 
-    <?php get_template_part( 'template-parts/sections/hero' ); ?>
+    <?php get_template_part( 'template-parts/sections/hero-lp', null, $lp['hero'] ); ?>
 
-    <?php get_template_part( 'template-parts/sections/services' ); ?>
+    <?php get_template_part( 'template-parts/sections/services', null, $lp['services'] ); ?>
 
     <?php get_template_part( 'template-parts/sections/cta-callout' ); ?>
 

@@ -174,24 +174,29 @@ function sg_affiliations() {
  * @return array<array{headline:string,subhead:string,desc:string,expires:string}>
  */
 function sg_offers() {
+    // Rolling 7-day expiry. main.js also sets this client-side (.js-offer-expiry);
+    // computing it here keeps the SSR / no-JS value correct too (was a stale
+    // hardcoded date). Format matches the JS output (n/j/Y).
+    $expires = date( 'n/j/Y', strtotime( '+7 days' ) );
+
     return array(
         array(
             'headline' => '10% Off',
             'subhead'  => 'Any Glass Service',
             'desc'     => 'Available for new clients and first responders. Maximum discount $200. Valid ID required.',
-            'expires'  => '12/31/2025',
+            'expires'  => $expires,
         ),
         array(
             'headline' => '15% Off',
             'subhead'  => 'Returning Clients',
             'desc'     => 'Loyalty discount for repeat commercial and residential maintenance clients. No minimum spend.',
-            'expires'  => '12/31/2025',
+            'expires'  => $expires,
         ),
         array(
             'headline' => '$25 Off',
             'subhead'  => 'Window Repairs',
             'desc'     => 'Valid on any residential glass window repair over $200. Cannot be combined with other offers.',
-            'expires'  => '12/31/2025',
+            'expires'  => $expires,
         ),
     );
 }

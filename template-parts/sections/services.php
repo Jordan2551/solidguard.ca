@@ -1,90 +1,56 @@
 <?php
 /**
- * Services section
+ * Services card grid — pure view.
+ *
+ * Each card either links to a page ('href', used by site pages) or opens a
+ * modal ('modal', used by the landing page). Content supplied by the caller;
+ * no hardcoded defaults.
  *
  * @package SolidGuard
+ *
+ * Expected $args:
+ *   heading string  section H2
+ *   intro   string  intro paragraph
+ *   items   array   cards: title, desc, image, alt, bullets[], w, h, slug, and
+ *                   either 'modal' (modal id) or 'href' (URL)
  */
 
-$img = get_template_directory_uri() . '/images/pictures/';
+$heading = isset( $args['heading'] ) ? $args['heading'] : '';
+$intro   = isset( $args['intro'] ) ? $args['intro'] : '';
+$items   = isset( $args['items'] ) ? (array) $args['items'] : array();
 
-$services = array(
-    array(
-        'title'  => 'Residential Glass Services',
-        'desc'   => 'Expert glass repair and replacement for homes across the GTA: windows, doors, patio sliders, and more.',
-        'image'  => $img . 'work/resedential-glass-services/foggy_before_after_combined(1)-1_70reduced.webp',
-        'alt'    => 'Residential glass repair before and after',
-        'bullets' => array(
-            'Glass unit replacement',
-            'Window water leak repair',
-            'Cracked, foggy or shattered glass',
-        ),
-        'w'     => 614,
-        'h'     => 429,
-        'slug'  => 'residential-glass-repair',
-        'modal' => 'modal-residential',
-    ),
-    array(
-        'title'  => 'Commercial Glass Services',
-        'desc'   => 'Comprehensive glass solutions for offices, retail, and multi-unit properties, minimising downtime.',
-        'image'  => $img . 'work/commercial-glass-services/before_after_combined(1)_70reduced.webp',
-        'alt'    => 'Commercial glass repair before and after',
-        'bullets' => array(
-            'Storefront glass repair and replacement',
-            'Cracked or shattered commercial doors',
-            'Emergency board-up after break-ins or damage',
-        ),
-        'w'     => 614,
-        'h'     => 497,
-        'slug'  => 'commercial-glass-repair',
-        'modal' => 'modal-commercial',
-    ),
-    array(
-        'title'  => 'Emergency Glass Services',
-        'desc'   => 'Around-the-clock rapid response to secure your property after a break-in, accident, or storm damage.',
-        'image'  => $img . 'work/emergency-glass-services/backyard_before_after_polished(1)_70reduced.webp',
-        'alt'    => 'Emergency glass repair before and after',
-        'bullets' => array(
-            'Emergency board-up',
-            'Break-in damage',
-            'Unsafe doors and windows',
-        ),
-        'w'     => 564,
-        'h'     => 614,
-        'slug'  => 'emergency-glass-repair',
-        'modal' => 'modal-emergency',
-    ),
-    array(
-        'title'  => 'Storefront Glass Services',
-        'desc'   => 'Custom storefront glazing, repairs, and replacements that keep your business looking sharp and secure.',
-        'image'  => $img . 'work/storefront-glass-services/dogstore_before_after_combined(1)_70reduced.webp',
-        'alt'    => 'Storefront glass repair before and after',
-        'bullets' => array(
-            'Storefront glass repair and replacement',
-            'Large tempered glass panels',
-            'Aluminum frame and door glass',
-        ),
-        'w'     => 614,
-        'h'     => 406,
-        'slug'  => 'storefront-glass-repair',
-        'modal' => 'modal-storefront',
-    ),
-);
+if ( empty( $items ) ) {
+    return;
+}
 ?>
 
 <section class="section section--white" id="services" aria-label="Our services">
     <div class="container">
 
-        <h2 class="section-heading">Our Services</h2>
-        <p class="body-sm text-muted">Professional glass repair and replacement across the GTA, backed by our workmanship warranty. We fix it right, or we come back for free.</p>
+        <?php if ( '' !== $heading ) : ?>
+            <h2 class="section-heading"><?php echo esc_html( $heading ); ?></h2>
+        <?php endif; ?>
+        <?php if ( '' !== $intro ) : ?>
+            <p class="body-sm text-muted"><?php echo esc_html( $intro ); ?></p>
+        <?php endif; ?>
 
         <div class="services-grid">
-            <?php foreach ( $services as $service ) : ?>
-                <article
+            <?php
+            foreach ( $items as $service ) :
+                $slug    = isset( $service['slug'] ) ? $service['slug'] : sanitize_title( $service['title'] );
+                $is_link = ! empty( $service['href'] );
+                $tag     = $is_link ? 'a' : 'article';
+                ?>
+                <<?php echo $tag; ?>
                     class="service-card"
+                    id="service-card-<?php echo esc_attr( $slug ); ?>"
+                    <?php if ( $is_link ) : ?>
+                    href="<?php echo esc_url( $service['href'] ); ?>"
+                    <?php else : ?>
                     data-modal-trigger="<?php echo esc_attr( $service['modal'] ); ?>"
-                    id="service-card-<?php echo esc_attr( $service['slug'] ); ?>"
                     role="button"
                     tabindex="0"
+                    <?php endif; ?>
                     aria-label="Learn more about <?php echo esc_attr( $service['title'] ); ?>"
                 >
 
@@ -104,7 +70,7 @@ $services = array(
                         <p class="service-card__desc"><?php echo esc_html( $service['desc'] ); ?></p>
 
                         <ul class="check-list" role="list">
-                            <?php foreach ( $service['bullets'] as $bullet ) : ?>
+                            <?php foreach ( (array) $service['bullets'] as $bullet ) : ?>
                                 <li class="check-list__item">
                                     <?php echo sg_icon( 'check_circle', 'icon-sm' ); ?>
                                     <?php echo wp_kses( $bullet, array() ); ?>
@@ -115,7 +81,7 @@ $services = array(
                         <div class="btn btn--outline btn--full" aria-hidden="true">Learn More</div>
                     </div>
 
-                </article>
+                </<?php echo $tag; ?>>
             <?php endforeach; ?>
         </div>
 
