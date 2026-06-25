@@ -11,7 +11,7 @@ $GLOBALS['sg_meta'] = array(
     'url'         => home_url( '/' ),
 );
 
-get_header();
+get_header( 'lp' );
 ?>
 
 <main id="primary" class="page-main">
@@ -37,4 +37,4 @@ get_header();
 
 <?php get_template_part( 'template-parts/sections/modals' ); ?>
 
-<?php get_footer(); ?>
+<?php get_footer( 'lp' ); ?>

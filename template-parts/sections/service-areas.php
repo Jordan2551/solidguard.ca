@@ -5,27 +5,8 @@
  * @package SolidGuard
  */
 
-$areas = array(
-    'Toronto',
-    'Mississauga',
-    'Brampton',
-    'Markham',
-    'Vaughan',
-    'Richmond Hill',
-    'Etobicoke',
-    'North York',
-    'Scarborough',
-    'Oakville',
-    'Burlington',
-    'Milton',
-    'Pickering',
-    'Ajax',
-    'Whitby',
-    'Oshawa',
-    'Newmarket',
-    'Aurora',
-    'Barrie',
-);
+// Sitewide service-area cities — single source in inc/site-data.php.
+$areas = sg_service_areas();
 ?>
 
 <section class="service-areas" id="service-areas" aria-label="Service areas">

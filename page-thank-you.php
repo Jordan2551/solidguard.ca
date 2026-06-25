@@ -14,7 +14,7 @@ $GLOBALS['sg_meta'] = array(
     'url'         => home_url( '/thank-you/' ),
 );
 
-get_header();
+get_header( 'lp' );
 ?>
 
 <main id="primary" class="page-main thankyou">
@@ -88,4 +88,4 @@ get_header();
 
 </main>
 
-<?php get_footer(); ?>
+<?php get_footer( 'lp' ); ?>

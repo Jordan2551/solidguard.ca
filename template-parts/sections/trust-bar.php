@@ -5,40 +5,8 @@
  * @package SolidGuard
  */
 
-$dir = get_template_directory_uri() . '/images/logos/affiliates/';
-
-$items = array(
-    array(
-        'logo'  => $dir . 'HomeStars.webp',
-        'alt'   => 'HomeStars',
-        'label' => 'HomeStars Verified',
-    ),
-    array(
-        'logo'  => $dir . 'IDN-Canada-Trusted-Partner.webp',
-        'alt'   => 'IDN Canada',
-        'label' => 'IDN Canada Trusted Partner',
-    ),
-    array(
-        'logo'  => $dir . 'Ontario_Provincial_Police_Logo.webp',
-        'alt'   => 'Ontario Provincial Police',
-        'label' => 'Police Background Cleared',
-    ),
-    array(
-        'logo'  => $dir . 'TPS-Police-Clearance-logo.webp',
-        'alt'   => 'TPS Police Clearance',
-        'label' => 'TPS Police Cleared',
-    ),
-    array(
-        'logo'  => $dir . 'Yellow_Pages_Limited_Yellow_Pages_Announces_Winner_of_its_2026_N.webp',
-        'alt'   => 'Yellow Pages 2026 Award Winner',
-        'label' => '2026 Yellow Pages Award Winner',
-    ),
-    array(
-        'logo'  => $dir . 'mywindow.webp',
-        'alt'   => 'MyWindow',
-        'label' => 'MyWindow Certified',
-    ),
-);
+// Sitewide affiliation badges — single source in inc/site-data.php.
+$items = sg_affiliations();
 ?>
 
 <section class="section section--white trust-bar" id="trust-bar" aria-label="Certifications and affiliations">

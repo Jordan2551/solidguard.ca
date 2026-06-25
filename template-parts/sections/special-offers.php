@@ -7,26 +7,8 @@
 
 $logo = get_template_directory_uri() . '/images/logos/logo-sm.webp';
 
-$offers = array(
-    array(
-        'headline' => '10% Off',
-        'subhead'  => 'Any Glass Service',
-        'desc'     => 'Available for new clients and first responders. Maximum discount $200. Valid ID required.',
-        'expires'  => '12/31/2025',
-    ),
-    array(
-        'headline' => '15% Off',
-        'subhead'  => 'Returning Clients',
-        'desc'     => 'Loyalty discount for repeat commercial and residential maintenance clients. No minimum spend.',
-        'expires'  => '12/31/2025',
-    ),
-    array(
-        'headline' => '$25 Off',
-        'subhead'  => 'Window Repairs',
-        'desc'     => 'Valid on any residential glass window repair over $200. Cannot be combined with other offers.',
-        'expires'  => '12/31/2025',
-    ),
-);
+// Standing offers — single source in inc/site-data.php.
+$offers = sg_offers();
 ?>
 
 <section class="section section--muted" id="offers" aria-label="Special offers">

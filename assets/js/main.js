@@ -473,6 +473,103 @@
 
 
 /* =============================================================================
+   SEO chrome — Glass / Service Areas mega-menus (desktop)
+   Hover-intent open + keyboard/focus + Escape. One panel open at a time.
+   (LP chrome has no [data-mega], so this is a no-op there.)
+   ============================================================================= */
+
+( function () {
+    'use strict';
+
+    var megas = Array.prototype.slice.call( document.querySelectorAll( '[data-mega]' ) );
+    if ( ! megas.length ) return;
+
+    var CLOSE_DELAY = 150; // hover-intent grace period
+    var closeTimer  = null;
+
+    function closeAll( except ) {
+        megas.forEach( function ( m ) {
+            if ( m === except ) return;
+            m.classList.remove( 'is-open' );
+            var trigger = m.querySelector( '.mega__trigger' );
+            if ( trigger ) trigger.setAttribute( 'aria-expanded', 'false' );
+        } );
+    }
+
+    function open( mega ) {
+        clearTimeout( closeTimer );
+        closeAll( mega );
+        mega.classList.add( 'is-open' );
+        var trigger = mega.querySelector( '.mega__trigger' );
+        if ( trigger ) trigger.setAttribute( 'aria-expanded', 'true' );
+    }
+
+    function close( mega ) {
+        mega.classList.remove( 'is-open' );
+        var trigger = mega.querySelector( '.mega__trigger' );
+        if ( trigger ) trigger.setAttribute( 'aria-expanded', 'false' );
+    }
+
+    megas.forEach( function ( mega ) {
+        mega.addEventListener( 'mouseenter', function () { open( mega ); } );
+        mega.addEventListener( 'mouseleave', function () {
+            clearTimeout( closeTimer );
+            closeTimer = setTimeout( function () { close( mega ); }, CLOSE_DELAY );
+        } );
+
+        // Keyboard: opening via focus, closing when focus leaves the whole group.
+        mega.addEventListener( 'focusin', function () { open( mega ); } );
+        mega.addEventListener( 'focusout', function ( e ) {
+            if ( ! mega.contains( e.relatedTarget ) ) close( mega );
+        } );
+    } );
+
+    // Escape closes any open panel and returns focus to its trigger.
+    document.addEventListener( 'keydown', function ( e ) {
+        if ( e.key !== 'Escape' ) return;
+        megas.forEach( function ( mega ) {
+            if ( ! mega.classList.contains( 'is-open' ) ) return;
+            close( mega );
+            var trigger = mega.querySelector( '.mega__trigger' );
+            if ( trigger ) trigger.focus();
+        } );
+    } );
+
+    // Click anywhere outside an open panel closes it.
+    document.addEventListener( 'click', function ( e ) {
+        if ( ! e.target.closest( '[data-mega]' ) ) closeAll( null );
+    } );
+
+} )();
+
+
+/* =============================================================================
+   SEO chrome — generalized mobile drawer accordion ([data-accordion])
+   The shared drawer open/close + focus-trap above already handle #site-nav;
+   this only adds multi-group expand/collapse for the new header.php drawer.
+   ============================================================================= */
+
+( function () {
+    'use strict';
+
+    var triggers = document.querySelectorAll( '[data-accordion]' );
+    if ( ! triggers.length ) return;
+
+    triggers.forEach( function ( trigger ) {
+        var sub = document.getElementById( trigger.getAttribute( 'aria-controls' ) );
+        if ( ! sub ) return;
+
+        trigger.addEventListener( 'click', function () {
+            var isOpen = trigger.getAttribute( 'aria-expanded' ) === 'true';
+            trigger.setAttribute( 'aria-expanded', isOpen ? 'false' : 'true' );
+            sub.classList.toggle( 'is-open', ! isOpen );
+        } );
+    } );
+
+} )();
+
+
+/* =============================================================================
    Attribution capture — gclid / msclkid / fbclid / utm_* → channel_id
    ============================================================================= */
 ( function () {

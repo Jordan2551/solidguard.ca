@@ -21,6 +21,13 @@ define( 'SG_EMAIL_DISPATCH','emergency@solidguard.ca' );
 
 
 // ---------------------------------------------------------------------------
+// Sitewide data layer — nav tree, service areas, affiliations, offers.
+// Single source of truth read by the chrome and the section partials.
+// ---------------------------------------------------------------------------
+require_once get_template_directory() . '/inc/site-data.php';
+
+
+// ---------------------------------------------------------------------------
 // Theme setup
 // ---------------------------------------------------------------------------
 function solidguard_setup() {
@@ -43,7 +50,7 @@ add_action( 'after_setup_theme', 'solidguard_setup' );
 // Enqueue styles & scripts
 // ---------------------------------------------------------------------------
 function solidguard_scripts() {
-    $v = '2.2.0';
+    $v = '2.3.3';
     $uri = get_template_directory_uri();
 
     // Local fonts (Inter + Rajdhani)
