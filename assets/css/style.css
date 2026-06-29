@@ -3003,9 +3003,6 @@ details[open] > .faq__question .faq__question-text {
    (default header.php / footer.php; the LP uses header-lp / footer-lp)
    ============================================================================= */
 
-/* Spacer that offsets the fixed header on content pages. */
-.site-header-spacer { height: var(--header-h); }
-
 /* --- Mega-menu trigger (desktop) --- */
 .mega { position: static; }
 
@@ -3454,13 +3451,139 @@ a.mega__col-head:hover { color: var(--color-primary); }
 
 .page-hero__trust .sg-icon { width: var(--icon-xs); height: var(--icon-xs); color: var(--color-orange); flex-shrink: 0; }
 
-/* --- Prose content sections --- */
-.glass-section { padding-block: var(--space-12); }
-.glass-section--accent { background: var(--color-surface-container); }
+/* Floating-asset hero: transparent cutout (e.g. a window) on the right with a
+   soft glow behind it, copy on the left (Nordik-style). */
+.page-hero--asset {
+  background: radial-gradient(115% 95% at 82% 38%, #1d4f86 0%, var(--color-navy) 58%);
+}
 
-.container.glass-section__narrow { max-width: 52rem; }
+.page-hero--asset .page-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
 
-.glass-section .section-heading { text-align: left; margin-bottom: var(--space-4); }
+@media (min-width: 900px) {
+  .page-hero--asset .page-hero__inner {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: var(--space-10);
+  }
+}
+
+.page-hero__asset { display: flex; justify-content: center; }
+
+.page-hero__asset img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  filter: drop-shadow(0 24px 38px rgba(0, 0, 0, 0.45));
+}
+
+/* Animated frame sequence: cross-fade a casement window open then closed,
+   looping gently. Resting frames are the clean closed window. */
+.page-hero__seq {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1 / 1;
+}
+
+.page-hero__seq img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  opacity: 0;
+}
+
+/* 2s delay before the first open; `backwards` holds the closed frame during it. */
+.page-hero__seq img:nth-child(1) { animation: sg-cw-0 7s ease-in-out 2s infinite backwards; }
+.page-hero__seq img:nth-child(2) { animation: sg-cw-1 7s ease-in-out 2s infinite backwards; }
+.page-hero__seq img:nth-child(3) { animation: sg-cw-2 7s ease-in-out 2s infinite backwards; }
+
+/* Crisp swaps: each frame holds at full opacity, then snaps over ~3% (~0.2s).
+   closed: held at the start and end of the loop */
+@keyframes sg-cw-0 { 0%, 15% { opacity: 1; } 18%, 68% { opacity: 0; } 71%, 100% { opacity: 1; } }
+/* half-open: the transition frames (opening and closing) */
+@keyframes sg-cw-1 { 0%, 15% { opacity: 0; } 18%, 28% { opacity: 1; } 31%, 55% { opacity: 0; } 58%, 68% { opacity: 1; } 71%, 100% { opacity: 0; } }
+/* fully open: held in the middle */
+@keyframes sg-cw-2 { 0%, 28% { opacity: 0; } 31%, 55% { opacity: 1; } 58%, 100% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero__seq img { animation: none; }
+  .page-hero__seq img:nth-child(1) { opacity: 1; } /* static clean closed window */
+}
+
+/* --- Prose content sections ---
+   Same .container as every other section (consistent width + gutters). White by
+   default; --muted alternates for clear separation. Prose left-aligned and
+   capped to a readable measure. */
+.glass-section {
+  padding-block: var(--section-py);
+  background: var(--color-surface);
+}
+@media (min-width: 768px)  { .glass-section { padding-block: var(--section-py-md); } }
+@media (min-width: 1024px) { .glass-section { padding-block: var(--section-py-lg); } }
+
+.glass-section--muted { background: var(--color-surface-container); }
+
+.glass-section .section-heading {
+  text-align: left;
+  margin-bottom: var(--space-5);
+}
+
+.glass-section .prose { max-width: 68ch; }
+.glass-section .check-list--cols { max-width: 56rem; }
+
+/* Overview: benefit copy + real before/after slider, two columns on desktop. */
+.glass-overview {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .glass-overview {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: var(--space-12);
+    align-items: stretch;
+  }
+  .glass-overview--solo { grid-template-columns: 1fr; }
+
+  /* Stretch the before/after images to the full height of the copy column. */
+  .glass-overview__media .sg-ba-sxs { height: 100%; grid-template-rows: 1fr; }
+  .glass-overview__media .sg-ba-sxs__item { aspect-ratio: auto; height: 100%; }
+}
+
+.glass-overview__copy .prose { max-width: 60ch; }
+.glass-overview__copy .prose > * + * { margin-top: var(--space-4); }
+
+/* Before/after comparison fills the media column (and full container on mobile).
+   The component itself (slider or side-by-side) lives in the before-after block
+   + components.css. */
+.glass-overview__media { width: 100%; }
+
+/* What-we-handle, folded into the overview copy column (under the prose). */
+.glass-handle { margin-top: var(--space-8); }
+
+.glass-handle__title {
+  font-family: var(--font-headline);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-navy);
+  margin-bottom: var(--space-4);
+}
+
+/* Offers: center the card rail on desktop (3 cards fit; no scroll). */
+@media (min-width: 1024px) {
+  .scroll-rail { justify-content: center; }
+}
 
 .check-list--cols {
   display: grid;

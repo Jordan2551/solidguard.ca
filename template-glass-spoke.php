@@ -4,113 +4,140 @@
  * Template Post Type: page
  *
  * Template 4, the conversion workhorse (~17 pages). Composes the SEO hero +
- * ACF-driven prose sections + global helper sections, then emits Service +
- * FAQPage schema. RankMath owns title/meta/breadcrumb/LocalBusiness.
+ * ACF-driven sections + global helpers, then emits Service + FAQPage schema.
+ * RankMath owns title/meta/breadcrumb/LocalBusiness.
  *
  * @package SolidGuard
  */
 
+// Resolve the page id from the global $post (reliable here; the queried-object
+// id is 0 at template top on this site, see the id-gotcha memory). Pass it
+// explicitly to every get_field() and to sg_schema().
+$id = ! empty( $GLOBALS['post'] ) ? (int) $GLOBALS['post']->ID : get_queried_object_id();
+
 get_header();
 
-$id = get_the_ID();
+$overview_heading    = get_field( 'overview_heading', $id );
+$overview_body       = get_field( 'overview_body', $id );
+$repairfirst_body    = get_field( 'repairfirst_body', $id );
+$handle_heading      = get_field( 'whatwehandle_heading', $id );
+$handle_items        = get_field( 'whatwehandle_items', $id );
+$related             = get_field( 'related_services', $id );
+$final_cta_heading   = get_field( 'final_cta_heading', $id );
+$faqs                = get_field( 'faqs', $id );
+$hero_h1             = get_field( 'hero_h1', $id );
+$hero_subhead        = get_field( 'hero_subhead', $id );
+$hero_asset          = get_field( 'hero_asset', $id );
 
-// --- Hero (CTA variant) ---
-get_template_part( 'template-parts/sections/hero', null, array(
-    'h1'       => get_field( 'hero_h1' ) ?: get_the_title(),
-    'subhead'  => get_field( 'hero_subhead' ),
-    'bullets'  => sg_trust_bullets(),
-    'image_id' => get_field( 'hero_image' ),
-) );
+// Before/after pair. Falls back to test images until real shots are uploaded.
+$tpl_uri             = get_template_directory_uri();
+$before_img          = get_field( 'before_image', $id ) ?: $tpl_uri . '/images/pictures/test/backyard-glass-replacement-before.webp';
+$after_img           = get_field( 'after_image', $id )  ?: $tpl_uri . '/images/pictures/test/backyard-glass-replacement-after.webp';
+
+// The spoke's post title is its service keyword (e.g. "Window Glass Repair").
+// get_the_title() with no arg reads the global $post (reliable; the queried
+// object id is 0 at template top on this site — see the id gotcha memory).
+$page_kw = wp_strip_all_tags( get_the_title() );
 ?>
 
 <main id="primary" class="page-main">
 
     <?php get_template_part( 'template-parts/breadcrumb' ); ?>
 
+    <!-- Hero (CTA variant). Uploaded cutout overrides the default animated casement. -->
+    <?php
+    $hero_args = array(
+        'h1'      => $hero_h1 ?: $page_kw,
+        'subhead' => $hero_subhead,
+        'bullets' => sg_trust_bullets(),
+    );
+    if ( $hero_asset ) {
+        $hero_args['asset'] = $hero_asset;
+    } else {
+        $hero_args['asset_frames'] = array(
+            $tpl_uri . '/images/hero/casement-window/casement-window_0.webp',
+            $tpl_uri . '/images/hero/casement-window/casement-window_1.webp',
+            $tpl_uri . '/images/hero/casement-window/casement-window_2.webp',
+        );
+    }
+    get_template_part( 'template-parts/sections/hero', null, $hero_args );
+    ?>
+
     <!-- Credential bar -->
     <?php get_template_part( 'template-parts/sections/trust-bar' ); ?>
 
-    <?php
-    $overview_heading    = get_field( 'overview_heading' );
-    $overview_body       = get_field( 'overview_body' );
-    $repairfirst_heading = get_field( 'repairfirst_heading' );
-    $repairfirst_body    = get_field( 'repairfirst_body' );
-    $handle_heading      = get_field( 'whatwehandle_heading' );
-    $handle_items        = get_field( 'whatwehandle_items' );
-    $cost_heading        = get_field( 'cost_heading' );
-    $cost_body           = get_field( 'cost_body' );
-    $related             = get_field( 'related_services' );
-    $final_cta_heading   = get_field( 'final_cta_heading' );
-
-    $faqs = get_field( 'faqs' );
-    ?>
-
-    <!-- Overview -->
-    <?php if ( $overview_body ) : ?>
+    <!-- Service detail: benefit copy + what we fix (left) + real before/after (right) -->
+    <?php if ( $overview_body || $handle_items ) : ?>
         <section class="glass-section">
-            <div class="container glass-section__narrow">
-                <?php if ( $overview_heading ) : ?>
-                    <h2 class="section-heading"><?php echo esc_html( $overview_heading ); ?></h2>
-                <?php endif; ?>
-                <div class="prose"><?php echo wp_kses_post( $overview_body ); ?></div>
+            <div class="container">
+                <div class="glass-overview<?php echo ( $before_img && $after_img ) ? '' : ' glass-overview--solo'; ?>">
+
+                    <div class="glass-overview__copy">
+
+                        <?php if ( $overview_heading ) : ?>
+                            <h2 class="section-heading"><?php echo esc_html( $overview_heading ); ?></h2>
+                        <?php endif; ?>
+
+                        <?php if ( $overview_body ) : ?>
+                            <div class="prose">
+                                <?php echo wp_kses_post( wpautop( $overview_body ) ); ?>
+                                <?php if ( $repairfirst_body ) : ?>
+                                    <?php echo wp_kses_post( wpautop( $repairfirst_body ) ); ?>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if ( $handle_items ) : ?>
+                            <div class="glass-handle">
+                                <?php if ( $handle_heading ) : ?>
+                                    <h3 class="glass-handle__title"><?php echo esc_html( $handle_heading ); ?></h3>
+                                <?php endif; ?>
+                                <ul class="check-list check-list--cols" role="list">
+                                    <?php foreach ( $handle_items as $row ) : ?>
+                                        <li class="check-list__item">
+                                            <?php echo sg_icon( 'check_circle', 'icon-sm' ); ?>
+                                            <?php echo esc_html( $row['item'] ); ?>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+
+                    </div>
+
+                    <?php if ( $before_img && $after_img ) : ?>
+                        <div class="glass-overview__media">
+                            <?php get_template_part( 'template-parts/blocks/before-after', null, array(
+                                'before'     => $before_img,
+                                'after'      => $after_img,
+                                'layout'     => 'side-by-side',
+                                'cap_before' => 'Before',
+                                'cap_after'  => 'After',
+                                // Descriptive, keyword-aware alt (caption stays Before/After).
+                                'alt_before' => 'Damaged glass before ' . strtolower( $page_kw ),
+                                'alt_after'  => 'Finished ' . strtolower( $page_kw ) . ' in Toronto',
+                            ) ); ?>
+                        </div>
+                    <?php endif; ?>
+
+                </div>
             </div>
         </section>
     <?php endif; ?>
 
-    <!-- Repair-first -->
-    <?php if ( $repairfirst_body ) : ?>
-        <section class="glass-section glass-section--accent">
-            <div class="container glass-section__narrow">
-                <?php if ( $repairfirst_heading ) : ?>
-                    <h2 class="section-heading"><?php echo esc_html( $repairfirst_heading ); ?></h2>
-                <?php endif; ?>
-                <div class="prose"><?php echo wp_kses_post( wpautop( $repairfirst_body ) ); ?></div>
-            </div>
-        </section>
-    <?php endif; ?>
-
-    <!-- What we handle -->
-    <?php if ( $handle_items ) : ?>
-        <section class="glass-section">
-            <div class="container glass-section__narrow">
-                <?php if ( $handle_heading ) : ?>
-                    <h2 class="section-heading"><?php echo esc_html( $handle_heading ); ?></h2>
-                <?php endif; ?>
-                <ul class="check-list check-list--cols" role="list">
-                    <?php foreach ( $handle_items as $row ) : ?>
-                        <li class="check-list__item">
-                            <?php echo sg_icon( 'check_circle', 'icon-sm' ); ?>
-                            <?php echo esc_html( $row['item'] ); ?>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-        </section>
-    <?php endif; ?>
+    <!-- Social proof (lifted above offers, so trust precedes the ask) -->
+    <?php get_template_part( 'template-parts/sections/reviews' ); ?>
 
     <!-- Offers (global) -->
     <?php get_template_part( 'template-parts/sections/special-offers' ); ?>
 
-    <!-- Cost honesty -->
-    <?php if ( $cost_body ) : ?>
-        <section class="glass-section">
-            <div class="container glass-section__narrow">
-                <?php if ( $cost_heading ) : ?>
-                    <h2 class="section-heading"><?php echo esc_html( $cost_heading ); ?></h2>
-                <?php endif; ?>
-                <div class="prose"><?php echo wp_kses_post( wpautop( $cost_body ) ); ?></div>
-                <a class="btn btn--outline" href="<?php echo esc_url( home_url( '/glass/window-replacement-cost/' ) ); ?>">
-                    See cost ranges and estimate your job
-                </a>
-            </div>
-        </section>
-    <?php endif; ?>
+    <!-- Cost: repair-first savings calculator (reads pricing.php) -->
+    <?php get_template_part( 'template-parts/sections/savings-teaser', null, array(
+        'keyword' => strtolower( $page_kw ),
+    ) ); ?>
 
     <!-- Service areas (global) -->
     <?php get_template_part( 'template-parts/sections/service-areas-linked' ); ?>
-
-    <!-- Social proof (global) -->
-    <?php get_template_part( 'template-parts/sections/reviews' ); ?>
 
     <!-- Guarantee (global) -->
     <?php get_template_part( 'template-parts/sections/guarantee' ); ?>
@@ -123,10 +150,18 @@ get_template_part( 'template-parts/sections/hero', null, array(
         ) ); ?>
     <?php endif; ?>
 
+    <!-- CTA: van callout, keyword-optimized (above related services) -->
+    <?php get_template_part( 'template-parts/sections/cta-callout', null, array(
+        'eyebrow'      => $page_kw . ' &middot; Toronto &amp; the GTA',
+        'title'        => $final_cta_heading ?: 'Glass broken? We are on our way.',
+        'subtitle'     => 'Fast ' . strtolower( $page_kw ) . ' across the GTA. Repair-first, police-cleared technicians, same or next day. No commitment until you approve the quote.',
+        'estimate_url' => home_url( '/contact/' ),
+    ) ); ?>
+
     <!-- Related services -->
     <?php if ( $related ) : ?>
-        <section class="glass-section">
-            <div class="container glass-section__narrow">
+        <section class="glass-section glass-section--muted">
+            <div class="container">
                 <h2 class="section-heading">Related services</h2>
                 <ul class="related-links" role="list">
                     <?php foreach ( $related as $r ) : ?>
@@ -142,27 +177,14 @@ get_template_part( 'template-parts/sections/hero', null, array(
         </section>
     <?php endif; ?>
 
-    <!-- Final CTA band -->
-    <section class="glass-cta">
-        <div class="container">
-            <?php if ( $final_cta_heading ) : ?>
-                <h2 class="glass-cta__heading"><?php echo esc_html( $final_cta_heading ); ?></h2>
-            <?php endif; ?>
-            <p class="glass-cta__sub">Around the clock rapid response, same or next day across the GTA.</p>
-            <div class="glass-cta__btns">
-                <a class="btn btn--orange btn--lg" href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>">
-                    <?php echo sg_icon( 'call', 'icon-sm' ); ?>
-                    Call Now <?php echo esc_html( SG_PHONE_DISPLAY ); ?>
-                </a>
-                <a class="btn btn--outline-white btn--lg" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
-                    Get a Quick Estimate
-                </a>
-            </div>
-        </div>
-    </section>
-
 </main>
 
 <?php
-sg_schema( $id );
+sg_schema( array(
+    'name'         => $hero_h1 ?: $page_kw,
+    'service_type' => $page_kw,
+    'url'          => get_permalink( get_the_ID() ),
+    'description'  => $hero_subhead,
+    'faqs'         => $faqs,
+) );
 get_footer();

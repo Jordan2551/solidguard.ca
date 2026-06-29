@@ -5,7 +5,7 @@
   'use strict';
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var money = function (n) { return '$' + Math.round(n).toLocaleString('en-CA'); };
-  var range = function (a) { return money(a[0]) + '–' + money(a[1]); };
+  var range = function (a) { return money(a[0]) + ' to ' + money(a[1]); };
   var mid = function (a) { return (a[0] + a[1]) / 2; };
 
   /* ---- Savings teaser (supports multiple instances per page) ---- */
@@ -41,7 +41,7 @@
       if (barF) barF.style.width = ((rMid / pMid) * 100).toFixed(1) + '%';
       if (pR) pR.textContent = range(d.replace);
       if (pF) pF.textContent = range(d.repair);
-      if (sPct) sPct.textContent = 'less — ~' + Math.round((save / pMid) * 100) + '% off replacing';
+      if (sPct) sPct.textContent = 'around ' + Math.round((save / pMid) * 100) + '% off a full replacement';
       if (sAmt) countUp(sAmt, save);
     }
 

@@ -19,7 +19,7 @@ return array(
     ),
     'types' => array(
         'standard'   => array( 'label' => 'Standard window',      'desc' => 'Double-pane sealed unit, up to ~3×4 ft',        'repair' => array( 350, 650 ),  'replace' => array( 600, 1200 ) ),
-        'bay'        => array( 'label' => 'Bay / bow',            'desc' => '3-panel — we replace the failed sealed unit(s)', 'repair' => array( 700, 1500 ), 'replace' => array( 2800, 6000 ) ),
+        'bay'        => array( 'label' => 'Bay / bow',            'desc' => '3-panel, we replace the failed sealed unit(s)', 'repair' => array( 700, 1500 ), 'replace' => array( 2800, 6000 ) ),
         'patio'      => array( 'label' => 'Patio / sliding door', 'desc' => 'Sealed glass panel in the existing door',        'repair' => array( 500, 1000 ), 'replace' => array( 1500, 5500 ) ),
         'storefront' => array( 'label' => 'Storefront pane',      'desc' => 'Commercial tempered/plate glass, per panel',     'repair' => array( 600, 1500 ), 'replace' => array( 1500, 3000 ) ),
     ),

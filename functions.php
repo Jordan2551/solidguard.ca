@@ -34,7 +34,9 @@ require_once get_template_directory() . '/inc/schema.php';
 // Theme setup
 // ---------------------------------------------------------------------------
 function solidguard_setup() {
-    // Title tag handled directly in page templates via $GLOBALS['sg_meta']
+    // RankMath owns <title> on every page (LP included); it requires title-tag
+    // support to emit the tag. Per-page values come from rank_math_* post meta.
+    add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'html5', array(
         'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
@@ -53,7 +55,7 @@ add_action( 'after_setup_theme', 'solidguard_setup' );
 // Enqueue styles & scripts
 // ---------------------------------------------------------------------------
 function solidguard_scripts() {
-    $v = '2.4.1';
+    $v = '2.6.2';
     $uri = get_template_directory_uri();
 
     // Local fonts (Inter + Rajdhani)

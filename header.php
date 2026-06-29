@@ -198,9 +198,6 @@ $glass_featured = array(
 
 </header>
 
-<!-- Fixed-header spacer: pushes content below the sticky chrome -->
-<div class="site-header-spacer" aria-hidden="true"></div>
-
 <!-- =====================================================================
      Mobile Navigation Drawer (accordion)
      ===================================================================== -->
@@ -221,7 +218,7 @@ $glass_featured = array(
 
         <ul class="nav-overlay__list" role="list">
 
-            <!-- Glass — expands to grouped spokes -->
+            <!-- Glass: expands to grouped spokes -->
             <li class="nav-overlay__item">
                 <button class="nav-overlay__trigger" aria-expanded="false" aria-controls="nav-glass" data-accordion>
                     <?php echo sg_icon( 'window' ); ?>
@@ -244,7 +241,7 @@ $glass_featured = array(
                 </div>
             </li>
 
-            <!-- Service Areas — expands to cities -->
+            <!-- Service Areas: expands to cities -->
             <li class="nav-overlay__item">
                 <button class="nav-overlay__trigger" aria-expanded="false" aria-controls="nav-areas" data-accordion>
                     <?php echo sg_icon( 'location_on' ); ?>

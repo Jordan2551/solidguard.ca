@@ -20,26 +20,20 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param int    $post_id     The page.
  * @param string $service_type Optional serviceType override (else focus kw / H1).
  */
-function sg_schema( $post_id = 0, $service_type = '' ) {
-    $post_id = $post_id ? $post_id : get_the_ID();
-    if ( ! $post_id ) {
+function sg_schema( $args = array() ) {
+    $args = wp_parse_args( $args, array(
+        'name'         => '',
+        'service_type' => '',
+        'url'          => '',
+        'description'  => '',
+        'faqs'         => array(),
+    ) );
+
+    if ( '' === $args['name'] ) {
         return;
     }
 
-    $h1      = function_exists( 'get_field' ) ? (string) get_field( 'hero_h1', $post_id ) : '';
-    $h1      = $h1 !== '' ? $h1 : get_the_title( $post_id );
-    $subhead = function_exists( 'get_field' ) ? (string) get_field( 'hero_subhead', $post_id ) : '';
-
-    $focus = (string) get_post_meta( $post_id, 'rank_math_focus_keyword', true );
-    if ( $focus !== '' ) {
-        $focus = trim( explode( ',', $focus )[0] ); // RankMath stores focus kws comma-separated
-    }
-    $desc = (string) get_post_meta( $post_id, 'rank_math_description', true );
-    $desc = $desc !== '' ? $desc : $subhead;
-
-    if ( $service_type === '' ) {
-        $service_type = $focus !== '' ? $focus : $h1;
-    }
+    $service_type = '' !== $args['service_type'] ? $args['service_type'] : $args['name'];
 
     $blocks = array();
 
@@ -47,10 +41,10 @@ function sg_schema( $post_id = 0, $service_type = '' ) {
     $blocks[] = array(
         '@context'    => 'https://schema.org',
         '@type'       => 'Service',
-        'name'        => $h1,
+        'name'        => $args['name'],
         'serviceType' => $service_type,
-        'url'         => get_permalink( $post_id ),
-        'description' => $desc,
+        'url'         => $args['url'],
+        'description' => $args['description'],
         'areaServed'  => array(
             '@type' => 'AdministrativeArea',
             'name'  => 'Toronto and the Greater Toronto Area',
@@ -64,10 +58,9 @@ function sg_schema( $post_id = 0, $service_type = '' ) {
     );
 
     // --- FAQPage (only if the page has FAQs) ---
-    $faqs = function_exists( 'get_field' ) ? get_field( 'faqs', $post_id ) : array();
-    if ( ! empty( $faqs ) && is_array( $faqs ) ) {
+    if ( ! empty( $args['faqs'] ) && is_array( $args['faqs'] ) ) {
         $entities = array();
-        foreach ( $faqs as $faq ) {
+        foreach ( $args['faqs'] as $faq ) {
             if ( empty( $faq['question'] ) || empty( $faq['answer'] ) ) {
                 continue;
             }

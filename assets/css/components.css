@@ -43,6 +43,23 @@
 .sg-ba__cap--before { left: var(--space-3); background: rgba(11,31,64,.82); }
 .sg-ba__cap--after  { right: var(--space-3); background: var(--orange-500); }
 
+/* Static side-by-side variant (layout="side-by-side") — two labeled images,
+   no slider lib. Fills its container; full width on mobile. */
+.sg-ba-sxs { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); width: 100%; }
+.sg-ba-sxs__item {
+  position: relative; margin: 0; aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);
+}
+.sg-ba-sxs__item img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.sg-ba-sxs__cap {
+  position: absolute; bottom: var(--space-2); padding: var(--space-1) var(--space-2);
+  font-family: var(--font-headline); font-weight: var(--font-bold);
+  text-transform: uppercase; letter-spacing: var(--tracking-wide);
+  font-size: var(--text-xs); color: #fff; border-radius: var(--radius-sm);
+}
+.sg-ba-sxs__cap--before { left: var(--space-2); background: rgba(11,31,64,.85); }
+.sg-ba-sxs__cap--after  { right: var(--space-2); background: var(--orange-500); }
+
 /* ----------------------------------------------------------------------------
    Savings teaser (navy section + comparator)
    ---------------------------------------------------------------------------- */
@@ -79,8 +96,8 @@
   align-items: baseline; gap: var(--space-2) var(--space-4);
   background: rgba(240,140,0,.10); border: 1px solid rgba(240,140,0,.35); border-radius: var(--radius-xl); }
 .sg-cmp__save-label { font-size: var(--text-sm); text-transform: uppercase; letter-spacing: var(--tracking-caps); color: var(--color-text-on-dark-muted); }
-.sg-cmp__save-amt { font-family: var(--font-headline); font-weight: var(--font-bold); font-size: var(--text-5xl); line-height: 1; color: var(--orange-300); }
-.sg-cmp__save-pct { font-size: var(--text-sm); color: #fff; }
+.sg-cmp__save-amt { font-family: var(--font-headline); font-weight: var(--font-bold); font-size: clamp(1.9rem, 4.5vw, var(--text-5xl)); line-height: 1; color: var(--orange-300); }
+.sg-cmp__save-pct { font-size: var(--text-base); font-weight: var(--font-semibold); color: #fff; }
 .sg-cmp__fine { margin-top: var(--space-4); font-size: var(--text-xs); color: var(--color-text-on-dark-muted); }
 
 /* ----------------------------------------------------------------------------

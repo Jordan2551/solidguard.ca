@@ -14,9 +14,10 @@
  */
 
 $args     = wp_parse_args( $args ?? array(), array(
-    'eyebrow'  => 'Emergency Response: Toronto &amp; GTA',
-    'title'    => 'Glass Broken? We\'re On Our Way.',
-    'subtitle' => 'Same-day service, background-checked technicians, and a free on-site assessment. No commitment until you approve the quote.',
+    'eyebrow'      => 'Emergency Response: Toronto &amp; GTA',
+    'title'        => 'Glass Broken? We\'re On Our Way.',
+    'subtitle'     => 'Same-day service, background-checked technicians, and a same-day on-site assessment. No commitment until you approve the quote.',
+    'estimate_url' => '', // empty = LP modal trigger; set a URL on SEO pages (no modal there)
 ) );
 ?>
 
@@ -27,7 +28,7 @@ $args     = wp_parse_args( $args ?? array(), array(
         <img
             class="cta-callout__van"
             src="<?php echo esc_url( get_template_directory_uri() . '/images/pictures/solidguard-van-no-bg.webp' ); ?>"
-            alt="Solid Guard service van"
+            alt="SolidGuard service van"
             loading="lazy"
             decoding="async"
             width="560"
@@ -51,10 +52,17 @@ $args     = wp_parse_args( $args ?? array(), array(
 
             <div class="cta-callout__actions">
 
-                <button type="button" class="btn btn--orange btn--lg" data-modal-trigger="modal-estimate" id="btn-cta-estimate">
-                    <?php echo sg_icon( 'edit_note', 'icon-sm' ); ?>
-                    Get Quick Estimate
-                </button>
+                <?php if ( ! empty( $args['estimate_url'] ) ) : ?>
+                    <a href="<?php echo esc_url( $args['estimate_url'] ); ?>" class="btn btn--orange btn--lg" id="btn-cta-estimate">
+                        <?php echo sg_icon( 'edit_note', 'icon-sm' ); ?>
+                        Get a Quick Estimate
+                    </a>
+                <?php else : ?>
+                    <button type="button" class="btn btn--orange btn--lg" data-modal-trigger="modal-estimate" id="btn-cta-estimate">
+                        <?php echo sg_icon( 'edit_note', 'icon-sm' ); ?>
+                        Get Quick Estimate
+                    </button>
+                <?php endif; ?>
 
                 <a
                     href="tel:<?php echo esc_attr( SG_PHONE_RAW ); ?>"

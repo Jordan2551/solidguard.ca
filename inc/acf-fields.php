@@ -56,14 +56,14 @@ function sg_register_acf_fields() {
                 'instructions' => 'Repair-first value prop + GTA + speed. No em dashes.',
             ),
             array(
-                'key'           => 'field_sg_hero_image',
-                'label'         => 'Hero image (optional)',
-                'name'          => 'hero_image',
+                'key'           => 'field_sg_hero_asset',
+                'label'         => 'Hero cutout image (optional)',
+                'name'          => 'hero_asset',
                 'type'          => 'image',
-                'return_format' => 'id',
+                'return_format' => 'url',
                 'preview_size'  => 'medium',
                 'library'       => 'all',
-                'instructions'  => 'Real-work technician photo for this service. Falls back to a default if empty.',
+                'instructions'  => 'Transparent window cutout that floats in the hero. Leave empty to use the default animated casement window.',
             ),
 
             // ---- Overview ------------------------------------------------
@@ -87,18 +87,30 @@ function sg_register_acf_fields() {
                 'media_upload' => 0,
                 'instructions' => 'Primary keyword within the first 100 words.',
             ),
+            array(
+                'key'           => 'field_sg_before_image',
+                'label'         => 'Before image',
+                'name'          => 'before_image',
+                'type'          => 'image',
+                'return_format' => 'url',
+                'preview_size'  => 'medium',
+                'instructions'  => 'Real "before" photo (damaged glass). Pair with the After image, same crop/angle. Renders side-by-side beside the overview.',
+            ),
+            array(
+                'key'           => 'field_sg_after_image',
+                'label'         => 'After image',
+                'name'          => 'after_image',
+                'type'          => 'image',
+                'return_format' => 'url',
+                'preview_size'  => 'medium',
+                'instructions'  => 'Real "after" photo (repaired glass), same crop/angle as Before.',
+            ),
 
             // ---- Repair-first --------------------------------------------
             array(
                 'key'   => 'field_sg_tab_repairfirst',
                 'label' => 'Repair-first',
                 'type'  => 'tab',
-            ),
-            array(
-                'key'   => 'field_sg_repairfirst_heading',
-                'label' => 'Repair-first heading',
-                'name'  => 'repairfirst_heading',
-                'type'  => 'text',
             ),
             array(
                 'key'          => 'field_sg_repairfirst_body',
@@ -136,27 +148,6 @@ function sg_register_acf_fields() {
                         'type'  => 'text',
                     ),
                 ),
-            ),
-
-            // ---- Cost ----------------------------------------------------
-            array(
-                'key'   => 'field_sg_tab_cost',
-                'label' => 'Cost',
-                'type'  => 'tab',
-            ),
-            array(
-                'key'   => 'field_sg_cost_heading',
-                'label' => 'Cost heading',
-                'name'  => 'cost_heading',
-                'type'  => 'text',
-            ),
-            array(
-                'key'          => 'field_sg_cost_body',
-                'label'        => 'Cost body',
-                'name'         => 'cost_body',
-                'type'         => 'textarea',
-                'rows'         => 3,
-                'instructions' => 'Repair-vs-replace savings framing. Use ranges, not "real pricing". Links to the cost guide.',
             ),
 
             // ---- FAQ -----------------------------------------------------
