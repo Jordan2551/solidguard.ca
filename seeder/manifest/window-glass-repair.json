@@ -1,0 +1,106 @@
+{
+    "path": "glass/residential/window-glass-repair",
+    "parent": "glass/residential",
+    "template": "template-glass-spoke.php",
+    "title": "Window Glass Repair",
+    "menu_order": 0,
+    "rank_math": {
+        "title": "Window Glass Repair in Toronto & the GTA | SolidGuard",
+        "description": "Cracked or chipped window glass? Fast window glass repair across the GTA. Repair-first, 5.0 rated, same or next day. Call (647) 230-2725.",
+        "focus_keyword": "window glass repair"
+    },
+    "cluster": {
+        "primary": "window glass repair",
+        "secondary": [
+            "cracked window glass",
+            "single-pane",
+            "glass pane",
+            "window glass repair in toronto"
+        ],
+        "semantic": [
+            "sealed unit",
+            "glazing",
+            "putty",
+            "chip",
+            "crack",
+            "same-day",
+            "GTA"
+        ],
+        "guard_against": [
+            "window glass replacement",
+            "broken window",
+            "foggy",
+            "emergency"
+        ]
+    },
+    "fields": {
+        "hero_h1": "Window Glass Repair in Toronto and the GTA",
+        "hero_subhead": "Cracked, chipped, or damaged window glass? We repair it fast across the GTA, and we are repair-first, so you keep your frame and your money.",
+        "overview_heading": "Cracked window glass, repaired right",
+        "overview_body": "<p>A cracked or chipped window only gets worse. SolidGuard does window glass repair across Toronto and the GTA: when the pane can be repaired or swapped into your existing frame, that is what we do, fast and fairly priced.</p>\n<p>From a single-pane glazing crack to a damaged double-pane sealed unit, we re-glaze, replace the pane, and finish the putty bead. Same-day window glass repair in Toronto is available for most jobs, police-cleared and warrantied.</p>\n",
+        "repairfirst_body": "If your frame is sound, you do not need a new window. We replace just the glass pane and you keep the difference. We handle full window replacement too, and tell you straight when it is the right call.",
+        "whatwehandle_heading": "Glass we fix every day",
+        "whatwehandle_items": [
+            {
+                "item": "Cracked and chipped glass"
+            },
+            {
+                "item": "Single-pane glass"
+            },
+            {
+                "item": "Double-pane sealed units"
+            },
+            {
+                "item": "Picture, casement, and slider windows"
+            },
+            {
+                "item": "Tempered and safety glass"
+            }
+        ],
+        "faqs": [
+            {
+                "question": "Can a cracked window be repaired, or does it need replacing?",
+                "answer": "Small chips and cracks can sometimes be repaired. If the pane is too damaged, we swap just the glass into your existing frame, which is faster and cheaper than a new window."
+            },
+            {
+                "question": "How much does window glass repair cost?",
+                "answer": "A standard sealed unit runs about $350 to $650, depending on size and glass type. See our cost guide for ranges."
+            },
+            {
+                "question": "How fast can you come out?",
+                "answer": "Same or next day across most of the GTA."
+            },
+            {
+                "question": "Do you replace just the glass or the whole window?",
+                "answer": "We are repair-first. If the frame is good, we replace just the glass. If a full replacement is the right call, we tell you."
+            },
+            {
+                "question": "Is the repair guaranteed?",
+                "answer": "Yes. A 3-month workmanship warranty, and we fix it right or come back free."
+            },
+            {
+                "question": "Do you repair single-pane glass and older glazing?",
+                "answer": "Yes. We handle single-pane glass repair, re-glazing of older wood and aluminum frames, and re-bedding the putty bead. If the glass is beyond repair, we swap in a new pane, same-day where possible."
+            }
+        ],
+        "related_services": [
+            {
+                "label": "Window Glass Replacement",
+                "url": "/glass/residential/window-glass-replacement/"
+            },
+            {
+                "label": "Foggy & Double-Pane Repair",
+                "url": "/glass/residential/double-pane-window-repair/"
+            },
+            {
+                "label": "Window Crank & Hardware Repair",
+                "url": "/glass/residential/window-crank-repair/"
+            },
+            {
+                "label": "Residential Glass",
+                "url": "/glass/residential/"
+            }
+        ],
+        "final_cta_heading": "Cracked window glass? We are on our way."
+    }
+}

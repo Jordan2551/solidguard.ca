@@ -1,0 +1,7 @@
+{
+    "path": "glass/residential",
+    "parent": "glass",
+    "template": "",
+    "title": "Residential",
+    "menu_order": 0
+}
