@@ -216,6 +216,34 @@ function sg_hero_frames( $key ) {
 }
 
 /**
+ * Hero visual args for a glass page: client upload > _sg_hero key > casement default.
+ *
+ * Returns the asset/asset_frames slice for template-parts/sections/hero.php; the
+ * caller merges in h1/subhead/bullets. Shared by hub/root/spoke templates.
+ *
+ * @param int $id Page id.
+ * @return array{asset?:string,asset_frames?:string[]}
+ */
+function sg_hero_visual_args( $id ) {
+    $upload = get_field( 'hero_asset', $id );
+    if ( $upload ) {
+        return array( 'asset' => $upload );
+    }
+    $key    = get_post_meta( $id, '_sg_hero', true );
+    $frames = $key ? sg_hero_frames( $key ) : array();
+    if ( ! $frames ) {
+        $frames = sg_hero_frames( 'casement-window' );
+    }
+    if ( count( $frames ) > 1 ) {
+        return array( 'asset_frames' => $frames );
+    }
+    if ( $frames ) {
+        return array( 'asset' => $frames[0] );
+    }
+    return array();
+}
+
+/**
  * Standing promotional offers (special-offers rail).
  *
  * @return array<array{headline:string,subhead:string,desc:string,expires:string}>

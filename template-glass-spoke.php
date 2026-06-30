@@ -27,7 +27,6 @@ $final_cta_heading   = get_field( 'final_cta_heading', $id );
 $faqs                = get_field( 'faqs', $id );
 $hero_h1             = get_field( 'hero_h1', $id );
 $hero_subhead        = get_field( 'hero_subhead', $id );
-$hero_asset          = get_field( 'hero_asset', $id );
 
 // Before/after pair. Falls back to test images until real shots are uploaded.
 $tpl_uri             = get_template_directory_uri();
@@ -46,27 +45,14 @@ $page_kw = wp_strip_all_tags( get_the_title() );
 
     <!-- Hero (CTA variant). Uploaded cutout overrides the default animated casement. -->
     <?php
-    $hero_args = array(
-        'h1'      => $hero_h1 ?: $page_kw,
-        'subhead' => $hero_subhead,
-        'bullets' => sg_trust_bullets(),
+    $hero_args = array_merge(
+        array(
+            'h1'      => $hero_h1 ?: $page_kw,
+            'subhead' => $hero_subhead,
+            'bullets' => sg_trust_bullets(),
+        ),
+        sg_hero_visual_args( $id )
     );
-    if ( $hero_asset ) {
-        // Client-uploaded cutout wins.
-        $hero_args['asset'] = $hero_asset;
-    } else {
-        // Per-page window graphic (manifest "hero" key), else the brand default.
-        $hero_key = get_post_meta( $id, '_sg_hero', true );
-        $frames   = $hero_key ? sg_hero_frames( $hero_key ) : array();
-        if ( ! $frames ) {
-            $frames = sg_hero_frames( 'casement-window' );
-        }
-        if ( count( $frames ) > 1 ) {
-            $hero_args['asset_frames'] = $frames; // animated cross-fade
-        } elseif ( $frames ) {
-            $hero_args['asset'] = $frames[0];     // single static cutout
-        }
-    }
     get_template_part( 'template-parts/sections/hero', null, $hero_args );
     ?>
 

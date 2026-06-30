@@ -648,6 +648,30 @@ p {
   margin-bottom: var(--space-3);
 }
 
+/* Text-only service card (hub/root child grid — no media) */
+.service-card--text {
+  display: flex;
+  text-decoration: none;
+}
+.service-card--text .service-card__body {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6) var(--space-6) var(--space-5);
+  width: 100%;
+}
+.service-card--text .service-card__desc { margin-bottom: var(--space-5); }
+.service-card__more {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  color: var(--color-navy);
+}
+.service-card--text:hover .service-card__more { color: var(--color-orange); }
+.service-grid__intro { margin-bottom: var(--space-8); max-width: 60ch; }
+
 /* Check list */
 .check-list {
   list-style: none;

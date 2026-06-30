@@ -1,7 +1,29 @@
 {
     "path": "glass/residential",
     "parent": "glass",
-    "template": "",
+    "template": "template-glass-root.php",
     "title": "Residential",
-    "menu_order": 0
+    "menu_order": 0,
+    "rank_math": {
+        "title": "Residential Glass Repair in Toronto & the GTA | SolidGuard",
+        "description": "Home glass repair and replacement across the GTA: window glass, sealed units, sliding doors, screens, and more. Repair-first, police-cleared, same or next day.",
+        "focus_keyword": "residential glass repair"
+    },
+    "cluster": {
+        "primary": "residential glass repair",
+        "secondary": ["window glass repair", "home glass repair"],
+        "semantic": ["window pane", "sealed unit", "sliding door", "screen", "GTA"]
+    },
+    "fields": {
+        "hero_h1": "Residential Glass Repair in Toronto and the GTA",
+        "hero_subhead": "Window glass, sealed units, sliding doors, and screens for GTA homes. We are repair-first, police-cleared, and out the same or next day.",
+        "overview_heading": "Glass services for your home",
+        "overview_body": "<p>SolidGuard provides residential glass repair across Toronto and the GTA. Cracked or foggy windows, sliding patio doors, window cranks, and screens: our residential glass repair covers it. We start with an assessment and repair where we can, so you keep your frame and your money. Need window glass repair or home glass repair done fast? We are out the same or next day, with police-cleared technicians and a workmanship warranty.</p>",
+        "whatwehandle_heading": "Our residential glass services",
+        "faqs": [
+            {"question": "What residential glass services do you offer?", "answer": "Window glass repair and replacement, foggy sealed-unit repair, sliding patio door glass, window crank and hardware repair, screens, and more."},
+            {"question": "Can you repair just the glass, not the whole window?", "answer": "Usually yes. If the frame is sound we replace just the glass pane, which is faster and cheaper than a new window."},
+            {"question": "How fast can you come out?", "answer": "Same or next day across most of the GTA."}
+        ]
+    }
 }
