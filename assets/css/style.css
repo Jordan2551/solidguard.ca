@@ -3327,7 +3327,7 @@ a.mega__col-head:hover { color: var(--color-primary); }
   font-size: var(--text-sm);
 }
 
-.breadcrumb .container { padding-block: var(--space-3); }
+.breadcrumb .container { padding-block: var(--space-2); }
 
 .breadcrumb__list {
   display: flex;
