@@ -1,0 +1,45 @@
+{
+    "path": "glass/residential/patio-sliding-door-glass",
+    "parent": "glass/residential",
+    "template": "template-glass-spoke.php",
+    "title": "Patio & Sliding Door Glass",
+    "menu_order": 3,
+    "hero": "slider-window",
+    "rank_math": {
+        "title": "Sliding Glass Door Repair in Toronto & the GTA | SolidGuard",
+        "description": "Sliding glass door repair across the GTA: cracked or foggy patio door glass, worn rollers, and sticking tracks. Repair-first, same or next day, warrantied.",
+        "focus_keyword": "sliding glass door repair"
+    },
+    "cluster": {
+        "primary": "sliding glass door repair",
+        "secondary": ["patio door glass replacement", "sliding patio door repair", "patio door glass"],
+        "semantic": ["rollers", "track", "tempered safety glass", "screen", "GTA"]
+    },
+    "fields": {
+        "hero_h1": "Sliding Glass Door Repair in Toronto and the GTA",
+        "hero_subhead": "Cracked or foggy patio door glass, worn rollers, or a door that sticks? We fix all of it across the GTA, repair-first, same or next day.",
+        "overview_heading": "Patio doors that glide and seal again",
+        "overview_body": "<p>A patio door that sticks, drafts, or has a cracked pane is more than a nuisance. SolidGuard does sliding glass door repair across Toronto and the GTA: cracked or foggy glass, worn rollers, and tracks that bind. We repair where we can, so a full sliding patio door repair often costs far less than a new door.</p><p>When the glass itself is the problem, we handle patio door glass replacement with tempered safety glass cut to size. Rollers, tracks, handles, and the screen, we sort the whole door so the patio door glass and hardware work as one again.</p>",
+        "repairfirst_body": "Most sliding doors do not need replacing. New rollers, a cleaned track, and fresh glass usually bring the door back to like-new for a fraction of the price.",
+        "whatwehandle_heading": "Patio door problems we fix",
+        "whatwehandle_items": [
+            {"item": "Cracked and foggy patio door glass"},
+            {"item": "Worn or seized rollers"},
+            {"item": "Sticking and noisy tracks"},
+            {"item": "Tempered safety glass replacement"},
+            {"item": "Handles, locks, and screens"}
+        ],
+        "faqs": [
+            {"question": "My patio door sticks. Can you fix it without replacing the door?", "answer": "Usually yes. Most sticking is worn rollers or a dirty track, both of which we repair. A full sliding patio door repair is far cheaper than a new door."},
+            {"question": "Can you replace just the glass in a sliding door?", "answer": "Yes. We handle patio door glass replacement with tempered safety glass cut to size, leaving your frame and door in place."},
+            {"question": "Is patio door glass tempered?", "answer": "It should be. Patio and sliding door glass is tempered safety glass, and that is what we install."},
+            {"question": "How fast can you come out?", "answer": "Same or next day across most of the GTA."}
+        ],
+        "related_services": [
+            {"label": "Window Glass Repair", "url": "/glass/residential/window-glass-repair/"},
+            {"label": "Window Crank & Hardware Repair", "url": "/glass/residential/window-crank-repair/"},
+            {"label": "Residential Glass", "url": "/glass/residential/"}
+        ],
+        "final_cta_heading": "Sliding door stuck or cracked?"
+    }
+}

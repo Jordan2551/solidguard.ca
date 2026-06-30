@@ -1,0 +1,45 @@
+{
+    "path": "glass/residential/porch-enclosures",
+    "parent": "glass/residential",
+    "template": "template-glass-spoke.php",
+    "title": "Porch Enclosures",
+    "menu_order": 6,
+    "hero": "bow-window",
+    "rank_math": {
+        "title": "Glass Porch Enclosures in Toronto & the GTA | SolidGuard",
+        "description": "Glass porch enclosures across the GTA. Turn a porch into a 3-season room with glass panels and screens. Custom-fit, draft-sealed, and built to last.",
+        "focus_keyword": "porch enclosure"
+    },
+    "cluster": {
+        "primary": "porch enclosure",
+        "secondary": ["glass porch enclosure", "front porch enclosure", "aluminum porch enclosure"],
+        "semantic": ["3-season", "sunroom", "screened", "glass panels", "draft", "GTA"],
+        "guard_against": ["entrance vestibule", "glass vestibule"]
+    },
+    "fields": {
+        "hero_h1": "Glass Porch Enclosures in Toronto and the GTA",
+        "hero_subhead": "Turn your porch into a year-round space. Custom glass and screen enclosures, draft-sealed and built to fit, across the GTA.",
+        "overview_heading": "A porch you can use in any season",
+        "overview_body": "<p>A glass porch enclosure turns an exposed porch into a comfortable 3-season room. SolidGuard builds porch enclosures across Toronto and the GTA: glass panels, screens, and an aluminum frame measured and cut to your space. Keep the view, lose the wind, bugs, and rain.</p><p>Whether you want a front porch enclosure for curb appeal or a back-porch sunroom to relax in, we design the enclosure to suit the opening. A glass porch enclosure with operable panels gives you airflow in summer and a draft-sealed space in spring and fall, and an aluminum porch enclosure frame keeps it low-maintenance for years.</p>",
+        "whatwehandle_heading": "Enclosure options",
+        "whatwehandle_items": [
+            {"item": "Glass-panel porch enclosures"},
+            {"item": "Screened 3-season enclosures"},
+            {"item": "Aluminum-frame enclosures"},
+            {"item": "Operable and fixed glass panels"},
+            {"item": "Custom-fit to your porch opening"}
+        ],
+        "faqs": [
+            {"question": "What is a 3-season porch enclosure?", "answer": "A glass and screen enclosure that makes the porch comfortable in spring, summer, and fall. It seals out wind, rain, and bugs without full heating."},
+            {"question": "Glass or screen panels?", "answer": "Many porch enclosures combine both: glass for weather and warmth, screens for airflow. We design to suit how you use the space."},
+            {"question": "Do you build to fit my porch exactly?", "answer": "Yes. Every porch enclosure is measured and built to your opening, with an aluminum frame for a clean, low-maintenance finish."},
+            {"question": "Do you serve the whole GTA?", "answer": "Yes, across Toronto and the GTA."}
+        ],
+        "related_services": [
+            {"label": "Window Glass Replacement", "url": "/glass/residential/window-glass-replacement/"},
+            {"label": "Window Screens", "url": "/glass/residential/window-screens/"},
+            {"label": "Residential Glass", "url": "/glass/residential/"}
+        ],
+        "final_cta_heading": "Ready to enclose your porch?"
+    }
+}

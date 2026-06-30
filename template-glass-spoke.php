@@ -28,10 +28,10 @@ $faqs                = get_field( 'faqs', $id );
 $hero_h1             = get_field( 'hero_h1', $id );
 $hero_subhead        = get_field( 'hero_subhead', $id );
 
-// Before/after pair. Falls back to test images until real shots are uploaded.
-$tpl_uri             = get_template_directory_uri();
-$before_img          = get_field( 'before_image', $id ) ?: $tpl_uri . '/images/pictures/test/backyard-glass-replacement-before.webp';
-$after_img           = get_field( 'after_image', $id )  ?: $tpl_uri . '/images/pictures/test/backyard-glass-replacement-after.webp';
+// Before/after pair. Only renders when both real images are uploaded (ACF);
+// otherwise the overview runs full-width. No placeholder images.
+$before_img          = get_field( 'before_image', $id );
+$after_img           = get_field( 'after_image', $id );
 
 // The spoke's post title is its service keyword (e.g. "Window Glass Repair").
 // get_the_title() with no arg reads the global $post (reliable; the queried

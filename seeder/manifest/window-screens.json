@@ -1,0 +1,44 @@
+{
+    "path": "glass/residential/window-screens",
+    "parent": "glass/residential",
+    "template": "template-glass-spoke.php",
+    "title": "Window Screens",
+    "menu_order": 5,
+    "hero": "slider-window",
+    "rank_math": {
+        "title": "Window Screen Installation & Repair in Toronto & the GTA | SolidGuard",
+        "description": "Window screen installation and repair across the GTA. New screens, re-mesh, and custom frames cut to fit. Pet-resistant and retractable options. Same or next day.",
+        "focus_keyword": "window screen installation"
+    },
+    "cluster": {
+        "primary": "window screen installation",
+        "secondary": ["window screen repair", "window screen replacement"],
+        "semantic": ["mesh", "frame", "retractable", "pet-resistant", "GTA"]
+    },
+    "fields": {
+        "hero_h1": "Window Screen Installation and Repair in Toronto and the GTA",
+        "hero_subhead": "Torn, bent, or missing screens? We supply, repair, and install window screens cut to fit, across the GTA.",
+        "overview_heading": "Screens that fit and last",
+        "overview_body": "<p>A torn or missing screen lets bugs in and drags down the look of the whole window. SolidGuard does window screen installation across Toronto and the GTA: new screens measured and cut to fit, plus window screen repair when the frame is good and only the mesh has gone.</p><p>Choose standard mesh, pet-resistant mesh, or a retractable screen, in a frame colour to match your windows. Whether you need one window screen replacement or a whole home re-screened, we measure on site so every screen seats clean and tight.</p>",
+        "whatwehandle_heading": "Screen work we handle",
+        "whatwehandle_items": [
+            {"item": "New screens cut to fit"},
+            {"item": "Re-mesh of good frames"},
+            {"item": "Bent and damaged screen frames"},
+            {"item": "Pet-resistant and heavy-duty mesh"},
+            {"item": "Retractable and sliding-door screens"}
+        ],
+        "faqs": [
+            {"question": "Can you repair a screen, or do I need a new one?", "answer": "If the frame is straight we re-mesh it, which is the cheaper window screen repair. If the frame is bent, a new screen is the better value."},
+            {"question": "Do you make custom-size screens?", "answer": "Yes. We measure on site and cut every screen to fit your window exactly."},
+            {"question": "Do you offer pet-resistant mesh?", "answer": "Yes, along with retractable screens and standard mesh, in frame colours to match your windows."},
+            {"question": "How fast can you come out?", "answer": "Same or next day across most of the GTA."}
+        ],
+        "related_services": [
+            {"label": "Window Glass Repair", "url": "/glass/residential/window-glass-repair/"},
+            {"label": "Window Crank & Hardware Repair", "url": "/glass/residential/window-crank-repair/"},
+            {"label": "Residential Glass", "url": "/glass/residential/"}
+        ],
+        "final_cta_heading": "Need screens fixed or fitted?"
+    }
+}

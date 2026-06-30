@@ -1,0 +1,46 @@
+{
+    "path": "glass/residential/window-crank-repair",
+    "parent": "glass/residential",
+    "template": "template-glass-spoke.php",
+    "title": "Window Crank & Hardware Repair",
+    "menu_order": 4,
+    "hero": "awning-window",
+    "rank_math": {
+        "title": "Window Crank Repair & Window Hardware Repair Toronto | SolidGuard",
+        "description": "Window crank repair and window hardware repair across the GTA. Stripped cranks, broken operators, and seized hinges on casement and awning windows. Same or next day.",
+        "focus_keyword": "window crank repair"
+    },
+    "cluster": {
+        "primary": "window crank repair",
+        "secondary": ["window hardware repair", "window hinge repair", "casement window repair"],
+        "semantic": ["crank handle", "casement", "awning", "operator", "balance", "GTA"],
+        "guard_against": ["window glass repair"]
+    },
+    "fields": {
+        "hero_h1": "Window Crank Repair in Toronto and the GTA",
+        "hero_subhead": "Stripped crank, broken operator, or a casement that will not close? We repair the hardware, not the whole window, across the GTA.",
+        "overview_heading": "Cranks and hardware, working again",
+        "overview_body": "<p>When a casement or awning window will not open, close, or seal, the glass is usually fine, the hardware has worn out. SolidGuard does window crank repair across Toronto and the GTA: stripped crank handles, broken operators, and seized hinges. A quick window hardware repair restores the window for a fraction of the cost of replacing it.</p><p>We carry common operators and parts for most makes, so casement window repair and window hinge repair are often done in a single visit. Cranks, operators, hinges, and locks, we match the part and set the window so it closes tight again.</p>",
+        "repairfirst_body": "A window that will not crank rarely needs replacing. The operator or hinge is the worn part, and that is what we fix.",
+        "whatwehandle_heading": "Hardware we repair",
+        "whatwehandle_items": [
+            {"item": "Stripped and broken crank handles"},
+            {"item": "Worn casement and awning operators"},
+            {"item": "Seized and bent hinges"},
+            {"item": "Loose or failed locks and latches"},
+            {"item": "Windows that will not seal shut"}
+        ],
+        "faqs": [
+            {"question": "My window crank spins but the window will not move. Can you fix it?", "answer": "Yes. That is usually a stripped operator gear. A window crank repair replaces the operator and the window works again."},
+            {"question": "Do you repair casement and awning windows?", "answer": "Yes. Casement window repair and awning hardware are our common jobs, including operators, hinges, and locks."},
+            {"question": "Do I need a whole new window?", "answer": "Almost never. The glass is fine, the hardware is worn. A window hardware repair is far cheaper than replacement."},
+            {"question": "How fast can you come out?", "answer": "Same or next day across most of the GTA."}
+        ],
+        "related_services": [
+            {"label": "Window Glass Repair", "url": "/glass/residential/window-glass-repair/"},
+            {"label": "Patio & Sliding Door Glass", "url": "/glass/residential/patio-sliding-door-glass/"},
+            {"label": "Residential Glass", "url": "/glass/residential/"}
+        ],
+        "final_cta_heading": "Crank or hardware broken?"
+    }
+}

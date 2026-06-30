@@ -1,0 +1,46 @@
+{
+    "path": "glass/residential/window-glass-replacement",
+    "parent": "glass/residential",
+    "template": "template-glass-spoke.php",
+    "title": "Window Glass Replacement",
+    "menu_order": 1,
+    "hero": "hung-window",
+    "rank_math": {
+        "title": "Window Glass Replacement in Toronto & the GTA | SolidGuard",
+        "description": "Window glass replacement across the GTA: shattered, cracked, or failed panes swapped into your frame, or a new unit installed. Same or next day, warrantied.",
+        "focus_keyword": "window glass replacement"
+    },
+    "cluster": {
+        "primary": "window glass replacement",
+        "secondary": ["glass replacement", "replace window glass", "window pane replacement"],
+        "semantic": ["double-pane", "triple-pane", "tempered", "low-E", "argon", "GTA"],
+        "guard_against": ["window glass repair", "foggy"]
+    },
+    "fields": {
+        "hero_h1": "Window Glass Replacement in Toronto and the GTA",
+        "hero_subhead": "Shattered, cracked, or failed glass? We swap the unit into your existing frame, or install a new window when that is the better call. Same or next day.",
+        "overview_heading": "New glass, installed clean",
+        "overview_body": "<p>When a pane is shattered, cracked through, or the seal is gone, SolidGuard does window glass replacement across Toronto and the GTA. Where the frame is sound we replace just the glass unit, which is faster and cheaper than a full window. Fair pricing, clean installs, and a workmanship warranty on every job.</p><p>From a single cracked pane to a full window pane replacement, we match the glass to your home: double-pane, triple-pane, tempered safety glass, or low-E with argon for efficiency. Need to replace window glass fast? Our window glass replacement is usually same or next day, with police-cleared technicians.</p>",
+        "repairfirst_body": "Before we replace, we check whether a repair will do. If it will, we say so, because it saves you money. When replacement is genuinely the right call, that is when we replace.",
+        "whatwehandle_heading": "Glass we replace",
+        "whatwehandle_items": [
+            {"item": "Shattered and cracked panes"},
+            {"item": "Failed and foggy sealed units"},
+            {"item": "Double-pane and triple-pane glass"},
+            {"item": "Tempered and safety glass"},
+            {"item": "Low-E and argon-filled units"}
+        ],
+        "faqs": [
+            {"question": "Do you replace just the glass or the whole window?", "answer": "If the frame is sound we replace just the glass unit, which is faster and cheaper. When the frame is past saving, we supply and install a new window."},
+            {"question": "How much does window glass replacement cost?", "answer": "A standard sealed unit typically runs a few hundred dollars depending on size and glass type. See our cost guide for ranges."},
+            {"question": "What kind of glass can you install?", "answer": "Double-pane, triple-pane, tempered safety glass, and low-E units with argon for better efficiency."},
+            {"question": "How fast can you come out?", "answer": "Same or next day across most of the GTA."}
+        ],
+        "related_services": [
+            {"label": "Window Glass Repair", "url": "/glass/residential/window-glass-repair/"},
+            {"label": "Foggy & Double-Pane Repair", "url": "/glass/residential/double-pane-window-repair/"},
+            {"label": "Residential Glass", "url": "/glass/residential/"}
+        ],
+        "final_cta_heading": "Need new window glass?"
+    }
+}
