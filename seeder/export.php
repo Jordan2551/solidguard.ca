@@ -52,6 +52,12 @@ foreach ( $pages as $pg ) {
         $entry['hero'] = $hero;
     }
 
+    // Before/after work photo (theme-relative path).
+    $work_photo = get_post_meta( $pg->ID, '_sg_work_photo', true );
+    if ( $work_photo ) {
+        $entry['work_photo'] = $work_photo;
+    }
+
     // RankMath meta.
     $rm = array_filter( array(
         'title'         => get_post_meta( $pg->ID, 'rank_math_title', true ),

@@ -27,11 +27,18 @@ $final_cta_heading   = get_field( 'final_cta_heading', $id );
 $faqs                = get_field( 'faqs', $id );
 $hero_h1             = get_field( 'hero_h1', $id );
 $hero_subhead        = get_field( 'hero_subhead', $id );
+$comparison          = get_field( 'comparison', $id );
 
 // Before/after pair. Only renders when both real images are uploaded (ACF);
 // otherwise the overview runs full-width. No placeholder images.
 $before_img          = get_field( 'before_image', $id );
 $after_img           = get_field( 'after_image', $id );
+
+// Single before/after work photo (composite), as a theme-relative path under
+// images/pictures/, set via the manifest "work_photo" key (_sg_work_photo meta).
+$wp_path             = get_post_meta( $id, '_sg_work_photo', true );
+$work_photo          = $wp_path ? get_template_directory_uri() . '/images/pictures/' . ltrim( $wp_path, '/' ) : '';
+$has_media           = ( $before_img && $after_img ) || $work_photo;
 
 // The spoke's post title is its service keyword (e.g. "Window Glass Repair").
 // get_the_title() with no arg reads the global $post (reliable; the queried
@@ -63,7 +70,7 @@ $page_kw = wp_strip_all_tags( get_the_title() );
     <?php if ( $overview_body || $handle_items ) : ?>
         <section class="glass-section">
             <div class="container">
-                <div class="glass-overview<?php echo ( $before_img && $after_img ) ? '' : ' glass-overview--solo'; ?>">
+                <div class="glass-overview<?php echo $has_media ? '' : ' glass-overview--solo'; ?>">
 
                     <div class="glass-overview__copy">
 
@@ -96,9 +103,21 @@ $page_kw = wp_strip_all_tags( get_the_title() );
                             </div>
                         <?php endif; ?>
 
+                        <?php if ( $comparison ) : ?>
+                            <div class="prose glass-overview__comparison">
+                                <?php echo wp_kses_post( $comparison ); ?>
+                            </div>
+                        <?php endif; ?>
+
                     </div>
 
-                    <?php if ( $before_img && $after_img ) : ?>
+                    <?php if ( $work_photo ) : ?>
+                        <div class="glass-overview__media">
+                            <figure class="glass-work-photo">
+                                <img src="<?php echo esc_url( $work_photo ); ?>" alt="Before and after <?php echo esc_attr( strtolower( $page_kw ) ); ?> by SolidGuard" loading="lazy" decoding="async">
+                            </figure>
+                        </div>
+                    <?php elseif ( $before_img && $after_img ) : ?>
                         <div class="glass-overview__media">
                             <?php get_template_part( 'template-parts/blocks/before-after', null, array(
                                 'before'     => $before_img,

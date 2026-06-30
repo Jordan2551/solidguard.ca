@@ -108,6 +108,13 @@ foreach ( $manifests as $m ) {
         delete_post_meta( $id, '_sg_hero' );
     }
 
+    // Before/after work photo (theme-relative path under images/pictures/).
+    if ( ! empty( $m['work_photo'] ) ) {
+        update_post_meta( $id, '_sg_work_photo', $m['work_photo'] );
+    } else {
+        delete_post_meta( $id, '_sg_work_photo' );
+    }
+
     // ACF content fields.
     if ( ! empty( $m['fields'] ) && is_array( $m['fields'] ) ) {
         foreach ( $m['fields'] as $name => $value ) {

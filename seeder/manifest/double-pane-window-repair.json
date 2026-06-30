@@ -5,6 +5,7 @@
     "title": "Foggy & Double-Pane Window Repair",
     "menu_order": 2,
     "hero": "awning-window",
+    "work_photo": "work/resedential-glass-services/foggy_before_after_combined(1)-1_70reduced.webp",
     "rank_math": {
         "title": "Foggy Window Repair & Double-Pane Window Repair Toronto | SolidGuard",
         "description": "Foggy window repair and double-pane window repair across the GTA. We replace the failed sealed unit, not the whole window. Same or next day, warrantied.",
@@ -20,7 +21,7 @@
         "hero_h1": "Foggy and Double-Pane Window Repair in Toronto and the GTA",
         "hero_subhead": "Fog or moisture between the panes means the seal has failed. We replace the sealed glass unit, not the whole window, across the GTA.",
         "overview_heading": "Foggy glass? The seal has failed",
-        "overview_body": "<p>Fog or condensation between the panes is a sign the seal has gone. SolidGuard does double-pane window repair across Toronto and the GTA: we replace the failed sealed unit and slot it into your existing frame, so the window looks and performs like new. Foggy window repair is usually same or next day, at a fraction of the cost of a new window.</p><p>You do not need to replace foggy windows wholesale. In most cases a sealed unit replacement clears the fog for good, restores the insulating gas, and stops the draft. We assess the frame, confirm the unit size, and handle the swap clean.</p>",
+        "overview_body": "<p><strong>Fog or condensation between the panes means the seal has failed, and you fix that by replacing the glass unit, not the window.</strong> SolidGuard does double-pane window repair across Toronto and the GTA: we replace the failed sealed unit and slot it into your existing frame, so the window looks and performs like new.</p><p>You do not need to replace foggy windows wholesale. In most cases a sealed unit replacement clears the fog for good, restores the insulating gas, and stops the draft. Foggy window repair is usually same or next day. We assess the frame, confirm the unit size, and handle the swap clean, with police-cleared technicians and a workmanship warranty.</p>",
         "repairfirst_body": "Replacing the whole window to fix foggy windows is almost never necessary. If the frame is sound, the sealed unit is what gets replaced, and that is the repair we recommend.",
         "whatwehandle_heading": "Foggy and sealed-unit problems we fix",
         "whatwehandle_items": [
@@ -30,11 +31,14 @@
             {"item": "Drafty, seal-failed glass"},
             {"item": "Cloudy or stained insulated glass"}
         ],
+        "comparison": "<h3>Repair the sealed unit vs. replace the window</h3><table><thead><tr><th>&nbsp;</th><th>Repair (new sealed unit)</th><th>Replace the window</th></tr></thead><tbody><tr><td>Best when</td><td>Frame is sound, only the seal between the panes has failed</td><td>Frame is rotted or bent, or you are upgrading the window</td></tr><tr><td>What is involved</td><td>New sealed glass unit slotted into your existing frame</td><td>Full window and frame, removal and install</td></tr><tr><td>Typical timeframe</td><td>Same or next day for most jobs</td><td>Scheduled installation</td></tr><tr><td>Relative cost</td><td>Usually lower</td><td>Higher</td></tr></tbody></table>",
         "faqs": [
-            {"question": "Why is my double-pane window foggy?", "answer": "The seal around the glass unit has failed, letting moisture in between the panes. The fog is trapped condensation, and it will not wipe off."},
-            {"question": "Can a foggy window be repaired, or do I replace it?", "answer": "You replace the sealed glass unit, not the whole window. We slot a new unit into your existing frame, which is far cheaper than a new window."},
-            {"question": "Will the fog come back?", "answer": "Not with a new sealed unit. A proper double-pane window repair restores the seal and the insulating gas for years."},
-            {"question": "How fast can you come out?", "answer": "Same or next day across most of the GTA."}
+            {"question": "Why is my double-pane window foggy?", "answer": "The seal around the glass unit has failed, letting moisture in between the panes. The fog is trapped condensation, and it will not wipe off because it is sealed inside."},
+            {"question": "Can a foggy window be repaired, or do I replace it?", "answer": "You replace the sealed glass unit, not the whole window. We slot a new unit into your existing frame, which is far simpler and usually less than a new window."},
+            {"question": "Will the fog come back after the repair?", "answer": "Not with a new sealed unit. A proper double-pane window repair restores the seal and the insulating gas, so the glass stays clear for years."},
+            {"question": "Do I have to replace all my foggy windows at once?", "answer": "No. We can replace the sealed units one at a time as your budget allows. Each one is independent."},
+            {"question": "Does a foggy window really cost me money?", "answer": "Yes. A failed seal lets the insulating gas escape, so the window drafts and your heating and cooling work harder. Fixing it restores the efficiency."},
+            {"question": "How fast can you come out?", "answer": "Same or next day across most of the GTA for the assessment, then we fit the new unit once it is cut to size."}
         ],
         "related_services": [
             {"label": "Window Glass Repair", "url": "/glass/residential/window-glass-repair/"},

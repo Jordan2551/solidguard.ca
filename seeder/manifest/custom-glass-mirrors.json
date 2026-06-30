@@ -19,7 +19,7 @@
         "hero_h1": "Custom Mirrors and Glass in Toronto and the GTA",
         "hero_subhead": "Wall mirrors, vanity mirrors, glass shelving, and table tops, measured, cut, and installed clean across the GTA.",
         "overview_heading": "Custom mirrors and glass, cut to fit",
-        "overview_body": "<p>SolidGuard supplies and installs custom mirrors and cut-to-size glass across Toronto and the GTA. Frameless wall mirrors, beveled vanity mirrors, gym and closet mirrors, measured to your space and installed level and secure. Mirror installation is clean, fast, and done right the first time.</p><p>Beyond mirrors, we cut glass shelving and protective glass table tops to any shape and size. Whether it is a single wall mirror installation or a set of custom mirrors for a fit-out, we measure on site and finish every edge for a safe, polished look.</p>",
+        "overview_body": "<p><strong>Off-the-shelf rarely fits the wall you have, so we cut custom mirrors and glass to your exact space.</strong> SolidGuard supplies and installs custom mirrors and cut-to-size glass across Toronto and the GTA: frameless wall mirrors, beveled vanity mirrors, and gym or closet mirrors, measured on site and mounted level and secure.</p><p>Beyond mirrors, we cut glass shelving and protective glass table tops to any shape and size, with polished, finished edges for safety. Whether it is a single wall mirror installation or a full set of custom mirrors for a fit-out, we measure first so every piece fits clean the first time.</p>",
         "whatwehandle_heading": "Glass and mirror work",
         "whatwehandle_items": [
             {"item": "Frameless and beveled wall mirrors"},
@@ -30,9 +30,11 @@
         ],
         "faqs": [
             {"question": "Do you make mirrors to a custom size?", "answer": "Yes. We measure on site and cut custom mirrors to any size and shape, with finished edges, frameless or beveled."},
-            {"question": "Can you install a large wall mirror?", "answer": "Yes. Wall mirror installation is a common job for us, mounted level and secure on any wall type."},
-            {"question": "Do you cut glass shelving and table tops?", "answer": "Yes, cut-to-size glass shelving and protective glass table tops, with polished edges for safety."},
-            {"question": "Do you serve the whole GTA?", "answer": "Yes, across Toronto and the GTA."}
+            {"question": "Can you install a large wall mirror?", "answer": "Yes. Wall mirror installation is a common job for us, mounted level and secure on drywall, tile, or masonry."},
+            {"question": "Do you cut glass shelving and table tops?", "answer": "Yes, cut-to-size glass shelving and protective glass table tops, with polished edges and rounded corners for safety."},
+            {"question": "What thickness of glass do you use?", "answer": "It depends on the use. Table tops and shelving use thicker, tempered glass for strength, while wall mirrors use a standard mirror thickness. We recommend the right spec for the job."},
+            {"question": "Can you replace a broken mirror in a frame or door?", "answer": "Yes. We cut a new mirror to fit your existing frame, closet door, or vanity, so you keep the surround."},
+            {"question": "Do you serve the whole GTA?", "answer": "Yes, across Toronto and the GTA. We start with an on-site measure and a firm quote."}
         ],
         "related_services": [
             {"label": "Window Glass Replacement", "url": "/glass/residential/window-glass-replacement/"},

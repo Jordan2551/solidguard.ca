@@ -20,7 +20,7 @@
         "hero_h1": "Glass Porch Enclosures in Toronto and the GTA",
         "hero_subhead": "Turn your porch into a year-round space. Custom glass and screen enclosures, draft-sealed and built to fit, across the GTA.",
         "overview_heading": "A porch you can use in any season",
-        "overview_body": "<p>A glass porch enclosure turns an exposed porch into a comfortable 3-season room. SolidGuard builds porch enclosures across Toronto and the GTA: glass panels, screens, and an aluminum frame measured and cut to your space. Keep the view, lose the wind, bugs, and rain.</p><p>Whether you want a front porch enclosure for curb appeal or a back-porch sunroom to relax in, we design the enclosure to suit the opening. A glass porch enclosure with operable panels gives you airflow in summer and a draft-sealed space in spring and fall, and an aluminum porch enclosure frame keeps it low-maintenance for years.</p>",
+        "overview_body": "<p><strong>A glass porch enclosure turns an exposed porch into a comfortable 3-season room without the cost of a full addition.</strong> SolidGuard builds porch enclosures across Toronto and the GTA: glass panels, screens, and an aluminum frame measured and cut to your space. Keep the view, lose the wind, bugs, and rain.</p><p>Whether you want a front porch enclosure for curb appeal or a back-porch sunroom to relax in, we design the enclosure to suit the opening. A glass porch enclosure with operable panels gives you airflow in summer and a draft-sealed space in spring and fall, and an aluminum porch enclosure frame keeps it low-maintenance and rust-free for years.</p>",
         "whatwehandle_heading": "Enclosure options",
         "whatwehandle_items": [
             {"item": "Glass-panel porch enclosures"},
@@ -29,11 +29,14 @@
             {"item": "Operable and fixed glass panels"},
             {"item": "Custom-fit to your porch opening"}
         ],
+        "comparison": "<h3>Glass enclosure vs. screened enclosure</h3><table><thead><tr><th>&nbsp;</th><th>Glass enclosure</th><th>Screened enclosure</th></tr></thead><tbody><tr><td>Best for</td><td>Year-round use, warmth, and weather protection</td><td>Summer use, maximum airflow, and a budget-friendly build</td></tr><tr><td>Keeps out</td><td>Wind, rain, cold, and bugs</td><td>Bugs and debris</td></tr><tr><td>Season</td><td>Spring, fall, and mild winter days</td><td>Mostly summer</td></tr><tr><td>Often combined</td><td colspan=\"2\">Many enclosures mix glass and screen panels so you get airflow and weather protection in one</td></tr></tbody></table>",
         "faqs": [
             {"question": "What is a 3-season porch enclosure?", "answer": "A glass and screen enclosure that makes the porch comfortable in spring, summer, and fall. It seals out wind, rain, and bugs without full heating."},
-            {"question": "Glass or screen panels?", "answer": "Many porch enclosures combine both: glass for weather and warmth, screens for airflow. We design to suit how you use the space."},
+            {"question": "Glass or screen panels, which should I choose?", "answer": "Glass for warmth and year-round use, screens for airflow and a lower cost. Many porch enclosures combine both, and we design to suit how you use the space."},
             {"question": "Do you build to fit my porch exactly?", "answer": "Yes. Every porch enclosure is measured and built to your opening, with an aluminum frame for a clean, low-maintenance finish."},
-            {"question": "Do you serve the whole GTA?", "answer": "Yes, across Toronto and the GTA."}
+            {"question": "Can I still get airflow with a glass enclosure?", "answer": "Yes. We fit operable glass panels and screen inserts so you can open it up in summer and seal it tight when it cools down."},
+            {"question": "Will an enclosure add value to my home?", "answer": "A well-built front porch enclosure adds usable living space and curb appeal, which buyers notice. We build to last so it holds up over time."},
+            {"question": "Do you serve the whole GTA?", "answer": "Yes, across Toronto and the GTA. We start with an on-site measure and a firm quote."}
         ],
         "related_services": [
             {"label": "Window Glass Replacement", "url": "/glass/residential/window-glass-replacement/"},

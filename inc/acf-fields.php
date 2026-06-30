@@ -105,6 +105,15 @@ function sg_register_acf_fields() {
                 'preview_size'  => 'medium',
                 'instructions'  => 'Real "after" photo (repaired glass), same crop/angle as Before.',
             ),
+            array(
+                'key'          => 'field_sg_comparison',
+                'label'        => 'Comparison / detail table',
+                'name'         => 'comparison',
+                'type'         => 'wysiwyg',
+                'tabs'         => 'visual',
+                'media_upload' => 0,
+                'instructions' => 'Optional table (e.g. repair vs replace). Renders below the "what we fix" list.',
+            ),
 
             // ---- Repair-first --------------------------------------------
             array(

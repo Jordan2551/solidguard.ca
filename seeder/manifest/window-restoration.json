@@ -20,8 +20,8 @@
         "hero_h1": "Window Restoration in Toronto and the GTA",
         "hero_subhead": "Keep the character, restore the function. Wood window repair, re-glazing, and sash work for heritage and older GTA homes.",
         "overview_heading": "Restore the windows, keep the character",
-        "overview_body": "<p>Older and heritage homes deserve windows that work, not vinyl replacements that erase their character. SolidGuard does window restoration across Toronto and the GTA: wood window repair, sash repair, re-glazing with fresh glazing putty, and weatherproofing that stops drafts without changing the look.</p><p>From a sticking sash to cracked or wavy glass, heritage window restoration brings original windows back to life. Where a pane is beyond saving we offer single pane window replacement that matches the original glass, so the restored window looks right and seals tight.</p>",
-        "repairfirst_body": "Original windows are often built better than their replacements. Where the wood is sound, restoration is the right call, and it keeps your home's character intact.",
+        "overview_body": "<p><strong>Original windows are often built better than their replacements, so the right move is usually to restore, not rip out.</strong> SolidGuard does window restoration across Toronto and the GTA: wood window repair, sash repair, re-glazing with fresh glazing putty, and weatherproofing that stops drafts without changing the look.</p><p>From a sticking sash to cracked or wavy glass, heritage window restoration brings original windows back to life. Where a pane is beyond saving we offer single pane window replacement that matches the original glass, so the restored window looks right and seals tight. The result keeps your home's character while working like a window should.</p>",
+        "repairfirst_body": "Where the wood is sound, restoration is almost always the better long-term choice. It keeps the original craftsmanship and character that a vinyl replacement would erase.",
         "whatwehandle_heading": "Restoration work we do",
         "whatwehandle_items": [
             {"item": "Wood window and sash repair"},
@@ -30,11 +30,14 @@
             {"item": "Draft-proofing and weatherproofing"},
             {"item": "Heritage and vintage windows"}
         ],
+        "comparison": "<h3>Restore vs. replace an old window</h3><table><thead><tr><th>&nbsp;</th><th>Restore the window</th><th>Replace the window</th></tr></thead><tbody><tr><td>Best when</td><td>The wood and frame are sound, the glazing or sash needs work</td><td>The frame is rotted through or structurally gone</td></tr><tr><td>What is involved</td><td>Sash repair, re-glazing, weatherproofing, glass matched to the original</td><td>Full window and frame, removal and install</td></tr><tr><td>Keeps the character</td><td>Yes, original wood and wavy glass preserved</td><td>No, original look is lost</td></tr><tr><td>Relative cost</td><td>Varies with the work needed</td><td>Higher up front</td></tr></tbody></table>",
         "faqs": [
             {"question": "Can you restore my old wood windows instead of replacing them?", "answer": "In most cases, yes. Wood window repair, sash work, and re-glazing restore function while keeping the original character. Restoration is often the better long-term choice."},
-            {"question": "Do you match heritage glass?", "answer": "Where a pane needs replacing, we use single pane window replacement glass that matches the original look as closely as possible."},
+            {"question": "Do you match heritage glass?", "answer": "Where a pane needs replacing, we use single pane window replacement glass that matches the original look as closely as possible, including wavy and antique-style glass."},
             {"question": "Will restoration stop the drafts?", "answer": "Yes. Weatherproofing and fresh glazing putty seal the sash and stop drafts without altering the window's appearance."},
-            {"question": "Do you serve the whole GTA?", "answer": "Yes, across Toronto and the GTA."}
+            {"question": "Are restored windows as efficient as new ones?", "answer": "A properly restored and weatherproofed window performs well, and you can add storm windows for extra efficiency while keeping the original sash."},
+            {"question": "Do you work on designated heritage properties?", "answer": "Yes. Heritage window restoration is part of what we do, and we work to keep the windows in keeping with the home and any heritage requirements."},
+            {"question": "Do you serve the whole GTA?", "answer": "Yes, across Toronto and the GTA. We start with an on-site assessment of the wood, sash, and glazing."}
         ],
         "related_services": [
             {"label": "Window Glass Repair", "url": "/glass/residential/window-glass-repair/"},

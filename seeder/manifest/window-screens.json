@@ -19,7 +19,7 @@
         "hero_h1": "Window Screen Installation and Repair in Toronto and the GTA",
         "hero_subhead": "Torn, bent, or missing screens? We supply, repair, and install window screens cut to fit, across the GTA.",
         "overview_heading": "Screens that fit and last",
-        "overview_body": "<p>A torn or missing screen lets bugs in and drags down the look of the whole window. SolidGuard does window screen installation across Toronto and the GTA: new screens measured and cut to fit, plus window screen repair when the frame is good and only the mesh has gone.</p><p>Choose standard mesh, pet-resistant mesh, or a retractable screen, in a frame colour to match your windows. Whether you need one window screen replacement or a whole home re-screened, we measure on site so every screen seats clean and tight.</p>",
+        "overview_body": "<p><strong>A torn screen is usually a re-mesh, not a whole new screen, and a missing one is a quick custom build.</strong> SolidGuard does window screen installation across Toronto and the GTA: new screens measured and cut to fit, plus window screen repair when the frame is good and only the mesh has gone.</p><p>Choose standard mesh, pet-resistant mesh, or a retractable screen, in a frame colour to match your windows. Whether you need one window screen replacement or a whole home re-screened, we measure on site so every screen seats clean and tight, with no gaps for bugs to get through.</p>",
         "whatwehandle_heading": "Screen work we handle",
         "whatwehandle_items": [
             {"item": "New screens cut to fit"},
@@ -28,11 +28,14 @@
             {"item": "Pet-resistant and heavy-duty mesh"},
             {"item": "Retractable and sliding-door screens"}
         ],
+        "comparison": "<h3>Re-mesh vs. a new screen</h3><table><thead><tr><th>&nbsp;</th><th>Re-mesh the frame</th><th>New screen</th></tr></thead><tbody><tr><td>Best when</td><td>Frame is straight, only the mesh is torn or sagging</td><td>Frame is bent, corroded, or missing</td></tr><tr><td>What is involved</td><td>Fresh mesh fitted to your existing frame</td><td>New frame and mesh, measured and cut to the window</td></tr><tr><td>Typical timeframe</td><td>Often same day</td><td>Built to measure, fitted on a return visit</td></tr><tr><td>Relative cost</td><td>Usually lower</td><td>Higher</td></tr></tbody></table>",
         "faqs": [
-            {"question": "Can you repair a screen, or do I need a new one?", "answer": "If the frame is straight we re-mesh it, which is the cheaper window screen repair. If the frame is bent, a new screen is the better value."},
-            {"question": "Do you make custom-size screens?", "answer": "Yes. We measure on site and cut every screen to fit your window exactly."},
+            {"question": "Can you repair a screen, or do I need a new one?", "answer": "If the frame is straight we re-mesh it, which is the cheaper window screen repair. If the frame is bent or corroded, a new screen is the better value."},
+            {"question": "Do you make custom-size screens?", "answer": "Yes. We measure on site and cut every screen to fit your window exactly, so there are no gaps."},
             {"question": "Do you offer pet-resistant mesh?", "answer": "Yes, along with retractable screens and standard mesh, in frame colours to match your windows."},
-            {"question": "How fast can you come out?", "answer": "Same or next day across most of the GTA."}
+            {"question": "Can you screen a sliding patio door?", "answer": "Yes. We supply and fit sliding-door and retractable screens, including replacements for doors where the original screen is missing."},
+            {"question": "Do you re-screen a whole house?", "answer": "Yes. Whether it is one window screen replacement or every screen in the home, we measure them all so each one seats clean and tight."},
+            {"question": "How fast can you come out?", "answer": "Same or next day across most of the GTA. Straightforward re-mesh jobs are often done on the spot."}
         ],
         "related_services": [
             {"label": "Window Glass Repair", "url": "/glass/residential/window-glass-repair/"},

@@ -3403,7 +3403,14 @@ a.mega__col-head:hover { color: var(--color-primary); }
 .prose { color: var(--color-text); line-height: var(--leading-relaxed); }
 .prose > * + * { margin-top: var(--space-4); }
 .prose h2 { font-family: var(--font-headline); font-size: var(--text-2xl); color: var(--color-navy); margin-top: var(--space-8); }
+.prose h3 { font-family: var(--font-headline); font-size: var(--text-xl); color: var(--color-navy); margin-top: var(--space-6); }
 .prose a { color: var(--color-primary); text-decoration: underline; }
+
+/* Comparison tables in prose (AI-extractable, e.g. repair vs replace) */
+.prose table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); margin-top: var(--space-4); }
+.prose th, .prose td { text-align: left; padding: var(--space-3); border: 1px solid var(--color-border); vertical-align: top; }
+.prose thead th { background: var(--color-surface-container); color: var(--color-navy); font-weight: var(--font-semibold); }
+.prose tbody td:first-child { font-weight: var(--font-semibold); color: var(--color-navy); }
 
 
 /* =============================================================================
@@ -3574,17 +3581,33 @@ a.mega__col-head:hover { color: var(--color-primary); }
   .glass-overview {
     grid-template-columns: 1.05fr 0.95fr;
     gap: var(--space-12);
-    align-items: stretch;
+    align-items: center; /* media sits at its natural height, centered beside the copy */
   }
   .glass-overview--solo { grid-template-columns: 1fr; }
 
-  /* Stretch the before/after images to the full height of the copy column. */
-  .glass-overview__media .sg-ba-sxs { height: 100%; grid-template-rows: 1fr; }
-  .glass-overview__media .sg-ba-sxs__item { aspect-ratio: auto; height: 100%; }
+  /* Before/after at a fixed aspect ratio, not stretched to the copy column. */
+  .glass-overview__media .sg-ba-sxs { height: auto; }
+  .glass-overview__media .sg-ba-sxs__item { aspect-ratio: 4 / 3; height: auto; }
 }
+
+/* Single before/after work photo (composite) */
+.glass-work-photo { margin: 0; }
+.glass-work-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* Comparison/detail table sits below the "what we fix" list. */
+.glass-overview__comparison { margin-top: var(--space-8); max-width: none; }
 
 .glass-overview__copy .prose { max-width: 60ch; }
 .glass-overview__copy .prose > * + * { margin-top: var(--space-4); }
+/* Solo layout (no before/after) gives prose + tables more room to breathe. */
+.glass-overview--solo .glass-overview__copy .prose { max-width: 72ch; }
+.glass-overview--solo .glass-overview__copy .prose table { max-width: none; }
 
 /* Before/after comparison fills the media column (and full container on mobile).
    The component itself (slider or side-by-side) lives in the before-after block
