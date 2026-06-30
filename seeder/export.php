@@ -46,6 +46,12 @@ foreach ( $pages as $pg ) {
         'menu_order' => (int) $pg->menu_order,
     );
 
+    // Hero window-graphic key.
+    $hero = get_post_meta( $pg->ID, '_sg_hero', true );
+    if ( $hero ) {
+        $entry['hero'] = $hero;
+    }
+
     // RankMath meta.
     $rm = array_filter( array(
         'title'         => get_post_meta( $pg->ID, 'rank_math_title', true ),

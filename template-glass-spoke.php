@@ -52,13 +52,20 @@ $page_kw = wp_strip_all_tags( get_the_title() );
         'bullets' => sg_trust_bullets(),
     );
     if ( $hero_asset ) {
+        // Client-uploaded cutout wins.
         $hero_args['asset'] = $hero_asset;
     } else {
-        $hero_args['asset_frames'] = array(
-            $tpl_uri . '/images/hero/casement-window/casement-window_0.webp',
-            $tpl_uri . '/images/hero/casement-window/casement-window_1.webp',
-            $tpl_uri . '/images/hero/casement-window/casement-window_2.webp',
-        );
+        // Per-page window graphic (manifest "hero" key), else the brand default.
+        $hero_key = get_post_meta( $id, '_sg_hero', true );
+        $frames   = $hero_key ? sg_hero_frames( $hero_key ) : array();
+        if ( ! $frames ) {
+            $frames = sg_hero_frames( 'casement-window' );
+        }
+        if ( count( $frames ) > 1 ) {
+            $hero_args['asset_frames'] = $frames; // animated cross-fade
+        } elseif ( $frames ) {
+            $hero_args['asset'] = $frames[0];     // single static cutout
+        }
     }
     get_template_part( 'template-parts/sections/hero', null, $hero_args );
     ?>

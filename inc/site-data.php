@@ -183,6 +183,39 @@ function sg_trust_bullets() {
 }
 
 /**
+ * Resolve a hero window-graphic key (e.g. "slider-window") to its frame URLs.
+ *
+ * Reads images/hero/<key>/*.webp in natural order. A folder with one file is a
+ * static cutout; multiple files animate via the .page-hero__seq cross-fade.
+ * Returns an empty array if the key is blank or the folder is missing.
+ *
+ * @param string $key Folder name under images/hero/.
+ * @return string[]   Ordered frame URLs.
+ */
+function sg_hero_frames( $key ) {
+    $key = trim( (string) $key, '/' );
+    if ( '' === $key || preg_match( '#[^a-z0-9_-]#i', $key ) ) {
+        return array();
+    }
+    $dir = get_template_directory() . '/images/hero/' . $key;
+    if ( ! is_dir( $dir ) ) {
+        return array();
+    }
+    $files = glob( $dir . '/*.webp' );
+    if ( ! $files ) {
+        return array();
+    }
+    natsort( $files );
+    $uri = get_template_directory_uri() . '/images/hero/' . $key . '/';
+    return array_values( array_map(
+        static function ( $f ) use ( $uri ) {
+            return $uri . basename( $f );
+        },
+        $files
+    ) );
+}
+
+/**
  * Standing promotional offers (special-offers rail).
  *
  * @return array<array{headline:string,subhead:string,desc:string,expires:string}>

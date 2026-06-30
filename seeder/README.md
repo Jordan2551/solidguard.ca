@@ -51,3 +51,29 @@ Notes:
   they are not exported as URLs and need real assets sideloaded before seeding.
 - The posts-index homepage SEO is **not** a manifest (no post). It lives in the
   RankMath `rank-math-options-titles` option; seed it separately.
+
+## Hero image assignments
+
+The manifest `hero` key picks a window graphic from `images/hero/<key>/`. A folder
+with one file renders a static cutout; three files animate (cross-fade). Priority:
+a client-uploaded `hero_asset` (ACF) > the `hero` key > the casement default.
+
+Six graphics exist; these are the assignments (reasoned from what each image shows,
+not a strict 1:1 — reuse where no dedicated art exists):
+
+| Page | `hero` | Why |
+|---|---|---|
+| `window-glass-repair` | `casement-window` ✱ | flagship; clean modern double casement |
+| `patio-sliding-door-glass` | `slider-window` | wide horizontal slider = sliding door (best literal match) |
+| `window-crank-repair` | `awning-window` ✱ | awning windows are crank-operated; motion suits the page |
+| `window-restoration` | `shaped-window` | arched/heritage = restoring character windows |
+| `porch-enclosures` | `bow-window` | projecting 3D bay reads as an enclosure/sunroom |
+| `window-glass-replacement` | `hung-window` | pristine classic double-hung = "new window" |
+| `double-pane-window-repair` | `awning-window` ✱ | two clearly stacked panes reads "double pane" |
+| `window-screens` | `slider-window` | screen panel is visible in the graphic |
+| `custom-glass-mirrors` | `shaped-window` | decorative/custom (low priority) |
+| commercial structural (curtain-wall, vestibules, partitions) | `bow-window` | most architectural of the set (stand-in until storefront art) |
+| roots / hub / emergency / other commercial | *(omit)* | falls back to the casement default until dedicated art |
+
+✱ = animated (3 frames). Swap any of these for a real per-page photo later by
+uploading to the page's `hero_asset` ACF field, which overrides the key.

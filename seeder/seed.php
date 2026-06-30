@@ -101,6 +101,13 @@ foreach ( $manifests as $m ) {
         delete_post_meta( $id, '_wp_page_template' );
     }
 
+    // Hero window-graphic key (design directive, not client-editable content).
+    if ( ! empty( $m['hero'] ) ) {
+        update_post_meta( $id, '_sg_hero', $m['hero'] );
+    } else {
+        delete_post_meta( $id, '_sg_hero' );
+    }
+
     // ACF content fields.
     if ( ! empty( $m['fields'] ) && is_array( $m['fields'] ) ) {
         foreach ( $m['fields'] as $name => $value ) {
