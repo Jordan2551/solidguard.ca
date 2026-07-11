@@ -22,6 +22,8 @@ $bullets  = isset( $args['bullets'] ) ? (array) $args['bullets'] : array();
 $image_id = isset( $args['image_id'] ) ? (int) $args['image_id'] : 0;
 $asset    = isset( $args['asset'] ) ? $args['asset'] : '';
 $frames   = isset( $args['asset_frames'] ) ? array_filter( (array) $args['asset_frames'] ) : array();
+// Optional keyword phrase to accent within the H1 (first occurrence).
+$highlight = isset( $args['highlight'] ) ? trim( (string) $args['highlight'] ) : '';
 
 if ( '' === $h1 ) {
     return;
@@ -47,7 +49,16 @@ if ( $asset || $frames )    { $classes .= ' page-hero--asset'; }
 
         <div class="page-hero__copy">
 
-            <h1 class="page-hero__title"><?php echo esc_html( $h1 ); ?></h1>
+            <h1 class="page-hero__title"><?php
+            $hl_pos = ( '' !== $highlight ) ? stripos( $h1, $highlight ) : false;
+            if ( false !== $hl_pos ) {
+                echo esc_html( substr( $h1, 0, $hl_pos ) )
+                    . '<span class="page-hero__hl">' . esc_html( substr( $h1, $hl_pos, strlen( $highlight ) ) ) . '</span>'
+                    . esc_html( substr( $h1, $hl_pos + strlen( $highlight ) ) );
+            } else {
+                echo esc_html( $h1 );
+            }
+            ?></h1>
 
             <?php if ( '' !== $subhead ) : ?>
                 <p class="page-hero__subhead"><?php echo esc_html( $subhead ); ?></p>

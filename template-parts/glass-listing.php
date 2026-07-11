@@ -3,9 +3,10 @@
  * Shared body for listing pages (hub + category root).
  *
  * Self-contained: resolves the page id from the global $post, reads its ACF
- * content, renders intro + an auto-generated child grid + global trust sections,
- * and emits Service (+ FAQPage) schema. Both template-glass-hub.php and
- * template-glass-root.php are thin wrappers around this.
+ * content, renders one intro-and-grid section + global trust sections, and emits
+ * Service (+ FAQPage) schema. Both template-glass-hub.php and template-glass-root.php
+ * are thin wrappers around this. No credential marquee here (it lives on the
+ * conversion spokes); the hero bullets + reviews carry trust on category pages.
  *
  * @package SolidGuard
  */
@@ -18,12 +19,11 @@ $final_cta_heading = get_field( 'final_cta_heading', $id );
 $faqs              = get_field( 'faqs', $id );
 $hero_h1           = get_field( 'hero_h1', $id );
 $hero_subhead      = get_field( 'hero_subhead', $id );
-$grid_heading      = get_field( 'whatwehandle_heading', $id );
 
 $page_kw = wp_strip_all_tags( get_the_title() );
 ?>
 
-<main id="primary" class="page-main">
+<main id="primary" class="page-main page-main--listing">
 
     <?php get_template_part( 'template-parts/breadcrumb' ); ?>
 
@@ -31,39 +31,28 @@ $page_kw = wp_strip_all_tags( get_the_title() );
     <?php
     $hero_args = array_merge(
         array(
-            'h1'      => $hero_h1 ?: $page_kw,
-            'subhead' => $hero_subhead,
-            'bullets' => sg_trust_bullets(),
+            'h1'        => $hero_h1 ?: $page_kw,
+            'subhead'   => $hero_subhead,
+            'bullets'   => sg_trust_bullets(),
+            'highlight' => get_post_meta( $id, 'rank_math_focus_keyword', true ),
         ),
         sg_hero_visual_args( $id )
     );
     get_template_part( 'template-parts/sections/hero', null, $hero_args );
     ?>
 
-    <!-- Credential bar -->
-    <?php get_template_part( 'template-parts/sections/trust-bar' ); ?>
-
-    <!-- Intro -->
-    <?php if ( $overview_body ) : ?>
-        <section class="glass-section">
-            <div class="container">
-                <div class="glass-overview glass-overview--solo">
-                    <div class="glass-overview__copy">
-                        <?php if ( $overview_heading ) : ?>
-                            <h2 class="section-heading"><?php echo esc_html( $overview_heading ); ?></h2>
-                        <?php endif; ?>
-                        <div class="prose"><?php echo wp_kses_post( wpautop( $overview_body ) ); ?></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    <?php endif; ?>
-
-    <!-- Child services (auto-generated from the page tree) -->
-    <?php get_template_part( 'template-parts/sections/service-grid', null, array(
-        'parent_id' => $id,
-        'heading'   => $grid_heading ?: 'Our ' . $page_kw . ' services',
-    ) ); ?>
+    <!-- Intro + child-service grid (one section) -->
+    <section class="section section--white">
+        <div class="container">
+            <?php if ( $overview_heading ) : ?>
+                <h2 class="section-heading"><?php echo esc_html( $overview_heading ); ?></h2>
+            <?php endif; ?>
+            <?php if ( $overview_body ) : ?>
+                <div class="prose service-grid__intro"><?php echo wp_kses_post( wpautop( $overview_body ) ); ?></div>
+            <?php endif; ?>
+            <?php get_template_part( 'template-parts/sections/service-grid', null, array( 'parent_id' => $id ) ); ?>
+        </div>
+    </section>
 
     <!-- Social proof -->
     <?php get_template_part( 'template-parts/sections/reviews' ); ?>
@@ -71,11 +60,11 @@ $page_kw = wp_strip_all_tags( get_the_title() );
     <!-- Offers (global) -->
     <?php get_template_part( 'template-parts/sections/special-offers' ); ?>
 
+    <!-- Guarantee (global) — sits between the two grey card sections for contrast -->
+    <?php get_template_part( 'template-parts/sections/guarantee' ); ?>
+
     <!-- Service areas (global) -->
     <?php get_template_part( 'template-parts/sections/service-areas-linked' ); ?>
-
-    <!-- Guarantee (global) -->
-    <?php get_template_part( 'template-parts/sections/guarantee' ); ?>
 
     <!-- FAQ -->
     <?php if ( $faqs ) : ?>

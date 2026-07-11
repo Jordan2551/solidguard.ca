@@ -100,10 +100,10 @@ $glass_featured = array(
 
                 <!-- Glass mega-menu -->
                 <div class="mega" data-mega>
-                    <a href="<?php echo esc_url( home_url( '/glass/' ) ); ?>" class="mega__trigger" aria-expanded="false" aria-controls="mega-glass">
+                    <button type="button" class="mega__trigger" aria-expanded="false" aria-controls="mega-glass">
                         Glass
                         <?php echo sg_icon( 'expand_more', 'mega__chevron' ); ?>
-                    </a>
+                    </button>
 
                     <div class="mega__panel" id="mega-glass" role="region" aria-label="Glass services">
                         <div class="mega__inner">

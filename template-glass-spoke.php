@@ -54,9 +54,10 @@ $page_kw = wp_strip_all_tags( get_the_title() );
     <?php
     $hero_args = array_merge(
         array(
-            'h1'      => $hero_h1 ?: $page_kw,
-            'subhead' => $hero_subhead,
-            'bullets' => sg_trust_bullets(),
+            'h1'        => $hero_h1 ?: $page_kw,
+            'subhead'   => $hero_subhead,
+            'bullets'   => sg_trust_bullets(),
+            'highlight' => get_post_meta( $id, 'rank_math_focus_keyword', true ),
         ),
         sg_hero_visual_args( $id )
     );

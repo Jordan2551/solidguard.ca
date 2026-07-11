@@ -670,7 +670,24 @@ p {
   color: var(--color-navy);
 }
 .service-card--text:hover .service-card__more { color: var(--color-orange); }
-.service-grid__intro { margin-bottom: var(--space-8); max-width: 60ch; }
+
+/* Icon badge — gives the text cards a visual anchor */
+.service-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-md);
+  background: var(--color-navy);
+  color: var(--neutral-0);
+  margin-bottom: var(--space-4);
+  transition: background var(--transition);
+}
+.service-card__icon .sg-icon { width: 1.5rem; height: 1.5rem; }
+.service-card--text:hover .service-card__icon { background: var(--color-orange); }
+
+.service-grid__intro { margin-top: var(--space-4); margin-bottom: var(--space-10); max-width: 65ch; }
 
 /* Check list */
 .check-list {
@@ -3035,9 +3052,12 @@ details[open] > .faq__question .faq__question-text {
   align-items: center;
   gap: var(--space-1);
   padding: var(--space-2) var(--space-3);
+  font-family: inherit;
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
   color: var(--color-navy);
+  background: none;
+  border: 0;
   border-radius: var(--radius-md);
   white-space: nowrap;
   cursor: pointer;
@@ -3448,6 +3468,7 @@ a.mega__col-head:hover { color: var(--color-primary); }
   max-width: 22ch;
   margin-bottom: var(--space-4);
 }
+.page-hero__hl { color: var(--color-orange); }
 
 .page-hero__subhead {
   font-size: var(--text-lg);

@@ -55,7 +55,7 @@ add_action( 'after_setup_theme', 'solidguard_setup' );
 // Enqueue styles & scripts
 // ---------------------------------------------------------------------------
 function solidguard_scripts() {
-    $v = '2.6.6';
+    $v = '2.6.7';
     $uri = get_template_directory_uri();
 
     // Local fonts (Inter + Rajdhani)
