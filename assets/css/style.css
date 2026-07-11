@@ -839,11 +839,16 @@ p {
    7. HEADER — two-row: topbar (CTAs) + navbar (logo + hamburger)
    ============================================================================= */
 
-/* Override the single-row header height token */
+/* Override the single-row header height token.
+   Header height (and the .page-main offset it drives) = topbar + navbar:
+   mobile 52 + 59 = 111px; desktop 52 + 72 = 124px. */
 :root {
-  --topbar-h: 3.25rem;   /* 52px */
-  --navbar-h: 6.5rem;    /* 104px — extra breathing room around logo */
+  --topbar-h: 52px;
+  --navbar-h: 59px;
   --header-h: calc(var(--topbar-h) + var(--navbar-h));
+}
+@media (min-width: 1024px) {
+  :root { --navbar-h: 72px; }
 }
 
 .site-header {
@@ -1049,9 +1054,12 @@ p {
 }
 
 .site-header__logo img {
-  height: 5rem;
+  height: 2.75rem;   /* 44px — fits the 59px mobile navbar */
   width: auto;
   object-fit: contain;
+}
+@media (min-width: 1024px) {
+  .site-header__logo img { height: 3.5rem; } /* 56px — fits the 72px desktop navbar */
 }
 
 
