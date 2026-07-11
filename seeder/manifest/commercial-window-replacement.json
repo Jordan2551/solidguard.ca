@@ -1,0 +1,47 @@
+{
+    "path": "glass/commercial/commercial-window-replacement",
+    "parent": "glass/commercial",
+    "template": "template-glass-spoke.php",
+    "title": "Commercial Window Replacement",
+    "menu_order": 2,
+    "work_photo": "work/commercial-glass-services/before_after_combined(1)_70reduced.webp",
+    "rank_math": {
+        "title": "Commercial Window Replacement in Toronto & the GTA | SolidGuard",
+        "description": "Commercial window replacement and repair across the GTA: failed sealed units, broken panes, and glazing for offices and retail. Fully insured, minimal downtime.",
+        "focus_keyword": "commercial window replacement"
+    },
+    "cluster": {
+        "primary": "commercial window replacement",
+        "secondary": ["commercial windows", "commercial window installation", "commercial window repair"],
+        "semantic": ["spandrel", "glazing", "sealed unit", "energy code", "GTA"]
+    },
+    "fields": {
+        "hero_h1": "Commercial Window Replacement in Toronto and the GTA",
+        "hero_subhead": "Failed, foggy, or broken commercial glass? We replace sealed units and glazing for offices, retail, and multi-unit buildings across the GTA.",
+        "overview_heading": "Commercial glass replaced, downtime minimized",
+        "overview_body": "<p><strong>For most commercial windows, you replace the failed glass unit, not the whole frame.</strong> SolidGuard handles commercial window replacement across Toronto and the GTA: foggy and failed sealed units, broken panes, and re-glazing for offices, retail, and multi-unit buildings. We work around your hours and keep tenants and trading uninterrupted.</p><p>From a single floor of commercial windows to a building-wide glazing program, we replace double and triple-pane units, spandrel panels, and tempered safety glass to match the original spec and energy code. Fitting out a new space? We also handle commercial window installation from the frame up. Need commercial window repair rather than replacement? If the frame and seal are sound, we repair. We are fully insured and used to working at height and on access equipment.</p>",
+        "whatwehandle_heading": "Commercial glass we replace",
+        "whatwehandle_items": [
+            {"item": "Failed and foggy sealed units"},
+            {"item": "Broken and cracked panes"},
+            {"item": "Spandrel and vision glass"},
+            {"item": "Tempered and laminated safety glass"},
+            {"item": "Re-glazing of existing frames"}
+        ],
+        "comparison": "<h3>Replace the glass vs. replace the window</h3><table><thead><tr><th>&nbsp;</th><th>Replace the glass</th><th>Replace the window</th></tr></thead><tbody><tr><td>Best when</td><td>Frame and glazing are sound, only the sealed unit has failed</td><td>Frame is corroded, failing, or being upgraded building-wide</td></tr><tr><td>What is involved</td><td>New sealed unit glazed into the existing frame</td><td>New framing and glass, removal and install</td></tr><tr><td>Disruption</td><td>Low, often unit by unit</td><td>Higher, scheduled in phases</td></tr><tr><td>Relative cost</td><td>Usually lower</td><td>Higher</td></tr></tbody></table>",
+        "faqs": [
+            {"question": "Do you replace the whole window or just the glass?", "answer": "Usually just the glass unit. If the frame is sound we re-glaze a new sealed unit into it, which is faster and less disruptive than reframing."},
+            {"question": "Can you match our existing glass and energy spec?", "answer": "Yes. We match double or triple-pane, low-E, and tempered specs to the original so the replacement meets energy code and looks consistent."},
+            {"question": "Can you work without closing our office?", "answer": "Yes. We schedule unit by unit around your hours so tenants and staff are not disrupted."},
+            {"question": "Do you handle high or hard-to-reach windows?", "answer": "Yes. We are fully insured and equipped to work at height and on access equipment where needed."},
+            {"question": "Is this different from curtain wall work?", "answer": "Yes. This covers punched and framed commercial windows. For full glazed facades, see our curtain wall service."},
+            {"question": "Do you cover the whole GTA?", "answer": "Yes, across Toronto and the GTA, fully insured with police-cleared technicians."}
+        ],
+        "related_services": [
+            {"label": "Storefront Glass", "url": "/glass/commercial/storefront-glass/"},
+            {"label": "Curtain Wall", "url": "/glass/commercial/curtain-wall/"},
+            {"label": "Commercial Glass", "url": "/glass/commercial/"}
+        ],
+        "final_cta_heading": "Need commercial glass replaced?"
+    }
+}

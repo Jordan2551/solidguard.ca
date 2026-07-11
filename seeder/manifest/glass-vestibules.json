@@ -1,0 +1,47 @@
+{
+    "path": "glass/commercial/glass-vestibules",
+    "parent": "glass/commercial",
+    "template": "template-glass-spoke.php",
+    "title": "Glass Vestibules",
+    "menu_order": 5,
+    "hero": "bow-window",
+    "rank_math": {
+        "title": "Glass Entrance Vestibules in Toronto & the GTA | SolidGuard",
+        "description": "Glass entrance vestibules across the GTA. Add a double-door air-lock to cut drafts, save energy, and warm your entrance. Custom-built and installed, fully insured.",
+        "focus_keyword": "entrance vestibule"
+    },
+    "cluster": {
+        "primary": "entrance vestibule",
+        "secondary": ["glass vestibule", "vestibule enclosure", "building vestibule"],
+        "semantic": ["air-lock", "double-door entry", "draft control", "energy savings", "GTA"]
+    },
+    "fields": {
+        "hero_h1": "Glass Entrance Vestibules in Toronto and the GTA",
+        "hero_subhead": "Cut drafts and heating costs at the door. Custom glass entrance vestibules that create a double-door air-lock, built and installed across the GTA.",
+        "overview_heading": "An entrance that holds the heat in",
+        "overview_body": "<p><strong>An entrance vestibule is a small glass enclosure inside your door that creates an air-lock, so outside air never blows straight into the building.</strong> SolidGuard designs and builds glass vestibules across Toronto and the GTA: a second set of doors and glass walls that keep the lobby warm in winter and cool in summer.</p><p>For retail, offices, restaurants, and condos, a building vestibule cuts drafts at the busiest door, lowers heating and cooling load, and makes the entrance more comfortable the moment customers walk in. We build the vestibule enclosure to suit your entry: framed or frameless glass, tempered safety glass, and doors with the closers and hardware to match.</p>",
+        "whatwehandle_heading": "Vestibule work we handle",
+        "whatwehandle_items": [
+            {"item": "Custom glass entrance vestibules"},
+            {"item": "Double-door air-lock entries"},
+            {"item": "Framed and frameless glass walls"},
+            {"item": "Tempered safety glass and doors"},
+            {"item": "Closers, locks, and auto operators"}
+        ],
+        "comparison": "<h3>Single door vs. an entrance vestibule</h3><table><thead><tr><th>&nbsp;</th><th>Single door</th><th>Vestibule (air-lock)</th></tr></thead><tbody><tr><td>Drafts</td><td>Outside air blows straight in</td><td>Trapped between two doors, blocked</td></tr><tr><td>Comfort</td><td>Cold or hot zone at the entrance</td><td>Stable temperature at the door</td></tr><tr><td>Energy</td><td>Higher heating and cooling load</td><td>Lower load at the busiest opening</td></tr></tbody></table>",
+        "faqs": [
+            {"question": "What is an entrance vestibule?", "answer": "An entrance vestibule is a small glass enclosure just inside the entrance with a second set of doors. Only one set opens at a time, creating an air-lock that stops outside air blowing straight into the building."},
+            {"question": "Will a vestibule really save energy?", "answer": "Yes. By blocking the draft at your busiest door, a vestibule lowers heating and cooling load and steadies the temperature near the entrance. The busier the door, the bigger the difference."},
+            {"question": "Do you build to fit our existing entrance?", "answer": "Yes. Every glass vestibule is designed and built to your entry, framed or frameless, with doors and hardware to match the look."},
+            {"question": "Is a vestibule the same as a porch enclosure?", "answer": "They are similar in build but different in purpose. A vestibule is a commercial entrance air-lock; a porch enclosure turns a home porch into living space."},
+            {"question": "Can it have automatic doors?", "answer": "Yes. We can fit auto operators and the closers and locks to suit accessibility and traffic at your entrance."},
+            {"question": "Do you cover the whole GTA?", "answer": "Yes, across Toronto and the GTA, fully insured with police-cleared technicians."}
+        ],
+        "related_services": [
+            {"label": "Commercial Storefront Doors", "url": "/glass/commercial/commercial-storefront-doors/"},
+            {"label": "Glass Partitions", "url": "/glass/commercial/glass-partitions/"},
+            {"label": "Commercial Glass", "url": "/glass/commercial/"}
+        ],
+        "final_cta_heading": "Want a warmer entrance?"
+    }
+}

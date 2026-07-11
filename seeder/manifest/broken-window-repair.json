@@ -1,0 +1,47 @@
+{
+    "path": "glass/emergency/broken-window-repair",
+    "parent": "glass/emergency",
+    "template": "template-glass-spoke.php",
+    "title": "Broken Window Repair",
+    "menu_order": 1,
+    "work_photo": "work/emergency-glass-services/backyard_before_after_polished(1)_70reduced.webp",
+    "rank_math": {
+        "title": "Broken Window Repair in Toronto & the GTA | Same-Day | SolidGuard",
+        "description": "Broken window repair across the GTA, fast. Smashed or shattered glass after a break-in, storm, or accident, secured and replaced. Safe cleanup, insurance docs.",
+        "focus_keyword": "broken window repair"
+    },
+    "cluster": {
+        "primary": "broken window repair",
+        "secondary": ["broken window glass repair", "smashed window", "broken window replacement"],
+        "semantic": ["shattered", "cracked", "safety glass", "cleanup", "break-in", "GTA"]
+    },
+    "fields": {
+        "hero_h1": "Broken Window Repair in Toronto and the GTA",
+        "hero_subhead": "Smashed or shattered window after a break-in, storm, or accident? We secure it, clean up the glass, and replace the pane, fast across the GTA.",
+        "overview_heading": "Broken window? We make it safe, then new",
+        "overview_body": "<p><strong>A smashed or shattered window is a safety and security risk, so broken window repair starts the moment we arrive.</strong> SolidGuard handles broken window repair across Toronto and the GTA after break-ins, storms, and accidents: we secure the opening, clear up the broken glass safely, and replace the pane.</p><p>If the glass cannot be replaced on the spot, we board up so the property stays secure, then return with the new unit cut to size. Whether it is a single smashed window at home or broken window glass repair at a storefront, we use the right safety glass, leave the area clean, and document the damage for your insurance. This is the urgent, same-day side of our work; for non-urgent cracks and chips, see window glass repair.</p>",
+        "whatwehandle_heading": "Broken glass we handle",
+        "whatwehandle_items": [
+            {"item": "Smashed and shattered windows"},
+            {"item": "Break-in and vandalism damage"},
+            {"item": "Storm and accident damage"},
+            {"item": "Safe broken-glass cleanup"},
+            {"item": "Board-up and same-day replacement"}
+        ],
+        "comparison": "<h3>Repair the glass vs. replace the window</h3><table><thead><tr><th>&nbsp;</th><th>Replace the glass</th><th>Replace the window</th></tr></thead><tbody><tr><td>Best when</td><td>Frame is intact, only the glass is broken</td><td>Frame is damaged in the break-in or impact</td></tr><tr><td>What is involved</td><td>New pane or sealed unit into the existing frame</td><td>New window and frame, removal and install</td></tr><tr><td>Typical timeframe</td><td>Same day where the glass is in stock</td><td>Board up now, replace once built</td></tr><tr><td>Relative cost</td><td>Usually lower</td><td>Higher</td></tr></tbody></table>",
+        "faqs": [
+            {"question": "How fast can you repair a broken window?", "answer": "We aim to reach most GTA properties the same day, day or night. We secure and clean up on arrival, and replace the glass the same visit where the pane is in stock."},
+            {"question": "My window was smashed in a break-in. What do you do first?", "answer": "We make it safe: secure the opening, clear the broken glass, and board up if the new pane cannot go in immediately. Then we replace the glass and document it for your insurer."},
+            {"question": "Do you clean up the broken glass?", "answer": "Yes. Safe cleanup of shattered glass is part of every broken window repair, inside and out."},
+            {"question": "Can you replace just the glass, or do I need a new window?", "answer": "If the frame survived, we replace just the glass, which is faster and usually less. If the frame was damaged too, we handle broken window replacement and swap the whole window."},
+            {"question": "Is this different from regular window glass repair?", "answer": "This is the urgent, same-day side, for smashed and shattered glass after a break-in or storm. For non-urgent cracks and chips, our window glass repair page covers that."},
+            {"question": "Can you help with my insurance claim?", "answer": "Yes. We document the damage and the work so you have what you need for your insurer."}
+        ],
+        "related_services": [
+            {"label": "Board-Up Service", "url": "/glass/emergency/board-up-service/"},
+            {"label": "Window Glass Repair", "url": "/glass/residential/window-glass-repair/"},
+            {"label": "Emergency Glass", "url": "/glass/emergency/"}
+        ],
+        "final_cta_heading": "Broken window? We are on our way."
+    }
+}

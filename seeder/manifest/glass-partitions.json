@@ -1,0 +1,47 @@
+{
+    "path": "glass/commercial/glass-partitions",
+    "parent": "glass/commercial",
+    "template": "template-glass-spoke.php",
+    "title": "Glass Partitions",
+    "menu_order": 3,
+    "hero": "bow-window",
+    "rank_math": {
+        "title": "Office Glass Partitions in Toronto & the GTA | SolidGuard",
+        "description": "Office glass partitions across the GTA: framed and frameless glass walls, demountable partitions, and privacy glass. Measured, supplied, and installed.",
+        "focus_keyword": "office glass partitions"
+    },
+    "cluster": {
+        "primary": "office glass partitions",
+        "secondary": ["glass partition installation", "glass wall", "demountable partition"],
+        "semantic": ["frameless", "framed", "acoustic", "privacy glass", "GTA"]
+    },
+    "fields": {
+        "hero_h1": "Office Glass Partitions in Toronto and the GTA",
+        "hero_subhead": "Open up your office with light while keeping rooms defined. Framed and frameless glass partitions, measured and installed across the GTA.",
+        "overview_heading": "Glass walls that open up the office",
+        "overview_body": "<p><strong>Office glass partitions divide space without closing it in, keeping daylight and sightlines while defining meeting rooms and offices.</strong> SolidGuard supplies and installs office glass partitions across Toronto and the GTA: framed and frameless glass walls, single and double glazed, with doors to match.</p><p>From a single meeting-room glass wall to a full floor of offices, we handle the glass partition installation end to end: measuring, tempered safety glass, hardware, and finishing. Choose a demountable partition system if you expect to reconfigure, acoustic glazing for quiet rooms, or privacy glass and film where you need it.</p>",
+        "whatwehandle_heading": "Partition work we handle",
+        "whatwehandle_items": [
+            {"item": "Framed and frameless glass walls"},
+            {"item": "Meeting-room and office partitions"},
+            {"item": "Demountable, reconfigurable systems"},
+            {"item": "Acoustic and double-glazed partitions"},
+            {"item": "Privacy glass, film, and manifestation"}
+        ],
+        "comparison": "<h3>Framed vs. frameless partitions</h3><table><thead><tr><th>&nbsp;</th><th>Framed</th><th>Frameless</th></tr></thead><tbody><tr><td>Look</td><td>Defined lines, more structure</td><td>Minimal, near-seamless glass</td></tr><tr><td>Acoustics</td><td>Easier to seal for quiet rooms</td><td>Good with thicker glass and seals</td></tr><tr><td>Reconfigure</td><td>Demountable systems move easily</td><td>Possible, more planning</td></tr><tr><td>Relative cost</td><td>Usually lower</td><td>Higher</td></tr></tbody></table>",
+        "faqs": [
+            {"question": "Framed or frameless glass partitions, which is better?", "answer": "Frameless looks the most open and minimal. Framed and demountable systems are easier to seal for acoustics and to move later. We will match the choice to your space and budget."},
+            {"question": "Can glass partitions be soundproofed?", "answer": "They can be made significantly quieter with thicker or double glazing and proper seals. Fully soundproof is not realistic with glass, but acoustic glazing handles most office needs."},
+            {"question": "Can I get privacy with a glass partition?", "answer": "Yes. We offer privacy glass, applied film, manifestation patterns, and switchable glass that frosts on demand."},
+            {"question": "Can the partitions be moved later?", "answer": "Yes, if you choose a demountable partition system. It is designed to be reconfigured as your floor plan changes."},
+            {"question": "Do you install doors in the partitions?", "answer": "Yes. Glass or solid doors, with the hardware and closers to match, integrated into the partition run."},
+            {"question": "Do you cover the whole GTA?", "answer": "Yes, across Toronto and the GTA, fully insured with police-cleared technicians."}
+        ],
+        "related_services": [
+            {"label": "Commercial Window Replacement", "url": "/glass/commercial/commercial-window-replacement/"},
+            {"label": "Glass Vestibules", "url": "/glass/commercial/glass-vestibules/"},
+            {"label": "Commercial Glass", "url": "/glass/commercial/"}
+        ],
+        "final_cta_heading": "Planning a glass partition?"
+    }
+}

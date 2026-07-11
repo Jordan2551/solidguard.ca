@@ -1,0 +1,47 @@
+{
+    "path": "glass/commercial/commercial-storefront-doors",
+    "parent": "glass/commercial",
+    "template": "template-glass-spoke.php",
+    "title": "Commercial Storefront Doors",
+    "menu_order": 1,
+    "work_photo": "work/storefront-glass-services/dogstore_before_after_combined(1)_70reduced.webp",
+    "rank_math": {
+        "title": "Storefront Door Repair in Toronto & the GTA | Glass & Aluminum | SolidGuard",
+        "description": "Commercial storefront door repair across the GTA: glass, closers, pivots, and panic hardware on aluminum storefront and entrance doors. Fast, fully insured.",
+        "focus_keyword": "storefront door"
+    },
+    "cluster": {
+        "primary": "storefront door",
+        "secondary": ["commercial door repair", "aluminum storefront door", "commercial entrance doors", "commercial glass door"],
+        "semantic": ["door closer", "pivot", "panic device", "exit device", "auto operator", "GTA"]
+    },
+    "fields": {
+        "hero_h1": "Storefront Door Repair in Toronto and the GTA",
+        "hero_subhead": "Sagging, sticking, or smashed storefront door? We repair the glass, closers, pivots, and panic hardware on aluminum entrance doors, across the GTA.",
+        "overview_heading": "Storefront doors that close and lock right",
+        "overview_body": "<p><strong>A storefront door that drags, will not latch, or has cracked glass is a daily problem and a security risk.</strong> SolidGuard handles storefront door repair across Toronto and the GTA: door glass, closers, pivots, and panic and exit hardware on aluminum storefront and entrance doors. Most issues are a hardware or glass fix, not a new door.</p><p>From a worn closer that slams to a smashed commercial glass door after a break-in, our commercial door repair covers the glass and aluminum side: pivots, hinges, locks, panic devices, and auto operators. We work on aluminum storefront door systems and commercial entrance doors. We do not service overhead or roll-up metal doors.</p>",
+        "whatwehandle_heading": "Storefront door problems we fix",
+        "whatwehandle_items": [
+            {"item": "Cracked or smashed door glass"},
+            {"item": "Worn or leaking door closers"},
+            {"item": "Sagging pivots and hinges"},
+            {"item": "Panic bars and exit devices"},
+            {"item": "Locks, handles, and auto operators"}
+        ],
+        "comparison": "<h3>Repair the door vs. replace it</h3><table><thead><tr><th>&nbsp;</th><th>Repair</th><th>Replace</th></tr></thead><tbody><tr><td>Best when</td><td>Frame is straight, glass or hardware has failed</td><td>Door is bent, corroded, or beyond economical repair</td></tr><tr><td>What is involved</td><td>New glass, closer, pivots, or panic hardware</td><td>New door leaf and frame, removal and install</td></tr><tr><td>Typical timeframe</td><td>Often a single visit</td><td>Built to measure, scheduled install</td></tr><tr><td>Relative cost</td><td>Usually lower</td><td>Higher</td></tr></tbody></table>",
+        "faqs": [
+            {"question": "My storefront door will not close properly. Can you fix it?", "answer": "Usually yes. A door that drags or slams is almost always a worn closer or sagging pivot, both of which we repair without replacing the door."},
+            {"question": "Do you repair the glass in a commercial glass door?", "answer": "Yes. We replace cracked or smashed door glass with tempered safety glass cut to fit your existing aluminum door."},
+            {"question": "Do you service panic bars and exit devices?", "answer": "Yes. We repair and replace panic and exit hardware so your entrance stays code-compliant and secure."},
+            {"question": "Do you fix overhead or roll-up metal doors?", "answer": "No. We handle glass and aluminum storefront and entrance doors only, not overhead, roll-up, or garage doors."},
+            {"question": "Can you secure the door after a break-in?", "answer": "Yes. We board up to secure the opening the same day, then return with the glass and hardware once parts are confirmed."},
+            {"question": "Do you cover the whole GTA?", "answer": "Yes, across Toronto and the GTA, fully insured with police-cleared technicians."}
+        ],
+        "related_services": [
+            {"label": "Storefront Glass", "url": "/glass/commercial/storefront-glass/"},
+            {"label": "Glass Vestibules", "url": "/glass/commercial/glass-vestibules/"},
+            {"label": "Commercial Glass", "url": "/glass/commercial/"}
+        ],
+        "final_cta_heading": "Storefront door need repair?"
+    }
+}

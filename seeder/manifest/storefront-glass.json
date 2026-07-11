@@ -1,0 +1,47 @@
+{
+    "path": "glass/commercial/storefront-glass",
+    "parent": "glass/commercial",
+    "template": "template-glass-spoke.php",
+    "title": "Storefront Glass",
+    "menu_order": 0,
+    "work_photo": "work/storefront-glass-services/dogstore_before_after_combined(1)_70reduced.webp",
+    "rank_math": {
+        "title": "Storefront Glass Repair & Replacement in Toronto & the GTA | SolidGuard",
+        "description": "Storefront glass repair and replacement across the GTA. Cracked, smashed, or failed panes and tempered safety glass, fast and fully insured. Board-up available.",
+        "focus_keyword": "storefront glass"
+    },
+    "cluster": {
+        "primary": "storefront glass",
+        "secondary": ["storefront window", "storefront glass replacement", "commercial glass"],
+        "semantic": ["tempered safety glass", "glazing", "shopfront", "plate glass", "GTA"]
+    },
+    "fields": {
+        "hero_h1": "Storefront Glass Repair and Replacement in Toronto and the GTA",
+        "hero_subhead": "Cracked, smashed, or failed storefront glass? We repair and replace it fast, secure the opening, and keep your business trading. Fully insured, across the GTA.",
+        "overview_heading": "Storefront glass, repaired or replaced fast",
+        "overview_body": "<p><strong>A broken storefront is lost sales and a security risk, so we move fast.</strong> SolidGuard repairs and replaces storefront glass across Toronto and the GTA: cracked or smashed panes, failed sealed units, and tempered safety glass cut to size. If the opening needs securing first, we board it up, then return with the glass.</p><p>We work around your hours to keep downtime down, and we are fully insured. From a single storefront window to a full shopfront re-glaze, our commercial glass work covers plate glass, tempered safety glass, and aluminum-framed units. Need storefront glass replacement after a break-in or accident? We document the job for your insurer.</p>",
+        "whatwehandle_heading": "Storefront glass we handle",
+        "whatwehandle_items": [
+            {"item": "Cracked and smashed storefront panes"},
+            {"item": "Tempered and laminated safety glass"},
+            {"item": "Failed sealed units and foggy glass"},
+            {"item": "Aluminum-framed shopfront glass"},
+            {"item": "Emergency board-up and re-glaze"}
+        ],
+        "comparison": "<h3>Tempered vs. laminated safety glass</h3><table><thead><tr><th>&nbsp;</th><th>Tempered glass</th><th>Laminated glass</th></tr></thead><tbody><tr><td>When broken</td><td>Shatters into small, blunt pieces</td><td>Holds together on an interlayer, stays in the frame</td></tr><tr><td>Security</td><td>Standard storefront option</td><td>Better against forced entry and repeat break-ins</td></tr><tr><td>Common use</td><td>Most storefronts and doors</td><td>High-security frontages, ground-floor retail</td></tr></tbody></table>",
+        "faqs": [
+            {"question": "My storefront glass is broken. How fast can you come?", "answer": "We aim to secure most GTA storefronts the same day. We board up to make the opening safe, then return and fit the replacement glass once it is cut to size."},
+            {"question": "Do you replace just the glass or the whole frame?", "answer": "Usually just the glass. If the aluminum frame is sound we replace the pane or sealed unit in place. We replace framing only when it is damaged."},
+            {"question": "Tempered or laminated, which should I choose?", "answer": "Tempered is the standard storefront option. Laminated holds together when struck, so it is the better choice for security or after repeat break-ins. We will advise for your location."},
+            {"question": "Can you handle an insurance claim?", "answer": "Yes. We document the damage and the work so you have what you need for your insurer, and we can bill where that is set up."},
+            {"question": "Will you work after hours so we stay open?", "answer": "Yes. We schedule around your trading hours to keep downtime to a minimum, and we respond fast to emergencies."},
+            {"question": "Do you cover the whole GTA?", "answer": "Yes, across Toronto and the GTA, fully insured with police-cleared technicians."}
+        ],
+        "related_services": [
+            {"label": "Commercial Storefront Doors", "url": "/glass/commercial/commercial-storefront-doors/"},
+            {"label": "Commercial Window Replacement", "url": "/glass/commercial/commercial-window-replacement/"},
+            {"label": "Commercial Glass", "url": "/glass/commercial/"}
+        ],
+        "final_cta_heading": "Storefront glass broken?"
+    }
+}

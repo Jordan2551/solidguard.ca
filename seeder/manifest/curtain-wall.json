@@ -1,0 +1,47 @@
+{
+    "path": "glass/commercial/curtain-wall",
+    "parent": "glass/commercial",
+    "template": "template-glass-spoke.php",
+    "title": "Curtain Wall",
+    "menu_order": 4,
+    "hero": "bow-window",
+    "rank_math": {
+        "title": "Curtain Wall Systems & Repair in Toronto & the GTA | SolidGuard",
+        "description": "Glass curtain wall installation and repair across the GTA: failed sealed units, glazing, and gaskets on stick-built and unitized systems. Fully insured, at height.",
+        "focus_keyword": "curtain wall system"
+    },
+    "cluster": {
+        "primary": "curtain wall system",
+        "secondary": ["glass curtain wall", "curtain wall installation", "curtain wall repair"],
+        "semantic": ["mullion", "spandrel", "unitized", "stick-built", "structural glazing", "GTA"]
+    },
+    "fields": {
+        "hero_h1": "Curtain Wall Systems and Repair in Toronto and the GTA",
+        "hero_subhead": "Glazed facades that perform. We install and repair glass curtain wall systems, sealed units, and gaskets across the GTA, fully insured and at height.",
+        "overview_heading": "Curtain wall, installed and maintained",
+        "overview_body": "<p><strong>A curtain wall system is the glazed skin of a building, carrying its own weight on aluminum mullions while keeping weather out.</strong> SolidGuard installs and repairs glass curtain wall across Toronto and the GTA: new glazing, failed sealed unit replacement, gaskets, and weather seals on stick-built and unitized systems.</p><p>From a single failed panel to a full facade, our curtain wall installation and repair covers vision glass, spandrel panels, mullions, and structural glazing. Curtain wall repair covers leaks and fogging too: we diagnose the cause, replace sealed units or gaskets in place where possible, and restore the weather and thermal performance. We are fully insured and equipped to work at height on swing stages and lifts.</p>",
+        "whatwehandle_heading": "Curtain wall work we handle",
+        "whatwehandle_items": [
+            {"item": "Failed and foggy sealed units"},
+            {"item": "Vision and spandrel glass"},
+            {"item": "Mullion and gasket repair"},
+            {"item": "Leak diagnosis and weather seals"},
+            {"item": "Stick-built and unitized systems"}
+        ],
+        "comparison": "<h3>Stick-built vs. unitized curtain wall</h3><table><thead><tr><th>&nbsp;</th><th>Stick-built</th><th>Unitized</th></tr></thead><tbody><tr><td>Assembly</td><td>Built piece by piece on site</td><td>Factory-built panels craned into place</td></tr><tr><td>Best for</td><td>Low to mid-rise, repairs, and infill</td><td>High-rise and fast, large-scale installs</td></tr><tr><td>On-site time</td><td>Higher</td><td>Lower</td></tr><tr><td>Typical repair</td><td colspan=\"2\">Most repairs replace the sealed unit or gasket in place, on either system</td></tr></tbody></table>",
+        "faqs": [
+            {"question": "Can you repair a curtain wall without replacing the whole system?", "answer": "Almost always. Most issues are a failed sealed unit, gasket, or weather seal, which we replace in place. Full system replacement is rare."},
+            {"question": "Our curtain wall is fogging and leaking. What is wrong?", "answer": "Fogging is a failed sealed unit; leaks are usually perished gaskets or weather seals. We diagnose the cause and replace the failed components."},
+            {"question": "Do you work on high-rise facades?", "answer": "Yes. We are fully insured and equipped to work at height on swing stages and lifts."},
+            {"question": "What is the difference between stick-built and unitized?", "answer": "Stick-built is assembled piece by piece on site; unitized arrives as factory-built panels. We service and repair both."},
+            {"question": "Can you replace just one failed panel?", "answer": "Yes. We replace individual vision or spandrel units without disturbing the rest of the facade."},
+            {"question": "Do you cover the whole GTA?", "answer": "Yes, across Toronto and the GTA, fully insured with police-cleared technicians."}
+        ],
+        "related_services": [
+            {"label": "Commercial Window Replacement", "url": "/glass/commercial/commercial-window-replacement/"},
+            {"label": "Storefront Glass", "url": "/glass/commercial/storefront-glass/"},
+            {"label": "Commercial Glass", "url": "/glass/commercial/"}
+        ],
+        "final_cta_heading": "Curtain wall leaking or fogging?"
+    }
+}

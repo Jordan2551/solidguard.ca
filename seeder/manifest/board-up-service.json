@@ -1,0 +1,45 @@
+{
+    "path": "glass/emergency/board-up-service",
+    "parent": "glass/emergency",
+    "template": "template-glass-spoke.php",
+    "title": "Board-Up Service",
+    "menu_order": 0,
+    "rank_math": {
+        "title": "Emergency Window Board-Up Service in Toronto & the GTA | SolidGuard",
+        "description": "Emergency window board up for homes and storefronts across the GTA, day or night. We secure the opening after a break-in, storm, or accident, then replace the glass.",
+        "focus_keyword": "window board up"
+    },
+    "cluster": {
+        "primary": "window board up",
+        "secondary": ["board up window", "emergency board up service", "storefront board up"],
+        "semantic": ["plywood", "secure the opening", "post-break-in", "vandalism", "insurance", "GTA"]
+    },
+    "fields": {
+        "hero_h1": "Emergency Window Board-Up in Toronto and the GTA",
+        "hero_subhead": "Broken in, smashed, or storm-damaged? We board up the opening fast to secure your property, day or night, then come back with the glass.",
+        "overview_heading": "Secure the opening first, glass after",
+        "overview_body": "<p><strong>After a break-in or smashed window, the first job is to secure the opening, not wait days for glass.</strong> SolidGuard provides emergency window board-up across Toronto and the GTA, day or night. A same-day window board up secures the window or storefront with cut plywood, makes the property safe and weather-tight, and books the glass to follow.</p><p>Need to board up window glass after a break-in? A fast board-up stops further loss, keeps the weather and intruders out, and buys time to source the right glass. We handle post-break-in, vandalism, storm, and accident damage for homes and businesses, and we document everything for your insurance. Once the glass is cut to size, we return, remove the board, and finish the repair.</p>",
+        "whatwehandle_heading": "Board-up situations we handle",
+        "whatwehandle_items": [
+            {"item": "Post-break-in window board up"},
+            {"item": "Smashed storefront board up"},
+            {"item": "Storm and accident damage"},
+            {"item": "Vandalism and after-hours call-outs"},
+            {"item": "Insurance documentation"}
+        ],
+        "faqs": [
+            {"question": "How fast can you board up my window?", "answer": "We aim to reach most GTA properties the same day, day or night. Call and we will give you a realistic arrival window and secure the opening as soon as we are on site."},
+            {"question": "Do you board up and replace the glass, or just board up?", "answer": "Both. We board up first to secure the opening immediately, then return with the glass cut to size once it is ready, and finish the repair."},
+            {"question": "Do you board up storefronts as well as homes?", "answer": "Yes. Emergency board up service covers homes and businesses, including smashed storefronts and commercial entrances."},
+            {"question": "Will the board-up keep the weather out?", "answer": "Yes. We fit cut plywood to secure the opening and keep wind, rain, and intruders out until the glass is replaced."},
+            {"question": "Can you help with my insurance claim?", "answer": "Yes. We document the damage and the work, including the board-up and the glass replacement, so you have what you need for your insurer."},
+            {"question": "Do you cover the whole GTA, after hours?", "answer": "Yes, across Toronto and the GTA, day or night, with police-cleared technicians."}
+        ],
+        "related_services": [
+            {"label": "Broken Window Repair", "url": "/glass/emergency/broken-window-repair/"},
+            {"label": "Storefront Glass", "url": "/glass/commercial/storefront-glass/"},
+            {"label": "Emergency Glass", "url": "/glass/emergency/"}
+        ],
+        "final_cta_heading": "Need an opening secured now?"
+    }
+}
